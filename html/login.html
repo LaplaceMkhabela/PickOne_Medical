@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PickOne Medics | Login</title>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+
+    <body>
+
+        <div class="main-container">
+
+            <div class="login-card">
+                <div class="header">
+                    <h1>WELCOME TO PICKONE MEDICS</h1>
+                    <p>Please select your role to continue</p>
+                </div>
+
+                <form id="loginForm">
+                    <div class="input-group">
+                        <label for="role">I am a...</label>
+                        <select id="role" name="role" required>
+                            <option value="" disabled selected>Select your role</option>
+                            <option value="patient">Patient</option>
+                            <option value="doctor">Doctor</option>
+                            <option value="nurse">OT Nurse</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="username">Practice No. / HPCSA reg. / SANC No. / ID</label>
+                        <input type="text" id="username" placeholder="Enter ID" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Enter Password" required>
+                    </div>
+
+                    <button type="submit" class="btn-login">Secure Login</button>
+                </form>
+
+                <p class="footer">Need help? <a href="#">Contact Support</a></p>
+
+            </div>
+
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
