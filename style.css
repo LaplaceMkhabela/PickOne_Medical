@@ -1,0 +1,36 @@
+:root {
+  --background-color: #5F7491;
+  --primary-color:hsl(215, 21%, 67%);
+  --secondary-color:#3F4146;
+  --tertiary-color:#AAA799;
+  --containers: #E7F6F2;
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+.app-container {
+  width: 540px;
+  height: 720px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--primary-color);
+  border-radius: 20px;
+  border-style: outset;
+  border-color: var(--secondary-color);
+  box-shadow: 5px 10px rgba(39, 33, 66, 0.4);
+}
+
+header {
+  display: flex;
+  background-color: #66ff66;
+}
+.patient-details {
+  background-color: #ff5555;
+}
+img {
+  border-radius: 100%;
+  border-color: var(--secondary-color);
+  width: 100px;
+}
