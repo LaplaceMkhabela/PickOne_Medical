@@ -39,6 +39,7 @@ def register(type, id, key):
         
         else:
             return render_template('login.html')
+        #checkme
         
 
 if __name__ == '__main__':
