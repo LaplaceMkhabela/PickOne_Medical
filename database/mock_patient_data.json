@@ -1,0 +1,3824 @@
+{
+    "patients": [
+      {
+        "id": 1,
+        "name": "John Mokoena",
+        "email": "john.mokoena@example.com",
+        "phone": "+27 759 876 7890",
+        "age": 45,
+        "gender": "Male",
+        "bp": [
+          "111/78",
+          "126/85",
+          "122/95",
+          "119/85",
+          "121/88",
+          "116/86",
+          "114/79",
+          "114/94",
+          "113/89",
+          "135/78",
+          "127/92",
+          "135/89",
+          "114/79",
+          "113/93",
+          "112/91",
+          "120/85",
+          "127/73",
+          "121/83",
+          "120/89",
+          "130/76",
+          "127/85",
+          "124/86",
+          "118/71",
+          "135/87",
+          "110/72",
+          "133/82",
+          "132/95",
+          "131/90",
+          "110/89",
+          "125/80"
+        ],
+        "weight": [
+          81.9,
+          82.0,
+          82.6,
+          81.8,
+          82.2,
+          81.9,
+          82.7,
+          82.5,
+          82.1,
+          81.7,
+          82.0,
+          82.2,
+          82.6,
+          81.7,
+          82.2,
+          82.4,
+          82.2,
+          82.5,
+          82.2,
+          82.7,
+          82.3,
+          82.2,
+          82.1,
+          82.3,
+          82.0,
+          82.2,
+          81.9,
+          81.8,
+          81.8,
+          82.3
+        ],
+        "bmi": [
+          26.2,
+          26.1,
+          25.9,
+          26.3,
+          26.3,
+          26.4,
+          26.3,
+          26.3,
+          26.4,
+          26.2,
+          26.1,
+          26.3,
+          26.0,
+          26.3,
+          26.3,
+          26.3,
+          26.2,
+          26.4,
+          26.2,
+          26.1,
+          26.2,
+          26.4,
+          26.4,
+          26.3,
+          25.9,
+          26.2,
+          26.1,
+          26.2,
+          26.3,
+          26.0
+        ],
+        "temp": [
+          36.7,
+          36.2,
+          36.3,
+          36.7,
+          36.4,
+          36.8,
+          36.2,
+          36.2,
+          36.7,
+          36.1,
+          36.6,
+          36.8,
+          36.5,
+          36.6,
+          36.1,
+          36.6,
+          36.6,
+          36.6,
+          36.4,
+          36.4,
+          36.9,
+          36.1,
+          36.1,
+          36.9,
+          36.2,
+          36.2,
+          36.3,
+          36.7,
+          36.8,
+          36.1
+        ],
+        "pulse": [
+          73,
+          76,
+          68,
+          71,
+          68,
+          70,
+          68,
+          77,
+          71,
+          72,
+          73,
+          69,
+          67,
+          75,
+          74,
+          67,
+          76,
+          68,
+          78,
+          73,
+          70,
+          71,
+          72,
+          78,
+          74,
+          76,
+          69,
+          78,
+          77,
+          70
+        ],
+        "hbmp": [
+          73,
+          76,
+          68,
+          71,
+          68,
+          70,
+          68,
+          77,
+          71,
+          72,
+          73,
+          69,
+          67,
+          75,
+          74,
+          67,
+          76,
+          68,
+          78,
+          73,
+          70,
+          71,
+          72,
+          78,
+          74,
+          76,
+          69,
+          78,
+          77,
+          70
+        ],
+        "history": [
+          {
+            "date": "2025-10-12",
+            "reason": "Routine Checkup",
+            "doctor": "Dr. Smith",
+            "notes": "Patient presented with routine checkup. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2025-09-14",
+            "reason": "Follow-up",
+            "doctor": "Dr. Botha",
+            "notes": "Visit for follow-up. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2025-08-17",
+            "reason": "Emergency Visit",
+            "doctor": "Dr. Naidoo",
+            "notes": "Admitted for emergency visit. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2025-07-20",
+            "reason": "Chest Pain",
+            "doctor": "Dr. Smith",
+            "notes": "Follow-up visit focused on chest pain. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2025-06-22",
+            "reason": "Medication Review",
+            "doctor": "Dr. Patel",
+            "notes": "Patient presented with medication review. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2025-05-25",
+            "reason": "Bloodwork",
+            "doctor": "Dr. Williams",
+            "notes": "Follow-up visit focused on bloodwork. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2025-04-27",
+            "reason": "Flu-like Symptoms",
+            "doctor": "Dr. Botha",
+            "notes": "Admitted for flu-like symptoms. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2025-03-30",
+            "reason": "Hypertension Review",
+            "doctor": "Dr. Dlamini",
+            "notes": "Follow-up visit focused on hypertension review. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2025-03-02",
+            "reason": "Diabetes Management",
+            "doctor": "Dr. Singh",
+            "notes": "Visit for diabetes management. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2025-02-02",
+            "reason": "Allergy Consultation",
+            "doctor": "Dr. Patel",
+            "notes": "Patient presented with allergy consultation. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2025-01-05",
+            "reason": "Pre-op Assessment",
+            "doctor": "Dr. Botha",
+            "notes": "Patient presented with pre-op assessment. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2024-12-08",
+            "reason": "Post-op Visit",
+            "doctor": "Dr. Singh",
+            "notes": "Patient presented with post-op visit. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2024-11-10",
+            "reason": "Wound Care",
+            "doctor": "Dr. Smith",
+            "notes": "Admitted for wound care. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2024-10-13",
+            "reason": "Physical Therapy",
+            "doctor": "Dr. Patel",
+            "notes": "Visit for physical therapy. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2024-09-15",
+            "reason": "Mental Health Review",
+            "doctor": "Dr. Williams",
+            "notes": "Admitted for mental health review. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2024-08-18",
+            "reason": "Gastrointestinal Complaint",
+            "doctor": "Dr. Botha",
+            "notes": "Admitted for gastrointestinal complaint. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2024-07-21",
+            "reason": "Respiratory Infection",
+            "doctor": "Dr. Dlamini",
+            "notes": "Visit for respiratory infection. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2024-06-23",
+            "reason": "Dermatology Review",
+            "doctor": "Dr. Moyo",
+            "notes": "Follow-up visit focused on dermatology review. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2024-05-26",
+            "reason": "Orthopedic Check",
+            "doctor": "Dr. Khumalo",
+            "notes": "Patient presented with orthopedic check. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2024-04-28",
+            "reason": "Neurology Referral",
+            "doctor": "Dr. Botha",
+            "notes": "Visit for neurology referral. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2024-03-31",
+            "reason": "ENT Consultation",
+            "doctor": "Dr. Mthembu",
+            "notes": "Visit for ent consultation. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2024-03-03",
+            "reason": "Cardiology Review",
+            "doctor": "Dr. Patel",
+            "notes": "Visit for cardiology review. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2024-02-04",
+            "reason": "Endocrinology Review",
+            "doctor": "Dr. Williams",
+            "notes": "Follow-up visit focused on endocrinology review. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2024-01-07",
+            "reason": "Vaccination",
+            "doctor": "Dr. Khumalo",
+            "notes": "Follow-up visit focused on vaccination. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2023-12-10",
+            "reason": "Smoking Cessation",
+            "doctor": "Dr. Williams",
+            "notes": "Follow-up visit focused on smoking cessation. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2023-11-12",
+            "reason": "Imaging Review",
+            "doctor": "Dr. Khumalo",
+            "notes": "Follow-up visit focused on imaging review. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2023-10-15",
+            "reason": "Minor Surgery",
+            "doctor": "Dr. Patel",
+            "notes": "Visit for minor surgery. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2023-09-17",
+            "reason": "Nutrition Counseling",
+            "doctor": "Dr. Dlamini",
+            "notes": "Patient presented with nutrition counseling. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2023-08-20",
+            "reason": "Eye Exam",
+            "doctor": "Dr. Patel",
+            "notes": "Visit for eye exam. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2023-07-23",
+            "reason": "Hearing Test",
+            "doctor": "Dr. Singh",
+            "notes": "Follow-up visit focused on hearing test. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Ayanda Ndlovu",
+        "email": "ayanda.ndlovu@example.com",
+        "phone": "+27 787 873 1001",
+        "age": 33,
+        "gender": "Female",
+        "bp": [
+          "111/85",
+          "120/79",
+          "124/71",
+          "135/95",
+          "123/76",
+          "127/90",
+          "112/93",
+          "114/70",
+          "122/91",
+          "123/80",
+          "110/76",
+          "110/92",
+          "134/70",
+          "131/86",
+          "129/73",
+          "116/73",
+          "129/90",
+          "116/79",
+          "118/92",
+          "115/73",
+          "125/82",
+          "130/72",
+          "110/78",
+          "124/95",
+          "135/73",
+          "118/74",
+          "130/86",
+          "130/90",
+          "121/73",
+          "114/78"
+        ],
+        "weight": [
+          64.5,
+          63.6,
+          63.8,
+          63.9,
+          63.9,
+          64.0,
+          64.2,
+          64.5,
+          64.5,
+          64.7,
+          64.3,
+          64.1,
+          64.3,
+          64.1,
+          64.1,
+          64.6,
+          63.8,
+          64.0,
+          63.9,
+          63.8,
+          63.9,
+          64.0,
+          64.0,
+          63.7,
+          64.5,
+          63.6,
+          63.9,
+          63.8,
+          64.2,
+          64.0
+        ],
+        "bmi": [
+          22.6,
+          22.2,
+          22.2,
+          22.5,
+          22.6,
+          22.3,
+          22.5,
+          22.5,
+          22.3,
+          22.5,
+          22.2,
+          22.2,
+          22.4,
+          22.3,
+          22.3,
+          22.5,
+          22.5,
+          22.2,
+          22.2,
+          22.3,
+          22.1,
+          22.3,
+          22.4,
+          22.2,
+          22.2,
+          22.4,
+          22.5,
+          22.6,
+          22.1,
+          22.5
+        ],
+        "temp": [
+          36.3,
+          36.3,
+          36.4,
+          36.2,
+          36.5,
+          36.3,
+          36.8,
+          36.7,
+          36.7,
+          36.3,
+          36.2,
+          36.3,
+          36.9,
+          36.6,
+          36.2,
+          36.3,
+          36.2,
+          36.8,
+          36.8,
+          36.1,
+          36.5,
+          36.7,
+          36.3,
+          36.5,
+          36.3,
+          36.6,
+          36.9,
+          36.7,
+          36.6,
+          36.2
+        ],
+        "pulse": [
+          72,
+          71,
+          70,
+          73,
+          67,
+          66,
+          74,
+          72,
+          67,
+          74,
+          71,
+          75,
+          75,
+          71,
+          73,
+          72,
+          75,
+          70,
+          72,
+          72,
+          75,
+          75,
+          68,
+          73,
+          74,
+          68,
+          65,
+          70,
+          76,
+          76
+        ],
+        "hbmp": [
+          72,
+          71,
+          70,
+          73,
+          67,
+          66,
+          74,
+          72,
+          67,
+          74,
+          71,
+          75,
+          75,
+          71,
+          73,
+          72,
+          75,
+          70,
+          72,
+          72,
+          75,
+          75,
+          68,
+          73,
+          74,
+          68,
+          65,
+          70,
+          76,
+          76
+        ],
+        "history": [
+          {
+            "date": "2025-09-22",
+            "reason": "Routine Checkup",
+            "doctor": "Dr. Botha",
+            "notes": "Admitted for routine checkup. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2025-08-25",
+            "reason": "Follow-up",
+            "doctor": "Dr. Singh",
+            "notes": "Patient presented with follow-up. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2025-07-28",
+            "reason": "Emergency Visit",
+            "doctor": "Dr. Dlamini",
+            "notes": "Visit for emergency visit. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2025-06-30",
+            "reason": "Chest Pain",
+            "doctor": "Dr. Moyo",
+            "notes": "Visit for chest pain. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2025-06-02",
+            "reason": "Medication Review",
+            "doctor": "Dr. Patel",
+            "notes": "Admitted for medication review. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2025-05-05",
+            "reason": "Bloodwork",
+            "doctor": "Dr. Naidoo",
+            "notes": "Patient presented with bloodwork. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2025-04-07",
+            "reason": "Flu-like Symptoms",
+            "doctor": "Dr. Naidoo",
+            "notes": "Patient presented with flu-like symptoms. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2025-03-10",
+            "reason": "Hypertension Review",
+            "doctor": "Dr. Smith",
+            "notes": "Visit for hypertension review. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2025-02-10",
+            "reason": "Diabetes Management",
+            "doctor": "Dr. Dlamini",
+            "notes": "Patient presented with diabetes management. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2025-01-13",
+            "reason": "Allergy Consultation",
+            "doctor": "Dr. Patel",
+            "notes": "Patient presented with allergy consultation. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2024-12-16",
+            "reason": "Pre-op Assessment",
+            "doctor": "Dr. Smith",
+            "notes": "Admitted for pre-op assessment. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2024-11-18",
+            "reason": "Post-op Visit",
+            "doctor": "Dr. Patel",
+            "notes": "Visit for post-op visit. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2024-10-21",
+            "reason": "Wound Care",
+            "doctor": "Dr. Singh",
+            "notes": "Admitted for wound care. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2024-09-23",
+            "reason": "Physical Therapy",
+            "doctor": "Dr. Singh",
+            "notes": "Follow-up visit focused on physical therapy. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2024-08-26",
+            "reason": "Mental Health Review",
+            "doctor": "Dr. Williams",
+            "notes": "Patient presented with mental health review. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2024-07-29",
+            "reason": "Gastrointestinal Complaint",
+            "doctor": "Dr. Singh",
+            "notes": "Patient presented with gastrointestinal complaint. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2024-07-01",
+            "reason": "Respiratory Infection",
+            "doctor": "Dr. Moyo",
+            "notes": "Patient presented with respiratory infection. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2024-06-03",
+            "reason": "Dermatology Review",
+            "doctor": "Dr. Dlamini",
+            "notes": "Visit for dermatology review. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2024-05-06",
+            "reason": "Orthopedic Check",
+            "doctor": "Dr. Patel",
+            "notes": "Follow-up visit focused on orthopedic check. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2024-04-08",
+            "reason": "Neurology Referral",
+            "doctor": "Dr. Williams",
+            "notes": "Follow-up visit focused on neurology referral. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2024-03-11",
+            "reason": "ENT Consultation",
+            "doctor": "Dr. Khumalo",
+            "notes": "Visit for ent consultation. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2024-02-12",
+            "reason": "Cardiology Review",
+            "doctor": "Dr. Smith",
+            "notes": "Patient presented with cardiology review. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2024-01-15",
+            "reason": "Endocrinology Review",
+            "doctor": "Dr. Singh",
+            "notes": "Admitted for endocrinology review. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2023-12-18",
+            "reason": "Vaccination",
+            "doctor": "Dr. Botha",
+            "notes": "Admitted for vaccination. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2023-11-20",
+            "reason": "Smoking Cessation",
+            "doctor": "Dr. Patel",
+            "notes": "Patient presented with smoking cessation. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2023-10-23",
+            "reason": "Imaging Review",
+            "doctor": "Dr. Dlamini",
+            "notes": "Admitted for imaging review. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2023-09-25",
+            "reason": "Minor Surgery",
+            "doctor": "Dr. Moyo",
+            "notes": "Follow-up visit focused on minor surgery. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2023-08-28",
+            "reason": "Nutrition Counseling",
+            "doctor": "Dr. Khumalo",
+            "notes": "Follow-up visit focused on nutrition counseling. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2023-07-31",
+            "reason": "Eye Exam",
+            "doctor": "Dr. Smith",
+            "notes": "Visit for eye exam. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2023-07-03",
+            "reason": "Hearing Test",
+            "doctor": "Dr. Dlamini",
+            "notes": "Visit for hearing test. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Lerato Molefe",
+        "email": "lerato.molefe@example.com",
+        "phone": "+27 752 156 1588",
+        "age": 29,
+        "gender": "Female",
+        "bp": [
+          "125/83",
+          "114/85",
+          "129/92",
+          "112/91",
+          "132/74",
+          "135/81",
+          "123/71",
+          "129/84",
+          "122/84",
+          "111/73",
+          "125/94",
+          "114/70",
+          "111/89",
+          "129/74",
+          "130/80",
+          "113/92",
+          "127/90",
+          "121/76",
+          "122/95",
+          "134/94",
+          "125/73",
+          "111/89",
+          "132/84",
+          "129/90",
+          "120/90",
+          "113/91",
+          "132/89",
+          "119/95",
+          "114/82",
+          "135/79"
+        ],
+        "weight": [
+          58.8,
+          58.8,
+          58.5,
+          58.7,
+          58.4,
+          58.7,
+          58.0,
+          58.7,
+          58.3,
+          58.6,
+          58.3,
+          58.7,
+          57.9,
+          57.8,
+          58.8,
+          58.3,
+          58.8,
+          58.8,
+          58.5,
+          58.4,
+          58.0,
+          57.9,
+          58.7,
+          58.8,
+          58.7,
+          58.6,
+          58.3,
+          58.1,
+          57.9,
+          58.3
+        ],
+        "bmi": [
+          21.1,
+          21.3,
+          21.3,
+          21.0,
+          20.8,
+          21.2,
+          21.2,
+          20.8,
+          21.0,
+          21.1,
+          20.8,
+          21.3,
+          21.3,
+          21.2,
+          20.8,
+          20.8,
+          21.0,
+          20.8,
+          21.0,
+          20.8,
+          21.3,
+          21.2,
+          20.8,
+          21.2,
+          20.9,
+          20.9,
+          21.1,
+          21.3,
+          20.9,
+          20.8
+        ],
+        "temp": [
+          36.4,
+          36.1,
+          36.6,
+          36.8,
+          36.2,
+          36.2,
+          36.4,
+          36.9,
+          36.2,
+          36.9,
+          36.4,
+          36.5,
+          36.3,
+          36.8,
+          36.9,
+          36.6,
+          36.2,
+          36.9,
+          36.2,
+          36.6,
+          36.2,
+          36.8,
+          36.9,
+          36.7,
+          36.4,
+          36.3,
+          36.7,
+          36.3,
+          36.4,
+          36.1
+        ],
+        "pulse": [
+          65,
+          72,
+          63,
+          69,
+          64,
+          74,
+          64,
+          65,
+          69,
+          67,
+          71,
+          69,
+          74,
+          65,
+          72,
+          69,
+          67,
+          73,
+          68,
+          64,
+          66,
+          70,
+          73,
+          68,
+          73,
+          71,
+          63,
+          69,
+          69,
+          63
+        ],
+        "hbmp": [
+          65,
+          72,
+          63,
+          69,
+          64,
+          74,
+          64,
+          65,
+          69,
+          67,
+          71,
+          69,
+          74,
+          65,
+          72,
+          69,
+          67,
+          73,
+          68,
+          64,
+          66,
+          70,
+          73,
+          68,
+          73,
+          71,
+          63,
+          69,
+          69,
+          63
+        ],
+        "history": [
+          {
+            "date": "2025-09-02",
+            "reason": "Routine Checkup",
+            "doctor": "Dr. Botha",
+            "notes": "Follow-up visit focused on routine checkup. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2025-08-05",
+            "reason": "Follow-up",
+            "doctor": "Dr. Mthembu",
+            "notes": "Follow-up visit focused on follow-up. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2025-07-08",
+            "reason": "Emergency Visit",
+            "doctor": "Dr. Dlamini",
+            "notes": "Admitted for emergency visit. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2025-06-10",
+            "reason": "Chest Pain",
+            "doctor": "Dr. Naidoo",
+            "notes": "Follow-up visit focused on chest pain. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2025-05-13",
+            "reason": "Medication Review",
+            "doctor": "Dr. Naidoo",
+            "notes": "Visit for medication review. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2025-04-15",
+            "reason": "Bloodwork",
+            "doctor": "Dr. Naidoo",
+            "notes": "Admitted for bloodwork. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2025-03-18",
+            "reason": "Flu-like Symptoms",
+            "doctor": "Dr. Patel",
+            "notes": "Visit for flu-like symptoms. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2025-02-18",
+            "reason": "Hypertension Review",
+            "doctor": "Dr. Smith",
+            "notes": "Follow-up visit focused on hypertension review. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2025-01-21",
+            "reason": "Diabetes Management",
+            "doctor": "Dr. Moyo",
+            "notes": "Follow-up visit focused on diabetes management. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2024-12-24",
+            "reason": "Allergy Consultation",
+            "doctor": "Dr. Mthembu",
+            "notes": "Visit for allergy consultation. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2024-11-26",
+            "reason": "Pre-op Assessment",
+            "doctor": "Dr. Botha",
+            "notes": "Follow-up visit focused on pre-op assessment. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2024-10-29",
+            "reason": "Post-op Visit",
+            "doctor": "Dr. Botha",
+            "notes": "Visit for post-op visit. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2024-10-01",
+            "reason": "Wound Care",
+            "doctor": "Dr. Naidoo",
+            "notes": "Follow-up visit focused on wound care. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2024-09-03",
+            "reason": "Physical Therapy",
+            "doctor": "Dr. Mthembu",
+            "notes": "Follow-up visit focused on physical therapy. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2024-08-06",
+            "reason": "Mental Health Review",
+            "doctor": "Dr. Khumalo",
+            "notes": "Admitted for mental health review. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2024-07-09",
+            "reason": "Gastrointestinal Complaint",
+            "doctor": "Dr. Williams",
+            "notes": "Follow-up visit focused on gastrointestinal complaint. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2024-06-11",
+            "reason": "Respiratory Infection",
+            "doctor": "Dr. Khumalo",
+            "notes": "Follow-up visit focused on respiratory infection. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2024-05-14",
+            "reason": "Dermatology Review",
+            "doctor": "Dr. Dlamini",
+            "notes": "Visit for dermatology review. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2024-04-16",
+            "reason": "Orthopedic Check",
+            "doctor": "Dr. Dlamini",
+            "notes": "Patient presented with orthopedic check. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2024-03-19",
+            "reason": "Neurology Referral",
+            "doctor": "Dr. Moyo",
+            "notes": "Visit for neurology referral. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2024-02-20",
+            "reason": "ENT Consultation",
+            "doctor": "Dr. Naidoo",
+            "notes": "Follow-up visit focused on ent consultation. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2024-01-23",
+            "reason": "Cardiology Review",
+            "doctor": "Dr. Mthembu",
+            "notes": "Follow-up visit focused on cardiology review. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2023-12-26",
+            "reason": "Endocrinology Review",
+            "doctor": "Dr. Dlamini",
+            "notes": "Follow-up visit focused on endocrinology review. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2023-11-28",
+            "reason": "Vaccination",
+            "doctor": "Dr. Naidoo",
+            "notes": "Patient presented with vaccination. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2023-10-31",
+            "reason": "Smoking Cessation",
+            "doctor": "Dr. Khumalo",
+            "notes": "Admitted for smoking cessation. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2023-10-03",
+            "reason": "Imaging Review",
+            "doctor": "Dr. Dlamini",
+            "notes": "Patient presented with imaging review. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2023-09-05",
+            "reason": "Minor Surgery",
+            "doctor": "Dr. Singh",
+            "notes": "Follow-up visit focused on minor surgery. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2023-08-08",
+            "reason": "Nutrition Counseling",
+            "doctor": "Dr. Patel",
+            "notes": "Follow-up visit focused on nutrition counseling. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2023-07-11",
+            "reason": "Eye Exam",
+            "doctor": "Dr. Dlamini",
+            "notes": "Patient presented with eye exam. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2023-06-13",
+            "reason": "Hearing Test",
+            "doctor": "Dr. Dlamini",
+            "notes": "Admitted for hearing test. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Thabo Dlamini",
+        "email": "thabo.dlamini@example.com",
+        "phone": "+27 796 300 2396",
+        "age": 60,
+        "gender": "Male",
+        "bp": [
+          "112/72",
+          "126/79",
+          "144/80",
+          "117/86",
+          "125/94",
+          "120/72",
+          "136/79",
+          "128/86",
+          "118/88",
+          "143/90",
+          "123/87",
+          "116/83",
+          "144/82",
+          "127/79",
+          "138/81",
+          "118/75",
+          "117/92",
+          "117/82",
+          "135/88",
+          "139/74",
+          "145/91",
+          "129/81",
+          "140/93",
+          "136/76",
+          "140/85",
+          "142/80",
+          "141/90",
+          "113/84",
+          "129/74",
+          "141/71"
+        ],
+        "weight": [
+          91.0,
+          90.2,
+          90.4,
+          90.4,
+          91.1,
+          90.9,
+          91.1,
+          90.8,
+          90.1,
+          91.0,
+          91.0,
+          90.4,
+          90.4,
+          90.1,
+          90.0,
+          90.3,
+          90.7,
+          90.3,
+          91.0,
+          90.2,
+          90.6,
+          90.2,
+          90.5,
+          90.8,
+          90.4,
+          90.4,
+          90.7,
+          90.8,
+          90.2,
+          91.0
+        ],
+        "bmi": [
+          29.7,
+          29.8,
+          29.7,
+          29.7,
+          29.8,
+          30.1,
+          29.8,
+          29.8,
+          30.0,
+          30.0,
+          29.8,
+          29.7,
+          30.0,
+          30.1,
+          29.6,
+          29.9,
+          30.0,
+          29.8,
+          30.0,
+          29.9,
+          29.7,
+          29.7,
+          29.6,
+          30.0,
+          30.0,
+          30.0,
+          30.0,
+          29.8,
+          29.6,
+          29.9
+        ],
+        "temp": [
+          36.6,
+          36.6,
+          36.5,
+          36.7,
+          36.4,
+          36.5,
+          36.3,
+          36.5,
+          36.4,
+          36.1,
+          36.1,
+          36.4,
+          36.3,
+          36.1,
+          36.2,
+          36.4,
+          36.3,
+          36.6,
+          36.5,
+          36.3,
+          36.3,
+          36.6,
+          36.6,
+          36.2,
+          36.4,
+          36.5,
+          36.8,
+          36.3,
+          36.5,
+          36.3
+        ],
+        "pulse": [
+          76,
+          78,
+          83,
+          80,
+          78,
+          78,
+          79,
+          85,
+          86,
+          86,
+          79,
+          79,
+          83,
+          81,
+          79,
+          82,
+          80,
+          86,
+          78,
+          75,
+          79,
+          83,
+          76,
+          75,
+          82,
+          82,
+          86,
+          82,
+          75,
+          81
+        ],
+        "hbmp": [
+          76,
+          78,
+          83,
+          80,
+          78,
+          78,
+          79,
+          85,
+          86,
+          86,
+          79,
+          79,
+          83,
+          81,
+          79,
+          82,
+          80,
+          86,
+          78,
+          75,
+          79,
+          83,
+          76,
+          75,
+          82,
+          82,
+          86,
+          82,
+          75,
+          81
+        ],
+        "history": [
+          {
+            "date": "2025-08-13",
+            "reason": "Routine Checkup",
+            "doctor": "Dr. Patel",
+            "notes": "Follow-up visit focused on routine checkup. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2025-07-16",
+            "reason": "Follow-up",
+            "doctor": "Dr. Naidoo",
+            "notes": "Follow-up visit focused on follow-up. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2025-06-18",
+            "reason": "Emergency Visit",
+            "doctor": "Dr. Naidoo",
+            "notes": "Patient presented with emergency visit. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2025-05-21",
+            "reason": "Chest Pain",
+            "doctor": "Dr. Naidoo",
+            "notes": "Visit for chest pain. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2025-04-23",
+            "reason": "Medication Review",
+            "doctor": "Dr. Moyo",
+            "notes": "Visit for medication review. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2025-03-26",
+            "reason": "Bloodwork",
+            "doctor": "Dr. Patel",
+            "notes": "Visit for bloodwork. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2025-02-26",
+            "reason": "Flu-like Symptoms",
+            "doctor": "Dr. Moyo",
+            "notes": "Patient presented with flu-like symptoms. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2025-01-29",
+            "reason": "Hypertension Review",
+            "doctor": "Dr. Khumalo",
+            "notes": "Follow-up visit focused on hypertension review. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2025-01-01",
+            "reason": "Diabetes Management",
+            "doctor": "Dr. Mthembu",
+            "notes": "Visit for diabetes management. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2024-12-04",
+            "reason": "Allergy Consultation",
+            "doctor": "Dr. Mthembu",
+            "notes": "Follow-up visit focused on allergy consultation. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2024-11-06",
+            "reason": "Pre-op Assessment",
+            "doctor": "Dr. Dlamini",
+            "notes": "Visit for pre-op assessment. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2024-10-09",
+            "reason": "Post-op Visit",
+            "doctor": "Dr. Botha",
+            "notes": "Admitted for post-op visit. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2024-09-11",
+            "reason": "Wound Care",
+            "doctor": "Dr. Naidoo",
+            "notes": "Follow-up visit focused on wound care. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2024-08-14",
+            "reason": "Physical Therapy",
+            "doctor": "Dr. Williams",
+            "notes": "Admitted for physical therapy. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2024-07-17",
+            "reason": "Mental Health Review",
+            "doctor": "Dr. Dlamini",
+            "notes": "Visit for mental health review. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2024-06-19",
+            "reason": "Gastrointestinal Complaint",
+            "doctor": "Dr. Singh",
+            "notes": "Follow-up visit focused on gastrointestinal complaint. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2024-05-22",
+            "reason": "Respiratory Infection",
+            "doctor": "Dr. Singh",
+            "notes": "Follow-up visit focused on respiratory infection. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2024-04-24",
+            "reason": "Dermatology Review",
+            "doctor": "Dr. Dlamini",
+            "notes": "Admitted for dermatology review. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2024-03-27",
+            "reason": "Orthopedic Check",
+            "doctor": "Dr. Khumalo",
+            "notes": "Visit for orthopedic check. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2024-02-28",
+            "reason": "Neurology Referral",
+            "doctor": "Dr. Williams",
+            "notes": "Patient presented with neurology referral. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2024-01-31",
+            "reason": "ENT Consultation",
+            "doctor": "Dr. Smith",
+            "notes": "Patient presented with ent consultation. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2024-01-03",
+            "reason": "Cardiology Review",
+            "doctor": "Dr. Mthembu",
+            "notes": "Follow-up visit focused on cardiology review. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2023-12-06",
+            "reason": "Endocrinology Review",
+            "doctor": "Dr. Dlamini",
+            "notes": "Visit for endocrinology review. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2023-11-08",
+            "reason": "Vaccination",
+            "doctor": "Dr. Singh",
+            "notes": "Patient presented with vaccination. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2023-10-11",
+            "reason": "Smoking Cessation",
+            "doctor": "Dr. Khumalo",
+            "notes": "Follow-up visit focused on smoking cessation. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2023-09-13",
+            "reason": "Imaging Review",
+            "doctor": "Dr. Moyo",
+            "notes": "Patient presented with imaging review. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2023-08-16",
+            "reason": "Minor Surgery",
+            "doctor": "Dr. Naidoo",
+            "notes": "Admitted for minor surgery. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2023-07-19",
+            "reason": "Nutrition Counseling",
+            "doctor": "Dr. Mthembu",
+            "notes": "Admitted for nutrition counseling. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2023-06-21",
+            "reason": "Eye Exam",
+            "doctor": "Dr. Mthembu",
+            "notes": "Admitted for eye exam. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2023-05-24",
+            "reason": "Hearing Test",
+            "doctor": "Dr. Naidoo",
+            "notes": "Visit for hearing test. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Zanele Khumalo",
+        "email": "zanele.khumalo@example.com",
+        "phone": "+27 776 414 6362",
+        "age": 52,
+        "gender": "Female",
+        "bp": [
+          "124/81",
+          "140/79",
+          "120/74",
+          "110/87",
+          "142/80",
+          "133/88",
+          "111/95",
+          "118/82",
+          "119/75",
+          "142/72",
+          "118/94",
+          "123/95",
+          "141/88",
+          "123/77",
+          "118/77",
+          "134/81",
+          "118/90",
+          "141/73",
+          "111/86",
+          "132/85",
+          "139/79",
+          "110/77",
+          "145/90",
+          "120/91",
+          "141/95",
+          "140/87",
+          "130/92",
+          "115/78",
+          "118/89",
+          "135/92"
+        ],
+        "weight": [
+          74.7,
+          74.8,
+          74.8,
+          75.5,
+          74.7,
+          74.8,
+          75.3,
+          74.8,
+          75.4,
+          75.2,
+          75.2,
+          74.7,
+          74.9,
+          74.7,
+          74.5,
+          75.1,
+          74.6,
+          75.2,
+          74.9,
+          75.0,
+          74.6,
+          74.8,
+          74.5,
+          75.5,
+          74.9,
+          75.4,
+          74.9,
+          75.2,
+          74.6,
+          75.5
+        ],
+        "bmi": [
+          28.5,
+          28.4,
+          28.5,
+          28.6,
+          28.7,
+          28.7,
+          28.5,
+          28.3,
+          28.7,
+          28.6,
+          28.7,
+          28.8,
+          28.7,
+          28.7,
+          28.6,
+          28.4,
+          28.8,
+          28.4,
+          28.6,
+          28.6,
+          28.6,
+          28.7,
+          28.6,
+          28.3,
+          28.4,
+          28.7,
+          28.4,
+          28.8,
+          28.8,
+          28.7
+        ],
+        "temp": [
+          36.7,
+          36.8,
+          36.5,
+          36.7,
+          36.4,
+          36.8,
+          36.2,
+          36.6,
+          36.7,
+          36.6,
+          36.1,
+          36.4,
+          36.7,
+          36.4,
+          36.6,
+          36.8,
+          36.5,
+          36.4,
+          36.6,
+          36.5,
+          36.5,
+          36.2,
+          36.7,
+          36.4,
+          36.7,
+          36.9,
+          36.1,
+          36.5,
+          36.3,
+          36.5
+        ],
+        "pulse": [
+          73,
+          81,
+          82,
+          81,
+          77,
+          83,
+          73,
+          80,
+          79,
+          84,
+          74,
+          79,
+          78,
+          80,
+          73,
+          73,
+          77,
+          84,
+          73,
+          77,
+          83,
+          83,
+          82,
+          84,
+          77,
+          83,
+          76,
+          81,
+          81,
+          78
+        ],
+        "hbmp": [
+          73,
+          81,
+          82,
+          81,
+          77,
+          83,
+          73,
+          80,
+          79,
+          84,
+          74,
+          79,
+          78,
+          80,
+          73,
+          73,
+          77,
+          84,
+          73,
+          77,
+          83,
+          83,
+          82,
+          84,
+          77,
+          83,
+          76,
+          81,
+          81,
+          78
+        ],
+        "history": [
+          {
+            "date": "2025-07-24",
+            "reason": "Routine Checkup",
+            "doctor": "Dr. Dlamini",
+            "notes": "Follow-up visit focused on routine checkup. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2025-06-26",
+            "reason": "Follow-up",
+            "doctor": "Dr. Naidoo",
+            "notes": "Visit for follow-up. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2025-05-29",
+            "reason": "Emergency Visit",
+            "doctor": "Dr. Mthembu",
+            "notes": "Admitted for emergency visit. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2025-05-01",
+            "reason": "Chest Pain",
+            "doctor": "Dr. Smith",
+            "notes": "Admitted for chest pain. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2025-04-03",
+            "reason": "Medication Review",
+            "doctor": "Dr. Botha",
+            "notes": "Visit for medication review. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2025-03-06",
+            "reason": "Bloodwork",
+            "doctor": "Dr. Williams",
+            "notes": "Patient presented with bloodwork. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2025-02-06",
+            "reason": "Flu-like Symptoms",
+            "doctor": "Dr. Williams",
+            "notes": "Patient presented with flu-like symptoms. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2025-01-09",
+            "reason": "Hypertension Review",
+            "doctor": "Dr. Botha",
+            "notes": "Visit for hypertension review. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2024-12-12",
+            "reason": "Diabetes Management",
+            "doctor": "Dr. Dlamini",
+            "notes": "Admitted for diabetes management. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2024-11-14",
+            "reason": "Allergy Consultation",
+            "doctor": "Dr. Botha",
+            "notes": "Admitted for allergy consultation. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2024-10-17",
+            "reason": "Pre-op Assessment",
+            "doctor": "Dr. Moyo",
+            "notes": "Follow-up visit focused on pre-op assessment. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2024-09-19",
+            "reason": "Post-op Visit",
+            "doctor": "Dr. Smith",
+            "notes": "Follow-up visit focused on post-op visit. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2024-08-22",
+            "reason": "Wound Care",
+            "doctor": "Dr. Smith",
+            "notes": "Patient presented with wound care. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2024-07-25",
+            "reason": "Physical Therapy",
+            "doctor": "Dr. Patel",
+            "notes": "Patient presented with physical therapy. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2024-06-27",
+            "reason": "Mental Health Review",
+            "doctor": "Dr. Botha",
+            "notes": "Visit for mental health review. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2024-05-30",
+            "reason": "Gastrointestinal Complaint",
+            "doctor": "Dr. Patel",
+            "notes": "Patient presented with gastrointestinal complaint. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2024-05-02",
+            "reason": "Respiratory Infection",
+            "doctor": "Dr. Williams",
+            "notes": "Admitted for respiratory infection. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2024-04-04",
+            "reason": "Dermatology Review",
+            "doctor": "Dr. Naidoo",
+            "notes": "Visit for dermatology review. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2024-03-07",
+            "reason": "Orthopedic Check",
+            "doctor": "Dr. Dlamini",
+            "notes": "Follow-up visit focused on orthopedic check. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2024-02-08",
+            "reason": "Neurology Referral",
+            "doctor": "Dr. Singh",
+            "notes": "Visit for neurology referral. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2024-01-11",
+            "reason": "ENT Consultation",
+            "doctor": "Dr. Naidoo",
+            "notes": "Visit for ent consultation. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2023-12-14",
+            "reason": "Cardiology Review",
+            "doctor": "Dr. Williams",
+            "notes": "Visit for cardiology review. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2023-11-16",
+            "reason": "Endocrinology Review",
+            "doctor": "Dr. Singh",
+            "notes": "Patient presented with endocrinology review. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2023-10-19",
+            "reason": "Vaccination",
+            "doctor": "Dr. Moyo",
+            "notes": "Follow-up visit focused on vaccination. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2023-09-21",
+            "reason": "Smoking Cessation",
+            "doctor": "Dr. Dlamini",
+            "notes": "Admitted for smoking cessation. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2023-08-24",
+            "reason": "Imaging Review",
+            "doctor": "Dr. Khumalo",
+            "notes": "Admitted for imaging review. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2023-07-27",
+            "reason": "Minor Surgery",
+            "doctor": "Dr. Dlamini",
+            "notes": "Follow-up visit focused on minor surgery. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2023-06-29",
+            "reason": "Nutrition Counseling",
+            "doctor": "Dr. Singh",
+            "notes": "Admitted for nutrition counseling. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2023-06-01",
+            "reason": "Eye Exam",
+            "doctor": "Dr. Botha",
+            "notes": "Admitted for eye exam. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2023-05-04",
+            "reason": "Hearing Test",
+            "doctor": "Dr. Moyo",
+            "notes": "Visit for hearing test. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Michael van der Merwe",
+        "email": "michael.van.der.merwe@example.com",
+        "phone": "+27 728 965 1097",
+        "age": 38,
+        "gender": "Male",
+        "bp": [
+          "134/86",
+          "114/95",
+          "131/92",
+          "135/88",
+          "122/81",
+          "124/71",
+          "127/83",
+          "130/89",
+          "135/95",
+          "134/77",
+          "110/81",
+          "126/75",
+          "131/76",
+          "130/81",
+          "130/92",
+          "125/70",
+          "133/93",
+          "117/88",
+          "117/78",
+          "115/94",
+          "123/72",
+          "128/84",
+          "117/93",
+          "132/84",
+          "126/95",
+          "135/92",
+          "113/76",
+          "115/84",
+          "112/83",
+          "130/82"
+        ],
+        "weight": [
+          85.7,
+          85.0,
+          85.7,
+          85.6,
+          85.4,
+          84.8,
+          84.7,
+          84.7,
+          85.0,
+          85.5,
+          85.1,
+          85.6,
+          85.4,
+          85.1,
+          85.7,
+          84.7,
+          85.2,
+          85.6,
+          84.8,
+          85.5,
+          85.1,
+          84.7,
+          85.2,
+          85.3,
+          84.7,
+          85.3,
+          85.1,
+          84.7,
+          84.9,
+          84.8
+        ],
+        "bmi": [
+          27.6,
+          27.3,
+          27.8,
+          27.7,
+          27.8,
+          27.5,
+          27.8,
+          27.8,
+          27.7,
+          27.4,
+          27.6,
+          27.6,
+          27.5,
+          27.5,
+          27.3,
+          27.4,
+          27.4,
+          27.5,
+          27.6,
+          27.7,
+          27.3,
+          27.7,
+          27.3,
+          27.6,
+          27.7,
+          27.6,
+          27.8,
+          27.5,
+          27.6,
+          27.3
+        ],
+        "temp": [
+          36.5,
+          36.8,
+          36.3,
+          36.3,
+          36.7,
+          36.3,
+          36.3,
+          36.8,
+          36.9,
+          36.2,
+          36.8,
+          36.5,
+          36.1,
+          36.6,
+          36.6,
+          36.1,
+          36.7,
+          36.8,
+          36.2,
+          36.6,
+          36.5,
+          36.3,
+          36.5,
+          36.2,
+          36.4,
+          36.6,
+          36.5,
+          36.5,
+          36.5,
+          36.8
+        ],
+        "pulse": [
+          76,
+          71,
+          72,
+          72,
+          77,
+          80,
+          76,
+          80,
+          78,
+          76,
+          77,
+          79,
+          76,
+          81,
+          72,
+          73,
+          76,
+          71,
+          73,
+          82,
+          73,
+          71,
+          76,
+          80,
+          74,
+          71,
+          77,
+          81,
+          71,
+          82
+        ],
+        "hbmp": [
+          76,
+          71,
+          72,
+          72,
+          77,
+          80,
+          76,
+          80,
+          78,
+          76,
+          77,
+          79,
+          76,
+          81,
+          72,
+          73,
+          76,
+          71,
+          73,
+          82,
+          73,
+          71,
+          76,
+          80,
+          74,
+          71,
+          77,
+          81,
+          71,
+          82
+        ],
+        "history": [
+          {
+            "date": "2025-07-04",
+            "reason": "Routine Checkup",
+            "doctor": "Dr. Moyo",
+            "notes": "Admitted for routine checkup. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2025-06-06",
+            "reason": "Follow-up",
+            "doctor": "Dr. Williams",
+            "notes": "Patient presented with follow-up. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2025-05-09",
+            "reason": "Emergency Visit",
+            "doctor": "Dr. Botha",
+            "notes": "Visit for emergency visit. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2025-04-11",
+            "reason": "Chest Pain",
+            "doctor": "Dr. Moyo",
+            "notes": "Patient presented with chest pain. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2025-03-14",
+            "reason": "Medication Review",
+            "doctor": "Dr. Patel",
+            "notes": "Patient presented with medication review. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2025-02-14",
+            "reason": "Bloodwork",
+            "doctor": "Dr. Williams",
+            "notes": "Admitted for bloodwork. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2025-01-17",
+            "reason": "Flu-like Symptoms",
+            "doctor": "Dr. Dlamini",
+            "notes": "Admitted for flu-like symptoms. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2024-12-20",
+            "reason": "Hypertension Review",
+            "doctor": "Dr. Moyo",
+            "notes": "Follow-up visit focused on hypertension review. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2024-11-22",
+            "reason": "Diabetes Management",
+            "doctor": "Dr. Khumalo",
+            "notes": "Visit for diabetes management. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2024-10-25",
+            "reason": "Allergy Consultation",
+            "doctor": "Dr. Dlamini",
+            "notes": "Follow-up visit focused on allergy consultation. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2024-09-27",
+            "reason": "Pre-op Assessment",
+            "doctor": "Dr. Moyo",
+            "notes": "Visit for pre-op assessment. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2024-08-30",
+            "reason": "Post-op Visit",
+            "doctor": "Dr. Botha",
+            "notes": "Patient presented with post-op visit. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2024-08-02",
+            "reason": "Wound Care",
+            "doctor": "Dr. Naidoo",
+            "notes": "Patient presented with wound care. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2024-07-05",
+            "reason": "Physical Therapy",
+            "doctor": "Dr. Botha",
+            "notes": "Patient presented with physical therapy. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2024-06-07",
+            "reason": "Mental Health Review",
+            "doctor": "Dr. Smith",
+            "notes": "Patient presented with mental health review. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2024-05-10",
+            "reason": "Gastrointestinal Complaint",
+            "doctor": "Dr. Williams",
+            "notes": "Follow-up visit focused on gastrointestinal complaint. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2024-04-12",
+            "reason": "Respiratory Infection",
+            "doctor": "Dr. Botha",
+            "notes": "Patient presented with respiratory infection. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2024-03-15",
+            "reason": "Dermatology Review",
+            "doctor": "Dr. Singh",
+            "notes": "Follow-up visit focused on dermatology review. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2024-02-16",
+            "reason": "Orthopedic Check",
+            "doctor": "Dr. Patel",
+            "notes": "Follow-up visit focused on orthopedic check. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2024-01-19",
+            "reason": "Neurology Referral",
+            "doctor": "Dr. Khumalo",
+            "notes": "Patient presented with neurology referral. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2023-12-22",
+            "reason": "ENT Consultation",
+            "doctor": "Dr. Dlamini",
+            "notes": "Follow-up visit focused on ent consultation. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2023-11-24",
+            "reason": "Cardiology Review",
+            "doctor": "Dr. Singh",
+            "notes": "Patient presented with cardiology review. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2023-10-27",
+            "reason": "Endocrinology Review",
+            "doctor": "Dr. Naidoo",
+            "notes": "Patient presented with endocrinology review. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2023-09-29",
+            "reason": "Vaccination",
+            "doctor": "Dr. Botha",
+            "notes": "Admitted for vaccination. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2023-09-01",
+            "reason": "Smoking Cessation",
+            "doctor": "Dr. Patel",
+            "notes": "Patient presented with smoking cessation. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2023-08-04",
+            "reason": "Imaging Review",
+            "doctor": "Dr. Smith",
+            "notes": "Patient presented with imaging review. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2023-07-07",
+            "reason": "Minor Surgery",
+            "doctor": "Dr. Khumalo",
+            "notes": "Admitted for minor surgery. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2023-06-09",
+            "reason": "Nutrition Counseling",
+            "doctor": "Dr. Moyo",
+            "notes": "Patient presented with nutrition counseling. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2023-05-12",
+            "reason": "Eye Exam",
+            "doctor": "Dr. Smith",
+            "notes": "Admitted for eye exam. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2023-04-14",
+            "reason": "Hearing Test",
+            "doctor": "Dr. Smith",
+            "notes": "Visit for hearing test. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Sibusiso Nkosi",
+        "email": "sibusiso.nkosi@example.com",
+        "phone": "+27 732 898 3604",
+        "age": 47,
+        "gender": "Male",
+        "bp": [
+          "130/91",
+          "117/89",
+          "120/70",
+          "125/90",
+          "131/82",
+          "111/77",
+          "117/90",
+          "119/80",
+          "115/77",
+          "121/77",
+          "115/83",
+          "124/81",
+          "128/74",
+          "122/88",
+          "134/70",
+          "115/88",
+          "110/91",
+          "122/92",
+          "135/75",
+          "114/70",
+          "110/80",
+          "126/70",
+          "111/71",
+          "134/73",
+          "128/89",
+          "114/94",
+          "114/91",
+          "135/82",
+          "135/70",
+          "123/83"
+        ],
+        "weight": [
+          95.1,
+          95.3,
+          95.3,
+          95.5,
+          94.9,
+          94.7,
+          94.9,
+          94.6,
+          95.1,
+          94.9,
+          94.6,
+          95.5,
+          94.8,
+          94.9,
+          95.5,
+          94.8,
+          95.0,
+          95.5,
+          94.6,
+          94.8,
+          94.8,
+          95.1,
+          95.1,
+          95.2,
+          95.4,
+          95.5,
+          94.8,
+          95.2,
+          95.5,
+          94.9
+        ],
+        "bmi": [
+          31.1,
+          31.1,
+          31.2,
+          30.9,
+          31.0,
+          31.2,
+          31.2,
+          31.3,
+          31.0,
+          30.9,
+          31.0,
+          31.0,
+          30.9,
+          31.0,
+          30.9,
+          31.3,
+          31.2,
+          31.2,
+          30.9,
+          31.0,
+          30.9,
+          31.0,
+          31.0,
+          31.1,
+          30.8,
+          31.2,
+          30.9,
+          31.2,
+          31.0,
+          31.0
+        ],
+        "temp": [
+          36.1,
+          36.5,
+          36.1,
+          36.4,
+          36.4,
+          36.3,
+          36.2,
+          36.2,
+          36.4,
+          36.1,
+          36.6,
+          36.5,
+          36.6,
+          36.7,
+          36.2,
+          36.4,
+          36.7,
+          36.2,
+          36.2,
+          36.2,
+          36.1,
+          36.2,
+          36.5,
+          36.8,
+          36.6,
+          36.3,
+          36.7,
+          36.6,
+          36.7,
+          36.8
+        ],
+        "pulse": [
+          83,
+          81,
+          79,
+          82,
+          87,
+          85,
+          82,
+          85,
+          88,
+          79,
+          83,
+          88,
+          88,
+          85,
+          81,
+          80,
+          83,
+          82,
+          83,
+          84,
+          85,
+          81,
+          83,
+          83,
+          78,
+          87,
+          79,
+          79,
+          77,
+          86
+        ],
+        "hbmp": [
+          83,
+          81,
+          79,
+          82,
+          87,
+          85,
+          82,
+          85,
+          88,
+          79,
+          83,
+          88,
+          88,
+          85,
+          81,
+          80,
+          83,
+          82,
+          83,
+          84,
+          85,
+          81,
+          83,
+          83,
+          78,
+          87,
+          79,
+          79,
+          77,
+          86
+        ],
+        "history": [
+          {
+            "date": "2025-06-14",
+            "reason": "Routine Checkup",
+            "doctor": "Dr. Mthembu",
+            "notes": "Patient presented with routine checkup. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2025-05-17",
+            "reason": "Follow-up",
+            "doctor": "Dr. Dlamini",
+            "notes": "Patient presented with follow-up. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2025-04-19",
+            "reason": "Emergency Visit",
+            "doctor": "Dr. Moyo",
+            "notes": "Visit for emergency visit. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2025-03-22",
+            "reason": "Chest Pain",
+            "doctor": "Dr. Khumalo",
+            "notes": "Patient presented with chest pain. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2025-02-22",
+            "reason": "Medication Review",
+            "doctor": "Dr. Naidoo",
+            "notes": "Patient presented with medication review. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2025-01-25",
+            "reason": "Bloodwork",
+            "doctor": "Dr. Patel",
+            "notes": "Admitted for bloodwork. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2024-12-28",
+            "reason": "Flu-like Symptoms",
+            "doctor": "Dr. Naidoo",
+            "notes": "Admitted for flu-like symptoms. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2024-11-30",
+            "reason": "Hypertension Review",
+            "doctor": "Dr. Botha",
+            "notes": "Follow-up visit focused on hypertension review. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2024-11-02",
+            "reason": "Diabetes Management",
+            "doctor": "Dr. Patel",
+            "notes": "Admitted for diabetes management. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2024-10-05",
+            "reason": "Allergy Consultation",
+            "doctor": "Dr. Smith",
+            "notes": "Visit for allergy consultation. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2024-09-07",
+            "reason": "Pre-op Assessment",
+            "doctor": "Dr. Singh",
+            "notes": "Patient presented with pre-op assessment. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2024-08-10",
+            "reason": "Post-op Visit",
+            "doctor": "Dr. Khumalo",
+            "notes": "Visit for post-op visit. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2024-07-13",
+            "reason": "Wound Care",
+            "doctor": "Dr. Singh",
+            "notes": "Visit for wound care. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2024-06-15",
+            "reason": "Physical Therapy",
+            "doctor": "Dr. Williams",
+            "notes": "Follow-up visit focused on physical therapy. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2024-05-18",
+            "reason": "Mental Health Review",
+            "doctor": "Dr. Patel",
+            "notes": "Visit for mental health review. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2024-04-20",
+            "reason": "Gastrointestinal Complaint",
+            "doctor": "Dr. Dlamini",
+            "notes": "Follow-up visit focused on gastrointestinal complaint. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2024-03-23",
+            "reason": "Respiratory Infection",
+            "doctor": "Dr. Williams",
+            "notes": "Patient presented with respiratory infection. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2024-02-24",
+            "reason": "Dermatology Review",
+            "doctor": "Dr. Moyo",
+            "notes": "Visit for dermatology review. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2024-01-27",
+            "reason": "Orthopedic Check",
+            "doctor": "Dr. Patel",
+            "notes": "Visit for orthopedic check. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2023-12-30",
+            "reason": "Neurology Referral",
+            "doctor": "Dr. Moyo",
+            "notes": "Patient presented with neurology referral. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2023-12-02",
+            "reason": "ENT Consultation",
+            "doctor": "Dr. Williams",
+            "notes": "Patient presented with ent consultation. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2023-11-04",
+            "reason": "Cardiology Review",
+            "doctor": "Dr. Botha",
+            "notes": "Follow-up visit focused on cardiology review. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2023-10-07",
+            "reason": "Endocrinology Review",
+            "doctor": "Dr. Singh",
+            "notes": "Visit for endocrinology review. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2023-09-09",
+            "reason": "Vaccination",
+            "doctor": "Dr. Khumalo",
+            "notes": "Follow-up visit focused on vaccination. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2023-08-12",
+            "reason": "Smoking Cessation",
+            "doctor": "Dr. Williams",
+            "notes": "Follow-up visit focused on smoking cessation. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2023-07-15",
+            "reason": "Imaging Review",
+            "doctor": "Dr. Dlamini",
+            "notes": "Patient presented with imaging review. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2023-06-17",
+            "reason": "Minor Surgery",
+            "doctor": "Dr. Singh",
+            "notes": "Follow-up visit focused on minor surgery. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2023-05-20",
+            "reason": "Nutrition Counseling",
+            "doctor": "Dr. Patel",
+            "notes": "Follow-up visit focused on nutrition counseling. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2023-04-22",
+            "reason": "Eye Exam",
+            "doctor": "Dr. Smith",
+            "notes": "Admitted for eye exam. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2023-03-25",
+            "reason": "Hearing Test",
+            "doctor": "Dr. Singh",
+            "notes": "Visit for hearing test. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Nomsa Jacobs",
+        "email": "nomsa.jacobs@example.com",
+        "phone": "+27 756 263 5955",
+        "age": 41,
+        "gender": "Female",
+        "bp": [
+          "129/74",
+          "124/72",
+          "112/85",
+          "122/88",
+          "123/87",
+          "112/78",
+          "125/77",
+          "113/79",
+          "114/81",
+          "135/73",
+          "114/91",
+          "111/91",
+          "114/88",
+          "127/76",
+          "110/71",
+          "122/87",
+          "132/94",
+          "129/85",
+          "132/92",
+          "113/85",
+          "127/81",
+          "134/80",
+          "113/91",
+          "110/77",
+          "117/85",
+          "119/78",
+          "117/70",
+          "125/81",
+          "126/80",
+          "112/72"
+        ],
+        "weight": [
+          70.1,
+          70.3,
+          70.6,
+          70.9,
+          70.7,
+          70.0,
+          70.1,
+          70.0,
+          70.7,
+          70.5,
+          70.7,
+          70.1,
+          70.5,
+          70.7,
+          69.9,
+          70.2,
+          70.8,
+          70.1,
+          70.6,
+          70.5,
+          70.2,
+          70.1,
+          70.9,
+          70.6,
+          70.6,
+          70.1,
+          69.9,
+          70.8,
+          69.9,
+          70.0
+        ],
+        "bmi": [
+          26.3,
+          26.2,
+          26.3,
+          26.0,
+          25.9,
+          26.1,
+          26.3,
+          26.0,
+          26.0,
+          26.3,
+          26.3,
+          26.2,
+          25.9,
+          26.0,
+          26.0,
+          25.9,
+          26.1,
+          25.8,
+          26.0,
+          26.0,
+          26.3,
+          26.2,
+          26.0,
+          25.8,
+          26.2,
+          26.0,
+          25.9,
+          26.2,
+          25.9,
+          25.9
+        ],
+        "temp": [
+          36.7,
+          36.1,
+          36.9,
+          36.1,
+          36.5,
+          36.2,
+          36.8,
+          36.6,
+          36.8,
+          36.2,
+          36.5,
+          36.8,
+          36.5,
+          36.6,
+          36.4,
+          36.5,
+          36.8,
+          36.3,
+          36.4,
+          36.5,
+          36.1,
+          36.3,
+          36.9,
+          36.1,
+          36.9,
+          36.1,
+          36.4,
+          36.4,
+          36.4,
+          36.5
+        ],
+        "pulse": [
+          71,
+          78,
+          77,
+          70,
+          73,
+          70,
+          80,
+          70,
+          73,
+          69,
+          80,
+          71,
+          78,
+          79,
+          71,
+          75,
+          72,
+          78,
+          79,
+          74,
+          72,
+          75,
+          77,
+          77,
+          70,
+          77,
+          70,
+          80,
+          76,
+          70
+        ],
+        "hbmp": [
+          71,
+          78,
+          77,
+          70,
+          73,
+          70,
+          80,
+          70,
+          73,
+          69,
+          80,
+          71,
+          78,
+          79,
+          71,
+          75,
+          72,
+          78,
+          79,
+          74,
+          72,
+          75,
+          77,
+          77,
+          70,
+          77,
+          70,
+          80,
+          76,
+          70
+        ],
+        "history": [
+          {
+            "date": "2025-05-25",
+            "reason": "Routine Checkup",
+            "doctor": "Dr. Patel",
+            "notes": "Follow-up visit focused on routine checkup. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2025-04-27",
+            "reason": "Follow-up",
+            "doctor": "Dr. Patel",
+            "notes": "Visit for follow-up. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2025-03-30",
+            "reason": "Emergency Visit",
+            "doctor": "Dr. Smith",
+            "notes": "Admitted for emergency visit. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2025-03-02",
+            "reason": "Chest Pain",
+            "doctor": "Dr. Dlamini",
+            "notes": "Follow-up visit focused on chest pain. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2025-02-02",
+            "reason": "Medication Review",
+            "doctor": "Dr. Naidoo",
+            "notes": "Follow-up visit focused on medication review. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2025-01-05",
+            "reason": "Bloodwork",
+            "doctor": "Dr. Mthembu",
+            "notes": "Admitted for bloodwork. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2024-12-08",
+            "reason": "Flu-like Symptoms",
+            "doctor": "Dr. Mthembu",
+            "notes": "Follow-up visit focused on flu-like symptoms. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2024-11-10",
+            "reason": "Hypertension Review",
+            "doctor": "Dr. Patel",
+            "notes": "Admitted for hypertension review. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2024-10-13",
+            "reason": "Diabetes Management",
+            "doctor": "Dr. Khumalo",
+            "notes": "Follow-up visit focused on diabetes management. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2024-09-15",
+            "reason": "Allergy Consultation",
+            "doctor": "Dr. Khumalo",
+            "notes": "Follow-up visit focused on allergy consultation. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2024-08-18",
+            "reason": "Pre-op Assessment",
+            "doctor": "Dr. Patel",
+            "notes": "Follow-up visit focused on pre-op assessment. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2024-07-21",
+            "reason": "Post-op Visit",
+            "doctor": "Dr. Moyo",
+            "notes": "Visit for post-op visit. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2024-06-23",
+            "reason": "Wound Care",
+            "doctor": "Dr. Dlamini",
+            "notes": "Visit for wound care. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2024-05-26",
+            "reason": "Physical Therapy",
+            "doctor": "Dr. Patel",
+            "notes": "Follow-up visit focused on physical therapy. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2024-04-28",
+            "reason": "Mental Health Review",
+            "doctor": "Dr. Mthembu",
+            "notes": "Visit for mental health review. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2024-03-31",
+            "reason": "Gastrointestinal Complaint",
+            "doctor": "Dr. Dlamini",
+            "notes": "Follow-up visit focused on gastrointestinal complaint. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2024-03-03",
+            "reason": "Respiratory Infection",
+            "doctor": "Dr. Patel",
+            "notes": "Admitted for respiratory infection. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2024-02-04",
+            "reason": "Dermatology Review",
+            "doctor": "Dr. Singh",
+            "notes": "Visit for dermatology review. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2024-01-07",
+            "reason": "Orthopedic Check",
+            "doctor": "Dr. Mthembu",
+            "notes": "Patient presented with orthopedic check. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2023-12-10",
+            "reason": "Neurology Referral",
+            "doctor": "Dr. Singh",
+            "notes": "Admitted for neurology referral. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2023-11-12",
+            "reason": "ENT Consultation",
+            "doctor": "Dr. Khumalo",
+            "notes": "Patient presented with ent consultation. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2023-10-15",
+            "reason": "Cardiology Review",
+            "doctor": "Dr. Botha",
+            "notes": "Visit for cardiology review. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2023-09-17",
+            "reason": "Endocrinology Review",
+            "doctor": "Dr. Botha",
+            "notes": "Patient presented with endocrinology review. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2023-08-20",
+            "reason": "Vaccination",
+            "doctor": "Dr. Patel",
+            "notes": "Visit for vaccination. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2023-07-23",
+            "reason": "Smoking Cessation",
+            "doctor": "Dr. Mthembu",
+            "notes": "Follow-up visit focused on smoking cessation. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2023-06-25",
+            "reason": "Imaging Review",
+            "doctor": "Dr. Patel",
+            "notes": "Follow-up visit focused on imaging review. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2023-05-28",
+            "reason": "Minor Surgery",
+            "doctor": "Dr. Smith",
+            "notes": "Visit for minor surgery. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2023-04-30",
+            "reason": "Nutrition Counseling",
+            "doctor": "Dr. Khumalo",
+            "notes": "Follow-up visit focused on nutrition counseling. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2023-04-02",
+            "reason": "Eye Exam",
+            "doctor": "Dr. Singh",
+            "notes": "Admitted for eye exam. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2023-03-05",
+            "reason": "Hearing Test",
+            "doctor": "Dr. Botha",
+            "notes": "Visit for hearing test. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "name": "Kgomotso Radebe",
+        "email": "kgomotso.radebe@example.com",
+        "phone": "+27 733 631 9892",
+        "age": 26,
+        "gender": "Female",
+        "bp": [
+          "132/89",
+          "128/83",
+          "114/90",
+          "132/89",
+          "125/91",
+          "128/76",
+          "129/84",
+          "111/77",
+          "125/89",
+          "120/87",
+          "133/76",
+          "110/71",
+          "111/74",
+          "117/84",
+          "131/89",
+          "117/91",
+          "131/73",
+          "134/86",
+          "123/90",
+          "130/79",
+          "131/80",
+          "125/91",
+          "116/75",
+          "121/87",
+          "121/92",
+          "124/82",
+          "124/91",
+          "120/84",
+          "112/74",
+          "117/94"
+        ],
+        "weight": [
+          54.6,
+          54.7,
+          55.5,
+          55.5,
+          55.3,
+          54.7,
+          54.9,
+          54.6,
+          54.9,
+          54.6,
+          55.0,
+          55.1,
+          55.4,
+          55.1,
+          55.2,
+          55.6,
+          55.2,
+          55.1,
+          55.5,
+          54.8,
+          55.1,
+          54.6,
+          55.2,
+          55.3,
+          55.3,
+          54.7,
+          55.2,
+          54.9,
+          54.6,
+          54.5
+        ],
+        "bmi": [
+          20.7,
+          20.6,
+          20.7,
+          20.6,
+          20.8,
+          20.5,
+          20.5,
+          20.4,
+          20.5,
+          20.7,
+          20.8,
+          20.5,
+          20.7,
+          20.8,
+          20.4,
+          20.6,
+          20.8,
+          20.3,
+          20.5,
+          20.6,
+          20.5,
+          20.8,
+          20.6,
+          20.5,
+          20.5,
+          20.7,
+          20.4,
+          20.6,
+          20.8,
+          20.4
+        ],
+        "temp": [
+          36.2,
+          36.1,
+          36.7,
+          36.3,
+          36.6,
+          36.3,
+          36.2,
+          36.3,
+          36.6,
+          36.6,
+          36.7,
+          36.5,
+          36.1,
+          36.5,
+          36.1,
+          36.8,
+          36.8,
+          36.6,
+          36.3,
+          36.2,
+          36.9,
+          36.2,
+          36.5,
+          36.9,
+          36.7,
+          36.3,
+          36.2,
+          36.2,
+          36.9,
+          36.2
+        ],
+        "pulse": [
+          64,
+          72,
+          67,
+          69,
+          65,
+          72,
+          75,
+          67,
+          66,
+          75,
+          74,
+          67,
+          70,
+          67,
+          73,
+          75,
+          75,
+          71,
+          69,
+          66,
+          68,
+          75,
+          69,
+          72,
+          67,
+          67,
+          71,
+          69,
+          66,
+          68
+        ],
+        "hbmp": [
+          64,
+          72,
+          67,
+          69,
+          65,
+          72,
+          75,
+          67,
+          66,
+          75,
+          74,
+          67,
+          70,
+          67,
+          73,
+          75,
+          75,
+          71,
+          69,
+          66,
+          68,
+          75,
+          69,
+          72,
+          67,
+          67,
+          71,
+          69,
+          66,
+          68
+        ],
+        "history": [
+          {
+            "date": "2025-05-05",
+            "reason": "Routine Checkup",
+            "doctor": "Dr. Naidoo",
+            "notes": "Patient presented with routine checkup. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2025-04-07",
+            "reason": "Follow-up",
+            "doctor": "Dr. Dlamini",
+            "notes": "Admitted for follow-up. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2025-03-10",
+            "reason": "Emergency Visit",
+            "doctor": "Dr. Khumalo",
+            "notes": "Admitted for emergency visit. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2025-02-10",
+            "reason": "Chest Pain",
+            "doctor": "Dr. Williams",
+            "notes": "Patient presented with chest pain. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2025-01-13",
+            "reason": "Medication Review",
+            "doctor": "Dr. Dlamini",
+            "notes": "Patient presented with medication review. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2024-12-16",
+            "reason": "Bloodwork",
+            "doctor": "Dr. Smith",
+            "notes": "Patient presented with bloodwork. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2024-11-18",
+            "reason": "Flu-like Symptoms",
+            "doctor": "Dr. Mthembu",
+            "notes": "Admitted for flu-like symptoms. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2024-10-21",
+            "reason": "Hypertension Review",
+            "doctor": "Dr. Patel",
+            "notes": "Admitted for hypertension review. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2024-09-23",
+            "reason": "Diabetes Management",
+            "doctor": "Dr. Moyo",
+            "notes": "Patient presented with diabetes management. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2024-08-26",
+            "reason": "Allergy Consultation",
+            "doctor": "Dr. Naidoo",
+            "notes": "Follow-up visit focused on allergy consultation. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2024-07-29",
+            "reason": "Pre-op Assessment",
+            "doctor": "Dr. Williams",
+            "notes": "Patient presented with pre-op assessment. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2024-07-01",
+            "reason": "Post-op Visit",
+            "doctor": "Dr. Botha",
+            "notes": "Follow-up visit focused on post-op visit. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2024-06-03",
+            "reason": "Wound Care",
+            "doctor": "Dr. Dlamini",
+            "notes": "Visit for wound care. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2024-05-06",
+            "reason": "Physical Therapy",
+            "doctor": "Dr. Moyo",
+            "notes": "Visit for physical therapy. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2024-04-08",
+            "reason": "Mental Health Review",
+            "doctor": "Dr. Khumalo",
+            "notes": "Admitted for mental health review. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2024-03-11",
+            "reason": "Gastrointestinal Complaint",
+            "doctor": "Dr. Khumalo",
+            "notes": "Patient presented with gastrointestinal complaint. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2024-02-12",
+            "reason": "Respiratory Infection",
+            "doctor": "Dr. Naidoo",
+            "notes": "Admitted for respiratory infection. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2024-01-15",
+            "reason": "Dermatology Review",
+            "doctor": "Dr. Botha",
+            "notes": "Admitted for dermatology review. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2023-12-18",
+            "reason": "Orthopedic Check",
+            "doctor": "Dr. Khumalo",
+            "notes": "Admitted for orthopedic check. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2023-11-20",
+            "reason": "Neurology Referral",
+            "doctor": "Dr. Singh",
+            "notes": "Visit for neurology referral. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2023-10-23",
+            "reason": "ENT Consultation",
+            "doctor": "Dr. Dlamini",
+            "notes": "Visit for ent consultation. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2023-09-25",
+            "reason": "Cardiology Review",
+            "doctor": "Dr. Moyo",
+            "notes": "Patient presented with cardiology review. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2023-08-28",
+            "reason": "Endocrinology Review",
+            "doctor": "Dr. Dlamini",
+            "notes": "Follow-up visit focused on endocrinology review. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2023-07-31",
+            "reason": "Vaccination",
+            "doctor": "Dr. Dlamini",
+            "notes": "Visit for vaccination. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2023-07-03",
+            "reason": "Smoking Cessation",
+            "doctor": "Dr. Singh",
+            "notes": "Admitted for smoking cessation. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2023-06-05",
+            "reason": "Imaging Review",
+            "doctor": "Dr. Patel",
+            "notes": "Follow-up visit focused on imaging review. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2023-05-08",
+            "reason": "Minor Surgery",
+            "doctor": "Dr. Moyo",
+            "notes": "Patient presented with minor surgery. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2023-04-10",
+            "reason": "Nutrition Counseling",
+            "doctor": "Dr. Smith",
+            "notes": "Admitted for nutrition counseling. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2023-03-13",
+            "reason": "Eye Exam",
+            "doctor": "Dr. Mthembu",
+            "notes": "Patient presented with eye exam. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2023-02-13",
+            "reason": "Hearing Test",
+            "doctor": "Dr. Moyo",
+            "notes": "Follow-up visit focused on hearing test. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "name": "Peter Chabalala",
+        "email": "peter.chabalala@example.com",
+        "phone": "+27 713 344 2328",
+        "age": 52,
+        "gender": "Male",
+        "bp": [
+          "129/73",
+          "121/74",
+          "138/70",
+          "133/86",
+          "136/73",
+          "143/77",
+          "141/79",
+          "127/82",
+          "137/85",
+          "113/75",
+          "143/81",
+          "122/77",
+          "119/77",
+          "129/95",
+          "119/75",
+          "145/78",
+          "144/70",
+          "121/77",
+          "136/92",
+          "120/77",
+          "145/74",
+          "120/93",
+          "125/86",
+          "129/95",
+          "111/93",
+          "139/95",
+          "122/71",
+          "136/75",
+          "134/86",
+          "134/76"
+        ],
+        "weight": [
+          89.0,
+          89.2,
+          88.7,
+          89.5,
+          89.2,
+          89.6,
+          89.6,
+          88.6,
+          89.4,
+          88.9,
+          89.0,
+          89.3,
+          89.7,
+          89.7,
+          89.3,
+          88.9,
+          88.7,
+          89.4,
+          89.2,
+          89.4,
+          89.5,
+          89.4,
+          88.7,
+          89.5,
+          89.4,
+          88.9,
+          89.4,
+          89.6,
+          89.3,
+          89.3
+        ],
+        "bmi": [
+          29.3,
+          29.0,
+          29.2,
+          29.1,
+          29.1,
+          29.3,
+          29.0,
+          29.2,
+          29.0,
+          28.9,
+          29.3,
+          29.4,
+          29.3,
+          29.2,
+          29.1,
+          29.1,
+          29.0,
+          29.3,
+          29.4,
+          29.3,
+          29.1,
+          29.3,
+          29.2,
+          29.1,
+          29.1,
+          29.3,
+          29.0,
+          29.3,
+          29.2,
+          29.0
+        ],
+        "temp": [
+          36.4,
+          36.3,
+          36.2,
+          36.2,
+          36.6,
+          36.7,
+          36.5,
+          36.8,
+          36.8,
+          36.6,
+          36.8,
+          36.3,
+          36.3,
+          36.8,
+          36.5,
+          36.7,
+          36.3,
+          36.3,
+          36.7,
+          36.1,
+          36.6,
+          36.8,
+          36.9,
+          36.9,
+          36.8,
+          36.3,
+          36.8,
+          36.6,
+          36.8,
+          36.6
+        ],
+        "pulse": [
+          83,
+          78,
+          74,
+          84,
+          84,
+          74,
+          74,
+          83,
+          76,
+          78,
+          77,
+          80,
+          81,
+          85,
+          79,
+          79,
+          75,
+          83,
+          80,
+          75,
+          85,
+          74,
+          76,
+          74,
+          83,
+          82,
+          78,
+          79,
+          85,
+          77
+        ],
+        "hbmp": [
+          83,
+          78,
+          74,
+          84,
+          84,
+          74,
+          74,
+          83,
+          76,
+          78,
+          77,
+          80,
+          81,
+          85,
+          79,
+          79,
+          75,
+          83,
+          80,
+          75,
+          85,
+          74,
+          76,
+          74,
+          83,
+          82,
+          78,
+          79,
+          85,
+          77
+        ],
+        "history": [
+          {
+            "date": "2025-04-15",
+            "reason": "Routine Checkup",
+            "doctor": "Dr. Mthembu",
+            "notes": "Follow-up visit focused on routine checkup. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2025-03-18",
+            "reason": "Follow-up",
+            "doctor": "Dr. Smith",
+            "notes": "Admitted for follow-up. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2025-02-18",
+            "reason": "Emergency Visit",
+            "doctor": "Dr. Patel",
+            "notes": "Visit for emergency visit. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2025-01-21",
+            "reason": "Chest Pain",
+            "doctor": "Dr. Williams",
+            "notes": "Visit for chest pain. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2024-12-24",
+            "reason": "Medication Review",
+            "doctor": "Dr. Williams",
+            "notes": "Follow-up visit focused on medication review. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2024-11-26",
+            "reason": "Bloodwork",
+            "doctor": "Dr. Khumalo",
+            "notes": "Visit for bloodwork. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2024-10-29",
+            "reason": "Flu-like Symptoms",
+            "doctor": "Dr. Moyo",
+            "notes": "Patient presented with flu-like symptoms. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2024-10-01",
+            "reason": "Hypertension Review",
+            "doctor": "Dr. Smith",
+            "notes": "Patient presented with hypertension review. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2024-09-03",
+            "reason": "Diabetes Management",
+            "doctor": "Dr. Moyo",
+            "notes": "Patient presented with diabetes management. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2024-08-06",
+            "reason": "Allergy Consultation",
+            "doctor": "Dr. Botha",
+            "notes": "Admitted for allergy consultation. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2024-07-09",
+            "reason": "Pre-op Assessment",
+            "doctor": "Dr. Khumalo",
+            "notes": "Visit for pre-op assessment. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2024-06-11",
+            "reason": "Post-op Visit",
+            "doctor": "Dr. Smith",
+            "notes": "Admitted for post-op visit. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2024-05-14",
+            "reason": "Wound Care",
+            "doctor": "Dr. Dlamini",
+            "notes": "Admitted for wound care. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2024-04-16",
+            "reason": "Physical Therapy",
+            "doctor": "Dr. Patel",
+            "notes": "Follow-up visit focused on physical therapy. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2024-03-19",
+            "reason": "Mental Health Review",
+            "doctor": "Dr. Dlamini",
+            "notes": "Admitted for mental health review. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2024-02-20",
+            "reason": "Gastrointestinal Complaint",
+            "doctor": "Dr. Patel",
+            "notes": "Patient presented with gastrointestinal complaint. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2024-01-23",
+            "reason": "Respiratory Infection",
+            "doctor": "Dr. Naidoo",
+            "notes": "Visit for respiratory infection. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2023-12-26",
+            "reason": "Dermatology Review",
+            "doctor": "Dr. Singh",
+            "notes": "Admitted for dermatology review. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2023-11-28",
+            "reason": "Orthopedic Check",
+            "doctor": "Dr. Williams",
+            "notes": "Follow-up visit focused on orthopedic check. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2023-10-31",
+            "reason": "Neurology Referral",
+            "doctor": "Dr. Moyo",
+            "notes": "Follow-up visit focused on neurology referral. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2023-10-03",
+            "reason": "ENT Consultation",
+            "doctor": "Dr. Williams",
+            "notes": "Visit for ent consultation. Symptoms were described in detail; physical exam revealed manageable findings. Lab results were reviewed and minor adjustments to medication were made. Advised lifestyle modifications and scheduled closer monitoring."
+          },
+          {
+            "date": "2023-09-05",
+            "reason": "Cardiology Review",
+            "doctor": "Dr. Smith",
+            "notes": "Follow-up visit focused on cardiology review. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2023-08-08",
+            "reason": "Endocrinology Review",
+            "doctor": "Dr. Williams",
+            "notes": "Patient presented with endocrinology review. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2023-07-11",
+            "reason": "Vaccination",
+            "doctor": "Dr. Smith",
+            "notes": "Patient presented with vaccination. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2023-06-13",
+            "reason": "Smoking Cessation",
+            "doctor": "Dr. Dlamini",
+            "notes": "Follow-up visit focused on smoking cessation. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks."
+          },
+          {
+            "date": "2023-05-16",
+            "reason": "Imaging Review",
+            "doctor": "Dr. Moyo",
+            "notes": "Patient presented with imaging review. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2023-04-18",
+            "reason": "Minor Surgery",
+            "doctor": "Dr. Dlamini",
+            "notes": "Admitted for minor surgery. Imaging and blood tests conducted; acute issues were stabilised. Referred to a specialist for further evaluation and multidisciplinary care. Discharged with comprehensive instructions and follow-up arranged."
+          },
+          {
+            "date": "2023-03-21",
+            "reason": "Nutrition Counseling",
+            "doctor": "Dr. Botha",
+            "notes": "Patient presented with nutrition counseling. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2023-02-21",
+            "reason": "Eye Exam",
+            "doctor": "Dr. Khumalo",
+            "notes": "Patient presented with eye exam. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          },
+          {
+            "date": "2023-01-24",
+            "reason": "Hearing Test",
+            "doctor": "Dr. Williams",
+            "notes": "Patient presented with hearing test. Detailed examination performed and relevant tests ordered. Treatment plan discussed and medications prescribed where appropriate. Follow-up scheduled to assess response and monitor progress."
+          }
+        ]
+      }
+    ]
+  }
