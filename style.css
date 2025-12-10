@@ -22,7 +22,7 @@ body {
   padding: 20px;
   background-color: var(--containers);
   border-radius: 20px;
-  border-style: ridge;
+  border-style: none;
   border-color: var(--secondary-color);
   box-shadow: 5px 10px hsla(251, 33%, 19%, 0.4);
 }
@@ -93,3 +93,32 @@ main {
 .patient-query a:hover {
   background-color: var(--primary-color)
 } 
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: space-between;
+}
+
+form select {
+  width: 450px;
+}
+
+form fieldset {
+  padding: 15px;
+  margin: auto;
+  border-style: 2px solid;
+  border-color: var(--tertiary-color);
+  border-radius: 20px;
+}
+form legend {
+  background-color: var(--tertiary-color);
+  color: #fff;
+  border-radius: 15px;
+  margin: auto;
+  padding: 10px;
+}
+form fieldset textarea{
+  margin: 15px;
+}
