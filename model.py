@@ -21,6 +21,7 @@ def ai_summary(medical_history_text):
 
     Question: {question}
     """
+    
 
     prompt = ChatPromptTemplate.from_template(template)
     chain = prompt | model
