@@ -121,4 +121,29 @@ form legend {
 }
 form fieldset textarea{
   margin: 15px;
+  width: 450px;
+  height: 60px;
+}
+#c_summary, #d_dx {
+  height: 100px;
+}
+@media screen and (max-width: 600px){
+
+  body {
+    font-size: x-small;
+  }
+  .app-container {
+    width: 280px;
+    margin: 10px;
+  } 
+  form select {
+    width: inherit;
+  }
+  form fieldset {
+    padding: 5px;
+    width: 280px;
+  }
+  form fieldset textarea {
+    width: 240px;
+  }
 }
