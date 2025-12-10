@@ -1,0 +1,57 @@
+PATIENT MEDICAL RECORD EXPORT
+Patient Name: Sarah Jenkins
+DOB: 1992-05-14
+Patient ID: #88921-SJ
+
+=========================================
+VISIT DATE: 2023-08-10
+PROVIDER: Dr. A. Smith (General Practitioner)
+REASON FOR VISIT:
+Patient complains of itchy, red patches on the inside of elbows and behind knees. States the itching (pruritus) is worse at night and affects sleep.
+
+PHYSICAL EXAM:
+Mild erythema (redness) noted in antecubital fossae. Skin appears dry. No signs of infection.
+
+DIAGNOSIS:
+Mild Atopic Dermatitis.
+
+PLAN:
+1. Prescribed Hydrocortisone 2.5% ointment (apply twice daily).
+2. Advised to use fragrance-free moisturizers and avoid hot showers.
+3. Follow up in 4 weeks if no improvement.
+
+=========================================
+VISIT DATE: 2023-09-15
+PROVIDER: Dr. A. Smith (General Practitioner)
+REASON FOR VISIT:
+Follow-up. Patient states condition has worsened. The hydrocortisone "did nothing." Patches have spread to the neck and face. Patient reports high stress levels at work which seems to trigger flare-ups.
+
+PHYSICAL EXAM:
+Significant lichenification (thickening of skin) behind knees. Bright red plaques visible on the neck. Evidence of excoriation (scratch marks) with minor bleeding.
+
+DIAGNOSIS:
+Moderate to Severe Atopic Dermatitis (uncontrolled).
+
+PLAN:
+1. Discontinue Hydrocortisone.
+2. Start Triamcinolone Acetonide 0.1% (stronger steroid) for body.
+3. Start Tacrolimus ointment for face (non-steroid).
+4. Referral generated for Dermatology Specialist.
+
+=========================================
+VISIT DATE: 2023-11-02
+PROVIDER: Dr. L. Chen (Dermatologist)
+REASON FOR VISIT:
+Specialist consultation. Patient is in distress. Reports severe burning sensation and "weeping" skin lesions on arms. Has missed 3 days of work due to discomfort.
+
+PHYSICAL EXAM:
+Widespread eczema covering 20% of body surface area. Yellow crusting noted on left arm (suggesting secondary bacterial infection).
+
+DIAGNOSIS:
+1. Severe Atopic Dermatitis with secondary Impetiginization (Staph infection).
+
+PLAN:
+1. Immediate course of oral antibiotics (Cephalexin 500mg) for 7 days.
+2. Prednisone taper (oral steroid) to calm massive flare-up.
+3. Discussed starting Dupixent (biologic injection) if this flare does not resolve.
+4. Patient advised to take lukewarm bleach baths twice weekly to reduce bacteria.

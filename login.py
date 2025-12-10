@@ -1,4 +1,5 @@
 import csv
+import json
 from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
@@ -11,35 +12,26 @@ def login(type, id, key):
         reader = csv.reader(file)
         
         # Authenticating the user
-        if type.lower() == 'patient':# If the user is a patient
-            if [type, id, key] in reader:
-                return render_template('home.html', user=[type, id, key])
-            else:
-                return render_template('login.html')
-            
-        elif type.lower() == 'doctor':# If the user is a doctor
-            if [type, id, key] in reader:
-                return render_template('home.html', user=[type, id, key])
-            else:
-                return render_template('login.html')
+        if [type, id, key] in reader:
+            return json.dumps({'status': 'yes', 'access': 'granted'})
+        else:
+            return json.dumps({'status': 'no', 'access': 'denied'})
             
 
-
-@app.route('/register/<type>/<id>/<key>')
-def register(type, id, key):
+@app.route('/register/<type>/<id>/<key>/<name>/<surname>/<email>')
+def register(type, id, key, name, surname, email):
 
     # Collecting all users from the CSV file
-    with open('users.csv', 'r') as file:
-        reader = csv.reader(file)
+    with open('users.csv', 'a+', newline='') as file:
+        file.seek(0)
+        reader = list(csv.reader(file))
         
-        # Authenticating the user
-        if [type, id, key] in reader:
-            # If the user is already registered
-            return render_template('home.html', user=[type, id, key])
-        
+        new_user = [type, id, key, name, surname, email]
+
+        # Checking if the user is not already registered.
+        if new_user in reader:
+            return json.dumps({'status': 'no', 'access': 'denied'})
         else:
-            return render_template('login.html')
-        #checkme
         
 
 if __name__ == '__main__':
