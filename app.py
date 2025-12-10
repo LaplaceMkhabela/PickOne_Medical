@@ -183,6 +183,12 @@ def dbms(id):
 def drop():
     Patient.__table__.drop(engine)
     return 'droped'
+
+
+@app.route('/diagnosis_form', methods=["GET", "POST"])
+def diagnosis_form():
+    return render_template('diagnosis_form.html')
+
     
 
 if __name__ == '__main__':

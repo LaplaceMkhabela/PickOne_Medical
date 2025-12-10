@@ -1,0 +1,124 @@
+:root {
+  --page-color: #9cc1db;
+  --primary-color:hsl(215, 21%, 67%);
+  --secondary-color:hsl(205, 47%, 70%);
+  --tertiary-color: #1565c0;
+  --containers: #fff;
+}
+
+body {
+  background-color: var(--page-color);
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+.app-container {
+  width: 540px;
+  height: fit-content;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--containers);
+  border-radius: 20px;
+  border-style: none;
+  border-color: var(--secondary-color);
+  box-shadow: 5px 10px hsla(251, 33%, 19%, 0.4);
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* background-color: #66ff66; */
+}
+.profile-details p{
+  /* background-color: #ff5555; */
+  margin: 15px;
+  padding: 5px;
+}
+.profile-img-container {
+  border-radius: 100%;
+  border-style: solid;
+  border-color: var(--secondary-color);
+}  
+.profile-img-container img {
+  margin: 15px;
+  width: 100px;
+  border-radius: 100%;
+  border-color: var(--secondary-color);
+  
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.patient-vitals p {
+  padding: 5px;
+}
+/* .patient-trends {
+  background-color: #2da898;
+} */
+.patient-trends img {
+  width: 360px;
+}
+/* ADD CSS FOR SUMMARY HERE */
+.patient-summary {
+  margin: 15px;
+}
+
+.patient-query {
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+  align-items: center;
+}
+.patient-query a {
+  width: 200px;
+  height: 45px;
+  text-align: center;
+  align-content: center;
+  text-decoration: none;
+  border-radius: 10px;
+  color: #fff;
+  background-color: var(--tertiary-color);
+  transition: 200ms ease-in-out;
+}
+
+.patient-query a:hover {
+  background-color: var(--primary-color)
+} 
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: space-between;
+}
+
+form select {
+  width: 450px;
+}
+
+form fieldset {
+  padding: 15px;
+  margin: auto;
+  border-style: 2px solid;
+  border-color: var(--tertiary-color);
+  border-radius: 20px;
+}
+form legend {
+  background-color: var(--tertiary-color);
+  color: #fff;
+  border-radius: 15px;
+  margin: auto;
+  padding: 10px;
+}
+form fieldset textarea{
+  margin: 15px;
+}
