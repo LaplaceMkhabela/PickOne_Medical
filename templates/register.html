@@ -16,7 +16,18 @@
                     <p>Please select your role to continue</p>
                 </div>
 
-                <form id="loginForm" action="/login" method="post">
+                <form id="loginForm" action="/register" method="post">
+
+                    <div class="input-group">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" placeholder="Enter Name" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" placeholder="Enter Email" required>
+                    </div>
+
                     <div class="input-group">
                         <label for="role">I am a...</label>
                         <select id="role" name="role" required>
@@ -37,11 +48,11 @@
                         <input type="password" name="password" id="password" placeholder="Enter Password" required>
                     </div>
 
-                    <button id="login_btn" type="submit" class="btn-login">Secure Login</button>
+                    <button id="login_btn" type="submit" class="btn-login">Submit</button>
                 </form>
 
                 <p class="footer">Need help? <a href="#">Contact Support</a></p>
-                <p class="footer">Need help? <a href="/register.html">Sign up</a></p>
+                <p class="footer">Already have an account? <a href="/registration">login</a></p>
             </div>
 
         </div>
