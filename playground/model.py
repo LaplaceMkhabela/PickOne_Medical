@@ -2,7 +2,7 @@ import os
 from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate
 
-with open("patient.txt","r") as file:
+with open("playground/patient.txt","r") as file:
     medical_history_text = file.read()
 
 def ai_summary(medical_history_text):
