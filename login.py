@@ -32,11 +32,6 @@ def register(type, id, key, name, surname, email):
         if new_user in reader:
             return json.dumps({'status': 'no', 'access': 'denied'})
         else:
-            write = csv.writer(file)
-            write.writerow(new_user)
-            return json.dumps({'status': 'yes', 'access': 'granted'})
-
-        
         
 
 if __name__ == '__main__':
