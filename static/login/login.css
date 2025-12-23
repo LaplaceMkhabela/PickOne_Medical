@@ -1,0 +1,85 @@
+/* ================== Login Card Styling ===================*/
+.login-card {
+    background-color: #ffffff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 100, 200, 0.1);
+    width: 100%;
+    max-width: 420px;
+    border-top: 5px solid #1976d2; 
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.header h1 {
+    color: #1565c0; 
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.header p {
+    color: #78909c;
+    font-size: 0.95rem;
+}
+
+.input-group {
+    margin-bottom: 1.2rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #455a64;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.input-group input, 
+.input-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #b0bec5;
+    border-radius: 6px;
+    background-color: #fafafa;
+    font-size: 1rem;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #1976d2;
+    outline: none;
+    background-color: #fff;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 0.9rem;
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 1rem;
+}
+
+.btn-login:hover {
+    background-color: #1565c0;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    color: #78909c;
+}
+
+.footer a {
+    color: #1976d2;
+    text-decoration: none;
+}
