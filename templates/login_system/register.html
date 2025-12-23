@@ -5,51 +5,53 @@ PickOne Medics | Register
 {% endblock %}
 
 {% block links %}
-<link rel="stylesheet" href="{{{{url_for('static', filename='./login/login.css')}}}}">
+<link rel="stylesheet" href="{{url_for('static', filename='./login/login.css')}}">
 {% endblock %}
 
 {% block content %}
 <div class="main-container">
-    <div class="header">
-    <h1>WELCOME TO PICKONE MEDICS</h1>
-    <p>Please select your role to continue</p>
-</div>
+    <div class="register-card">
+        <div class="header">
+            <h1>WELCOME TO PICKONE MEDICS</h1>
+            <p>Please select your role to continue</p>
+        </div>
 
-<form id="regiesterForm" action="/register" method="post">
-    <div class="input-group">
-        <label for="name">Name</label>
-        <input type="text" id="reg_name" name="name" placeholder="Name" required>
-    </div>
-    <div class="input-group">
-        <label for="email">Email</label>
-        <input type="text" id="reg_email" name="email" placeholder="example@test.com" required>
-    </div>
-    <div class="input-group">
-        <label for="role">I am a...</label>
-        <select id="reg_role" name="role" required>
-            <option value="" disabled selected>Select your role</option>
-            <option value="patient">Patient</option>
-            <option value="doctor">Doctor</option>
-            <option value="nurse">OT Nurse</option>
-            <option value="admin">Help Desk</option>
-        </select>
-    </div>
+        <form id="regiesterForm" action="/register" method="post">
+            <div class="input-group">
+                <label for="name">Name</label>
+                <input type="text" id="reg_name" name="name" placeholder="Name" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="text" id="reg_email" name="email" placeholder="example@test.com" required>
+            </div>
+            <div class="input-group">
+                <label for="role">I am a...</label>
+                <select id="reg_role" name="role" required>
+                    <option value="" disabled selected>Select your role</option>
+                    <option value="patient">Patient</option>
+                    <option value="doctor">Doctor</option>
+                    <option value="nurse">OT Nurse</option>
+                    <option value="admin">Help Desk</option>
+                </select>
+            </div>
 
-    <div class="input-group">
-        <label for="username">Practice No. / HPCSA reg. / SANC No. / ID</label>
-        <input type="text" name="id" id="reg_id" placeholder="Enter ID" required>
+            <div class="input-group">
+                <label for="username">Practice No. / HPCSA reg. / SANC No. / ID</label>
+                <input type="text" name="id" id="reg_id" placeholder="Enter ID" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="reg_password" placeholder="Enter Password" required>
+            </div>
+
+            <button id="register_btn" type="submit" class="btn-login">Sign up</button>
+        </form>
+
+        <p class="footer">Need help? <a href="#">Contact Support</a></p>
+        <p class="footer">Have an account? <a href="/">Login</a></p>
     </div>
-
-    <div class="input-group">
-        <label for="password">Password</label>
-        <input type="password" name="password" id="reg_password" placeholder="Enter Password" required>
-    </div>
-
-    <button id="register_btn" type="submit" class="btn-login">Sign up</button>
-</form>
-
-<p class="footer">Need help? <a href="#">Contact Support</a></p>
-<p class="footer">Have an account? <a href="/">Login</a></p>
 </div>
 {% endblock %}
 
@@ -63,7 +65,7 @@ PickOne Medics | Register
         const role = document.getElementById('reg_role').value
         const id = document.getElementById('reg_id').value
         const password = document.getElementById('reg_password').value
-        const url = 'http://127.0.0.1:5000/register/' + name + '/' +role+'/'+ email + '/' + id + '/' + password
+        const url = 'http://127.0.0.1:5000/register/' + name + '/' + role + '/' + email + '/' + id + '/' + password
         let resp_promise = await fetch(url)
         let resp_data = await resp_promise.json()
 

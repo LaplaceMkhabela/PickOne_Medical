@@ -9,6 +9,15 @@
     border-top: 5px solid #1976d2; 
 }
 
+.register-card {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 100, 200, 0.1);
+    width: 100%;
+    border-top: 5px solid #1976d2; 
+}
+
 .header {
     text-align: center;
     margin-bottom: 2rem;
