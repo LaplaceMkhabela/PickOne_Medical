@@ -5,12 +5,3 @@
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
-/* ================== Light Bluish Background ===================*/
-body {
-    background-color: #9cc1db; 
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
