@@ -1,4 +1,16 @@
 /* ================== Login Card Styling ===================*/
+/* =================== GLOBAL RESET ============*/
+
+
+/* ================== LOGIN PAGE STYLES ===================*/
+body {
+    background: linear-gradient(115deg, #cadeec 0%, #9cc1db 100%); 
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .login-card {
     background-color: #ffffff;
     padding: 2.5rem;
@@ -11,7 +23,7 @@
 
 .register-card {
     background-color: #ffffff;
-    padding: 1.5rem;
+    padding: 2.5rem;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 100, 200, 0.1);
     width: 100%;
@@ -63,6 +75,31 @@
     background-color: #fff;
 }
 
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-wrapper input {
+    padding-right: 40px; 
+}
+
+.toggle-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 25px; 
+    height: auto;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+
+.toggle-icon:hover {
+    opacity: 1;
+}
+
 .btn-login {
     width: 100%;
     padding: 0.9rem;
@@ -78,7 +115,7 @@
 }
 
 .btn-login:hover {
-    background-color: #1565c0;
+    background-color: #327fd8;
 }
 
 .footer {
