@@ -1,0 +1,51 @@
+import os
+import json
+from pwdlib import PasswordHash
+
+class Database:
+    def __init__(self):
+        self.encoder = PasswordHash.recommended()
+        
+    def login_user(self,current_user):
+        user_data = self.read_data()
+        user_accounts = user_data[current_user['role']]['accounts']
+            
+        for user in user_accounts:
+            if user['id'] == current_user['id'] and self.encoder.verify(current_user['password'],user['password']):
+                return True
+                
+        return False
+    
+    def register_user(self,current_user):
+        user_data = self.read_data()
+        user_ids = user_data[current_user['role']]['ids']
+            
+        if current_user['id'] in user_ids:
+            return False
+        else:
+            current_user['password'] = self.encoder.hash(current_user['password'])
+            user_data[current_user['role']]['accounts'].append(current_user)
+            user_data[current_user['role']]['ids'].append(current_user['id'])
+            self.write_data(user_data)
+            return True
+            
+                
+    def write_data(self,data):
+        with open(os.path.join(os.getcwd(),'database','database_files','users.json'),'w') as file:
+            try:
+                file.write(json.dumps(data))
+                return True
+            except:
+                return False
+            
+    def read_data(self):
+        with open(os.path.join(os.getcwd(),'database','database_files','users.json'),'r') as file:
+            try:
+                user_data = json.loads(file.read())
+                return user_data
+            except:
+                return False
+                
+            
+            
+            
