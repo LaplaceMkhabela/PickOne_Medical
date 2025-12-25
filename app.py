@@ -19,7 +19,7 @@ def login():
     user = request.get_json()
     
     if user['id'] in session:
-        return redirect(url_for('dashboard',user=user))
+        return redirect(url_for('welcome_page'))
     
     else:
         result = db.login_user(user)
@@ -28,11 +28,11 @@ def login():
             if user['id'] not in session:
                 session.append(user['id'])
                 
-            return redirect(url_for('dashboard',user=user))
+            return jsonify({'code':'200','link':'/users/welcome'})
         else:
             return jsonify({'code':'500','msg':'Invalid Login details'})
 
-@app.route('/users/register',methods=['POSt','GET'])
+@app.route('/users/register',methods=['POST','GET'])
 def register():
     user = request.get_json()
     result = db.register_user(user)
@@ -41,6 +41,10 @@ def register():
         return jsonify({'code':'200','msg':'Account created successfully'})
     else:
         return jsonify({'code':'500','msg':'Sorry we can\'t create your account right now'})
+    
+@app.route('/users/welcome')
+def welcome_page():
+    return render_template('./welcome/welcome.html')
 
 
 if __name__ == '__main__':
