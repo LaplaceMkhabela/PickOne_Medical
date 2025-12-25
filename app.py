@@ -72,7 +72,7 @@ def dashboard():
                 stats['patients'] = stats.get('patients') + 1
             
         except:
-            appointments = []
+            appointments = "Nothing yet"
         
         
         return render_template('./help_desk/dashboard.html',user=current_user,appointments=appointments,stats=stats)
