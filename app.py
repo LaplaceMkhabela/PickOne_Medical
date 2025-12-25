@@ -46,6 +46,27 @@ def register():
 def welcome_page():
     return render_template('./welcome/welcome.html')
 
+@app.route('/dashboard')
+def dashboard():
+    current_user = db.current_user()
+    
+    if current_user['role'] == 'help_desk':
+        appointments = db.get_appointments(current_user)
+        
+        return render_template('./help_desk/dashboard.html',user=current_user)
+    
+    return f'nothing yet'
+
+@app.route('/dashboard/appointments/new',methods=["POST","GET"])
+def create_appointment():
+    appointment = request.get_json()
+    result = db.create_appointment(db.current_user(),appointment)
+    
+    if result:
+        return jsonify({'code':'200','msg':'Appointment updated successfully'})
+    else:
+        return jsonify({'code':'500','msg':'Failure connecting to database'})
+
 
 if __name__ == '__main__':
     app.run(host="127.0.0.1", port=8000, debug=True)
