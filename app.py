@@ -46,6 +46,12 @@ def register():
 def welcome_page():
     return render_template('./welcome/welcome.html')
 
+@app.route('/users/logout')
+def logout():
+    session.remove(db.current_user()['id'])
+    
+    return render_template('./welcome/logout.html')
+
 @app.route('/dashboard')
 def dashboard():
     current_user = db.current_user()
