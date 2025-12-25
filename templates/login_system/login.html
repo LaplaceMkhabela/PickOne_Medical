@@ -71,7 +71,7 @@ PickOne Medics | Login
             'password': document.getElementById('log_password').value
         }
 
-        if (!user.name | !user.email | !user.role | !user.id | !user.password) {
+        if (user.name | user.email | user.role | user.id | user.password) {
             Swal.fire({
                 title: "Unsuccessful",
                 text: 'All fields are required',
@@ -105,6 +105,9 @@ PickOne Medics | Login
                         window.location.reload()
                     }
                 });
+            }
+            else if(resp_data['code'] == '200'){
+                window.location.replace(resp_data['link'])
             }
             else {
                 Swal.fire({
