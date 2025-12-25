@@ -1,0 +1,43 @@
+{% extends './base/dashboard_base.html' %}
+
+{% block head %}
+<style>
+    body {
+        background: #9e9e9e;
+    }
+</style>
+{% endblock %}
+
+{% block sidebar %}
+<div class="sidebar">
+    <div class="sidebar-header">
+        <h2>PickOne<br>Medics</h2>
+        <i class="fa-solid fa-xmark" id="closeSidebar"></i>
+    </div>
+
+    <ul class="nav-links">
+        <li class="active"><a href="/dashboard"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+        <li class="logout"><a href="/logout"><i class="fa-solid fa-sign-out-alt"></i> Logout</a></li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block topbar %}
+<div class="top-bar">
+    <div class="menu-toggle" id="menuToggle">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <h2>Welcome, <span id="doctorName">{{user.name}}</span></h2>
+
+    <button class="btn btn-success" onclick="newAppointmentDialog()">New Appointment</button>
+
+    <div class="user-profile">
+        <img src="https://i.ibb.co/RkbqB7tM/icons8-avatar-50.png" alt="Profile" class="avatar">
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='./help_desk/script.js') }}"></script>
+{% endblock %}
