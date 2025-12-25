@@ -30,6 +30,30 @@ class Database:
             user_data[current_user['role']]['ids'].append(current_user['id'])
             self.write_data(user_data)
             return True
+    
+    def create_appointment(self,user,appointment):
+        try:
+            db = self.read_data()
+            appointments = db[user['role']]['appointments']
+            
+            if appointment['date'] in appointments.keys():
+                appointments[appointment['date']].append(appointment)
+                
+            else:
+                appointments.update({appointment['date']:[]})
+                appointments[appointment['date']].append(appointment)
+            
+            self.write_data(db)
+            
+            return True
+            
+        except:
+            return False
+        
+        
+    def get_appointments(self,user):
+        appointments = self.read_data()[user['role']]
+        return appointments['appointments']
         
     def current_user(self):
         return self.user
