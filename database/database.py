@@ -5,6 +5,7 @@ from pwdlib import PasswordHash
 class Database:
     def __init__(self):
         self.encoder = PasswordHash.recommended()
+        self.user = {}
         
     def login_user(self,current_user):
         user_data = self.read_data()
@@ -12,6 +13,7 @@ class Database:
             
         for user in user_accounts:
             if user['id'] == current_user['id'] and self.encoder.verify(current_user['password'],user['password']):
+                self.user = user
                 return True
                 
         return False
@@ -28,6 +30,9 @@ class Database:
             user_data[current_user['role']]['ids'].append(current_user['id'])
             self.write_data(user_data)
             return True
+        
+    def current_user(self):
+        return self.user
             
                 
     def write_data(self,data):
@@ -45,6 +50,8 @@ class Database:
                 return user_data
             except:
                 return False
+            
+    
                 
             
             
