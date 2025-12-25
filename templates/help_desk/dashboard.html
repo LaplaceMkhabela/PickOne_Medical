@@ -38,6 +38,32 @@
 </div>
 {% endblock %}
 
+{% block cards %}
+<div class="stats-card">
+    <div class="card-icon blue-bg"><i class="fa-solid fa-users"></i></div>
+    <div class="card-info">
+        <h3>{{stats['patients']}}</h3>
+        <p>Total Patients</p>
+    </div>
+</div>
+
+<div class="stats-card">
+    <div class="card-icon green-bg"><i class="fa-solid fa-calendar-day"></i></div>
+    <div class="card-info">
+        <h3>{{stats['appointments']}}</h3>
+        <p>Appointments Today</p>
+    </div>
+</div>
+
+<div class="stats-card">
+    <div class="card-icon red-bg"><i class="fa-solid fa-clipboard-list"></i></div>
+    <div class="card-info">
+        <h3>{{stats['cancelled']}}</h3>
+        <p>Cancelled Appointments</p>
+    </div>
+</div>
+{% endblock %}
+
 {% block scripts %}
 <script src="{{ url_for('static', filename='./help_desk/script.js') }}"></script>
 {% endblock %}
