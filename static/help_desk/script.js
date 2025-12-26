@@ -79,3 +79,77 @@ function newAppointmentDialog() {
         }
     });
 }
+
+const monthYear = document.getElementById("monthYear");
+  const daysEl = document.getElementById("days");
+  let current = new Date()
+  let selectedDay = current.getDay();
+
+  function renderCalendar() {
+    daysEl.innerHTML = "";
+
+    const year = current.getFullYear();
+    const month = current.getMonth();
+
+    monthYear.textContent = current.toLocaleString("default", {
+      month: "long",
+      year: "numeric"
+    });
+
+    const firstDay = new Date(year, month, 1);
+    const startDay = (firstDay.getDay() + 6) % 7; 
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+    const daysInPrevMonth = new Date(year, month, 0).getDate();
+
+    // Previous month filler
+    for (let i = startDay - 1; i >= 0; i--) {
+      const d = document.createElement("div");
+      d.textContent = daysInPrevMonth - i;
+      d.className = "outside";
+      daysEl.appendChild(d);
+    }
+
+    // Current month days
+    for (let d = 1; d <= daysInMonth; d++) {
+      const day = document.createElement("div");
+      day.textContent = d;
+
+      if (d === selectedDay &&
+          month === 1 &&
+          year === 2024) {
+        day.classList.add("selected");
+      }
+
+      day.onclick = () => {
+        selectedDay = d;
+        renderCalendar();
+      };
+
+      daysEl.appendChild(day);
+    }
+
+    // Next month filler
+    const totalCells = daysEl.children.length;
+    const remaining = 42 - totalCells;
+
+    for (let i = 1; i <= remaining; i++) {
+      const d = document.createElement("div");
+      d.textContent = i;
+      d.className = "outside";
+      daysEl.appendChild(d);
+    }
+  }
+
+  document.getElementById("prev").onclick = () => {
+    current.setMonth(current.getMonth() - 1);
+    selectedDay = null;
+    renderCalendar();
+  };
+
+  document.getElementById("next").onclick = () => {
+    current.setMonth(current.getMonth() + 1);
+    selectedDay = null;
+    renderCalendar();
+  };
+
+  renderCalendar();
