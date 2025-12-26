@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request,redirect,url_for,jsonify
 from database.database import *
+from utility.utility import *
 import datetime
 
 app = Flask(__name__)
@@ -81,7 +82,7 @@ def dashboard():
             appointments = "Nothing yet"
         
         
-        return render_template('./help_desk/dashboard.html',user=current_user,appointments=appointments,stats=stats)
+        return render_template('./help_desk/dashboard.html',user=current_user,appointments=appointments,stats=stats,graph=mock_graph())
     
     return f'nothing yet'
 
