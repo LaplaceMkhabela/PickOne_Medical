@@ -152,4 +152,19 @@ const monthYear = document.getElementById("monthYear");
     renderCalendar();
   };
 
+
+  function parsePythonListString(str) {
+  // 1. Decode HTML entities
+  const decoded = str
+    .replace(/&#39;/g, "'")
+    .replace(/&quot;/g, '"');
+
+  // 2. Convert Python list syntax to JS/JSON
+  const jsonLike = decoded.replace(/'/g, '"');
+
+  // 3. Parse into JS array
+  return JSON.parse(jsonLike);
+}
+
+
   renderCalendar();
