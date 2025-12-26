@@ -85,6 +85,38 @@ def dashboard():
     
     return f'nothing yet'
 
+# Help Desk --------------------------------------------------------------------------------------------------------------
+@app.route('/help_desk/appointments')
+def help_desk_appointments():
+    current_user = db.current_user()
+    
+    if current_user['role'] == 'help_desk':
+        date = datetime.datetime.today().strftime('%Y-%m-%d')
+        appointments = db.get_appointments(current_user)
+        stats = {
+            "patients": 0,
+            "appointments" : 0,
+            "cancelled": 0
+        }
+        
+        try:
+            appointments = appointments[date]
+            
+            for appointment in appointments:
+                if appointment['status'] == 'Confirmed':
+                    stats['appointments'] = stats.get('appointments') + 1
+                    
+                else:
+                    stats['cancelled'] = stats.get('cancelled') + 1
+                
+                stats['patients'] = stats.get('patients') + 1
+            
+        except:
+            appointments = "Nothing yet"
+        
+        
+        return render_template('./help_desk/appointments.html',user=current_user,appointments=appointments,stats=stats)
+
 @app.route('/dashboard/appointments/new',methods=["POST","GET"])
 def create_appointment():
     appointment = request.get_json()
