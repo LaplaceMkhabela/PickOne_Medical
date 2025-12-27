@@ -6,6 +6,12 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+body{
+    display: flex; 
+    height: 100vh;
+    background: linear-gradient(115deg, #cadeec 0%, #9cc1db 100%);
+}
+
 /* ================== DASHBOARD PAGE STYLES =================== */
 .dashboard-body {
     display: flex; 
@@ -33,6 +39,10 @@
 .sidebar-header h2 {
     color: #1976d2;
     margin-bottom: 30px;
+}
+
+.sidebar ul {
+    padding-left: 0;
 }
 
 .nav-links {
