@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Page Not Found</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #0f4c75, #3282b8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #ffffff;
+    }
+
+    .card {
+      background: #ffffff;
+      color: #333;
+      padding: 40px;
+      max-width: 520px;
+      text-align: center;
+      border-radius: 14px;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+    }
+
+    .icon {
+      font-size: 60px;
+      color: #e63946;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 72px;
+      color: #0f4c75;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    a {
+      padding: 12px 22px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+
+    .home {
+      background: #0f4c75;
+      color: #fff;
+    }
+
+    .home:hover {
+      background: #0b3c5d;
+    }
+
+    .help {
+      border: 2px solid #0f4c75;
+      color: #0f4c75;
+      background: transparent;
+    }
+
+    .help:hover {
+      background: #0f4c75;
+      color: #fff;
+    }
+
+    .pulse {
+      margin-top: 25px;
+      height: 4px;
+      width: 100%;
+      background: linear-gradient(
+        to right,
+        transparent,
+        #e63946,
+        transparent
+      );
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.2; }
+      50% { opacity: 1; }
+      100% { opacity: 0.2; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <div class="icon">🚑</div>
+    <h1>404</h1>
+    <h2>Patient Record Not Found</h2>
+    <p>
+      The page or patient record you’re trying to access cannot be located.
+      Please check the URL or return to the dashboard.
+    </p>
+
+    <div class="actions">
+      <a href="/dashboard" class="home">Back to Dashboard</a>
+    </div>
+
+    <div class="pulse"></div>
+  </div>
+
+  <script>
+    function back(){
+        window.location.back()
+    }
+  </script>
+</body>
+</html>
