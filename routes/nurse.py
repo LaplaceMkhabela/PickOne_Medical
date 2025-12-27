@@ -10,3 +10,7 @@ def dashboard():
 @nurse_bp.route("/patients",methods=["GET"])
 def patients():
     return render_template('./nurse/patients.html')
+
+@nurse_bp.route("/appointments",methods=["GET"])
+def appointments():
+    return render_template('./nurse/appointments.html')
