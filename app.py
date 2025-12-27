@@ -53,6 +53,10 @@ def logout():
     
     return render_template('./welcome/logout.html')
 
+@app.route('/error')
+def error():
+    return render_template('./base/error.html')
+
 @app.route('/dashboard',methods=["POST","GET"])
 def dashboard():
     current_user = db.current_user()
