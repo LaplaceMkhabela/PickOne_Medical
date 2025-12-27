@@ -51,12 +51,27 @@ class Database:
         except:
             return False
         
+    def create_session(self,user):
+        try:
+            with open(os.path.join(os.getcwd(),'database','database_files','sessions','sessions.json'),'w') as file:
+                file.write(json.dumps({"current_user": user}))
+                
+        except:
+            raise ValueError('Failed to create session')
         
     def get_appointments(self,user):
         appointments = self.read_data()[user['role']]
         return appointments['appointments']
         
     def current_user(self):
+        try:
+            with open(os.path.join(os.getcwd(),'database','database_files','sessions','sessions.json'),'r') as file:
+                session = json.loads(file.read())
+                self.user = session['current_user']
+                
+        except:
+            raise ValueError('Failed to create session')
+        
         return self.user
             
                 
