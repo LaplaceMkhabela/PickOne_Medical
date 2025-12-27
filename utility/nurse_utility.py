@@ -3,7 +3,7 @@ from database.database import Database
 db = Database()
 
 def get_analytics():
-    appointments = get_appointments()
+    appointments = db.get_appointments({'role':'help_desk'}).values()
     stats = {
         "patients": 0,
         "appointments": 0,
@@ -12,9 +12,11 @@ def get_analytics():
     
     stats['patients'] = len(appointments)
     
-    for appointment in appointments:
-        if appointment['status'] == 'Confirmed':
-            stats['appointments'] = stats.get('appointments') + 1
+    for appointment_list in appointments:
+        for appointment in appointment_list:
+            if appointment['status'] == 'Confirmed':
+                stats['appointments'] = stats.get('appointments') + 1
+        
     
     return stats
 
@@ -26,7 +28,7 @@ def get_appointments():
     appointments_list = []
     
     for date,appointment in appointments_data.items():
-        appointments_list.append(appointment)
+        appointments_list.extend(appointment)
         
     return appointments_list
 
