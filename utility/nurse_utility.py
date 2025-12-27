@@ -32,5 +32,4 @@ def get_appointments():
 
 
 def get_patients():
-    patients_list = db.get_patients()
-    pass
+    return db.get_patients()
