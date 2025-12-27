@@ -1,11 +1,7 @@
 {% extends './base/dashboard_base.html' %}
 
 {% block head %}
-<style>
-    body {
-        background: linear-gradient(115deg, #cadeec 0%, #9cc1db 100%);
-    }
-</style>
+<link rel="stylesheet" href="{{ url_for('static', filename='./help_desk/styles.css') }}">   
 {% endblock %}
 
 {% block sidebar %}
