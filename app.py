@@ -1,11 +1,21 @@
 from flask import Flask, render_template, request,redirect,url_for,jsonify
 from database.database import *
 from utility.utility import *
+from routes.nurse import nurse_bp
 import datetime
 
-app = Flask(__name__)
+
 db = Database()
 session = []
+
+def create_app():
+    app = Flask(__name__)
+    
+    app.register_blueprint(nurse_bp,url_prefix='/nurse')
+    
+    return app
+
+app = create_app()
 
 @app.route("/")
 def index():
@@ -134,6 +144,7 @@ def create_appointment():
         return jsonify({'code':'200','msg':'Appointment updated successfully'})
     else:
         return jsonify({'code':'500','msg':'Failure connecting to database'})
+    
 
 
 if __name__ == '__main__':
