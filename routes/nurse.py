@@ -1,29 +1,20 @@
 from flask import Blueprint
 from flask import render_template
-from database.database import Database
+from utility.nurse_utility import *
 
 nurse_bp = Blueprint("nurse",__name__)
-db = Database()
-current_user = db.current_user()
 
 @nurse_bp.route("/dashboard",methods=["GET"])
 def dashboard():
-    return render_template('./nurse/dashboard.html',user=current_user)
+    return render_template('./nurse/dashboard.html',user=get_user(),analytics=get_analytics())
 
-@nurse_bp.route("/patients",methods=["GET"])
+@nurse_bp.route("/patients",methods=["GET","POST"])
 def patients():
-    patients_list = db.get_patients()
-    return render_template('./nurse/patients.html')
+    return render_template('./nurse/patients.html',user=get_user(),patients=get_patients())
 
 @nurse_bp.route("/appointments",methods=["GET"])
 def appointments():
-    appointments_data = db.get_appointments({'role':'help_desk'})
-    appointments_list = []
-    
-    for date,appointment in appointments_data.items():
-        appointments_list.append(appointment)
-        
-    return render_template('./nurse/appointments.html',appointments=appointments_list)
+    return render_template('./nurse/appointments.html',user=get_user(),appointments=get_appointments())
 
 @nurse_bp.route("/reports",methods=["GET"])
 def reports():
