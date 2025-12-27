@@ -53,7 +53,7 @@ def logout():
     
     return render_template('./welcome/logout.html')
 
-@app.route('/dashboard')
+@app.route('/dashboard',methods=["POST","GET"])
 def dashboard():
     current_user = db.current_user()
     
@@ -84,10 +84,13 @@ def dashboard():
         
         return render_template('./help_desk/dashboard.html',user=current_user,appointments=appointments,stats=stats,graph=mock_graph())
     
+    if current_user['role'] == 'nurse':
+        return render_template('./nurse/dashboard.html')
+        
     return f'nothing yet'
 
 # Help Desk --------------------------------------------------------------------------------------------------------------
-@app.route('/help_desk/appointments')
+@app.route('/help_desk/appointments',methods=["POST","GET"])
 def help_desk_appointments():
     current_user = db.current_user()
     
