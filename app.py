@@ -39,6 +39,8 @@ def login():
             if user['id'] not in session:
                 session.append(user['id'])
                 
+            db.create_session(user)
+                
             return jsonify({'code':'200','link':'/users/welcome'})
         else:
             return jsonify({'code':'500','msg':'Invalid Login details'})
@@ -97,8 +99,10 @@ def dashboard():
         
         
         return render_template('./help_desk/dashboard.html',user=current_user,appointments=appointments,stats=stats,graph=mock_graph())
-        
-    return f'nothing yet'
+    
+    
+    url = f'{current_user['role']}/dashboard'
+    return redirect(url)
 
 # Help Desk --------------------------------------------------------------------------------------------------------------
 @app.route('/help_desk/appointments',methods=["POST","GET"])
