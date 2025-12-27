@@ -62,6 +62,10 @@ class Database:
     def get_appointments(self,user):
         appointments = self.read_data()[user['role']]
         return appointments['appointments']
+    
+    def get_patients(self,user):
+        patients = self.read_data()[user['role']]
+        return patients['accounts']
         
     def current_user(self):
         try:
