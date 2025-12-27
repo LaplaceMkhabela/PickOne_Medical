@@ -14,3 +14,7 @@ def patients():
 @nurse_bp.route("/appointments",methods=["GET"])
 def appointments():
     return render_template('./nurse/appointments.html')
+
+@nurse_bp.route("/reports",methods=["GET"])
+def reports():
+    return render_template('./nurse/reports.html')
