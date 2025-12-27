@@ -10,11 +10,11 @@ def dashboard():
 
 @nurse_bp.route("/patients",methods=["GET","POST"])
 def patients():
-    return render_template('./nurse/patients.html',user=get_user(),patients=get_patients())
+    return render_template('./nurse/patients.html',user=get_user(),analytics=get_analytics(),patients=get_patients())
 
 @nurse_bp.route("/appointments",methods=["GET"])
 def appointments():
-    return render_template('./nurse/appointments.html',user=get_user(),appointments=get_appointments())
+    return render_template('./nurse/appointments.html',user=get_user(),analytics=get_analytics(),appointments=get_appointments())
 
 @nurse_bp.route("/reports",methods=["GET"])
 def reports():
