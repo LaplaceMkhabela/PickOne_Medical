@@ -64,7 +64,7 @@ class Database:
         return appointments['appointments']
     
     def get_patients(self):
-        patients = self.read_data()['patients']
+        patients = self.read_data()['patient']
         return patients['accounts']
         
     def current_user(self):
