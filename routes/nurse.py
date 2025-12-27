@@ -3,6 +3,6 @@ from flask import render_template
 
 nurse_bp = Blueprint("nurse",__name__)
 
-@nurse_bp.route("/nurse/dashboard",methods=["GET"])
+@nurse_bp.route("/dashboard",methods=["GET"])
 def dashboard():
     return render_template('./nurse/dashboard.html')
