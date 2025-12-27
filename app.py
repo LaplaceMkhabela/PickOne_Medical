@@ -97,9 +97,6 @@ def dashboard():
         
         
         return render_template('./help_desk/dashboard.html',user=current_user,appointments=appointments,stats=stats,graph=mock_graph())
-    
-    if current_user['role'] == 'nurse':
-        return render_template('./nurse/dashboard.html')
         
     return f'nothing yet'
 
