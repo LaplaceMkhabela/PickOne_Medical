@@ -3,11 +3,18 @@ from database.database import Database
 db = Database()
 
 def get_analytics():
+    appointments = get_appointments()
     stats = {
         "patients": 0,
         "appointments": 0,
         "reports": 0
     }
+    
+    stats['patients'] = len(appointments)
+    
+    for appointment in appointments:
+        if appointment['status'] == 'Confirmed':
+            stats['appointments'] = stats.get('appointments') + 1
     
     return stats
 
