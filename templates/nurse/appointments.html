@@ -75,34 +75,26 @@
         <thead>
             <tr>
                 <th>Patient Name</th>
+                <th>Id</th>
+                <th>Date</th>
                 <th>Time</th>
-                <th>Condition</th>
                 <th>Status</th>
-                <th>Action</th>
             </tr>
         </thead>
         <tbody>
+            {% if appointments != [] %}
+            {% for appointment in appointments %}
             <tr>
-                <td>John Doe</td>
-                <td>09:00 AM</td>
-                <td>Flu Symptoms</td>
-                <td><span class="status confirmed">Confirmed</span></td>
-                <td><button class="btn-view">View</button></td>
+                <td>{{appointment.name}}</td>
+                <td>{{appointment.id}}</td>
+                <td>{{appointment.date}}</td>
+                <td>{{appointment.time}}</td>
+                <td><span class="status {{appointment.status}}">{{appointment.status}}</span></td>
             </tr>
-            <tr>
-                <td>Sarah Connor</td>
-                <td>10:30 AM</td>
-                <td>Checkup</td>
-                <td><span class="status pending">Pending</span></td>
-                <td><button class="btn-view">View</button></td>
-            </tr>
-            <tr>
-                <td>Michael Scott</td>
-                <td>11:15 AM</td>
-                <td>Headache</td>
-                <td><span class="status cancelled">Cancelled</span></td>
-                <td><button class="btn-view">View</button></td>
-            </tr>
+            {% endfor %}
+            {% else %}
+            <tr>Nothing yet</tr>
+            {% endif %}
         </tbody>
     </table>
 </div>
