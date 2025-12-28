@@ -103,6 +103,19 @@
                 <td><span class="status cancelled">Cancelled</span></td>
                 <td><button class="btn-view">View</button></td>
             </tr>
+            {% if patients != [] %}
+                {% for patient in patients %}
+                     <tr>
+                        <td>Michael Scott</td>
+                        <td>11:15 AM</td>
+                        <td>Headache</td>
+                        <td><span class="status cancelled">Cancelled</span></td>
+                        <td><button class="btn-view">View</button></td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>Nothing yet</tr>
+            {% endif %}
         </tbody>
     </table>
 </div>
