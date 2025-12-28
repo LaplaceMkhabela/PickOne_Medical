@@ -32,7 +32,14 @@ class Database:
             return True
     
     def create_appointment(self,user,appointment):
-        appointment.update({'status':'Confirmed'})
+        vitals = {
+        'status': 'Confirmed',
+        'bp':'None',
+        'weight': 'None',
+        'temp': 'None'
+        }
+        appointment.update(vitals)
+        
         try:
             db = self.read_data()
             appointments = db[user['role']]['appointments']
