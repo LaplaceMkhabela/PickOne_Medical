@@ -89,7 +89,7 @@
                 <td>{{appointment.id}}</td>
                 <td>{{appointment.date}}</td>
                 <td>{{appointment.time}}</td>
-                <td><span class="status {{appointment.status}}">{{appointment.status}}</span></td>
+                <td><span class="{{appointment.status}}">{{appointment.status}}</span></td>
             </tr>
             {% endfor %}
             {% else %}
