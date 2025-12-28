@@ -41,13 +41,15 @@ def process_appointments(appointment_list):
     appointment_list = appointment_list
     
     for appointment in appointment_list:
-        if appointment['date'] > current_date:
-            appointment['status'] = 'pending'
+        year,month,day = appointment['date'].split('-')
+        
+        if date(int(year),int(month),int(day)) > current_date:
+            appointment['status'] = 'Pending'
             
-        elif appointment['date'] < current_date:
-            appointment['status'] = 'cancelled'
+        elif date(int(year),int(month),int(day)) < current_date:
+            appointment['status'] = 'Cancelled'
             
         else:
-            appointment['status'] = 'confirmed'
+            appointment['status'] = 'Confirmed'
             
     return appointment_list
