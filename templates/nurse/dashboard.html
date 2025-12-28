@@ -101,7 +101,7 @@
                 {% else %}
                     <td><span class="status Confirmed">{{patient.temp}}</span></td>
                 {% endif %}
-                <td><button class="btn-view">Update</button></td>
+                <td><button onclick="updateVitals('{{patient.id}}')" class="btn-view">Update</button></td>
             </tr>
             {% endfor %}
             {% else %}
@@ -110,4 +110,8 @@
         </tbody>
     </table>
 </div>
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript" src="{{ url_for('static', filename='./nurse/script.js') }}"></script>
 {% endblock %}
