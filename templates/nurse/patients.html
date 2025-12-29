@@ -1,7 +1,7 @@
 {% extends './base/dashboard_base.html' %}
 
 {% block head %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='./nurse/styles.css') }}">   
+<link rel="stylesheet" href="{{ url_for('static', filename='./nurse/styles.css') }}">
 {% endblock %}
 
 {% block sidebar %}
@@ -70,51 +70,30 @@
 
 {% block table %}
 <div class="table-container">
-    <h3>Upcoming Appointments</h3>
+    <h3>Patient Information</h3>
     <table class="styled-table">
         <thead>
             <tr>
                 <th>Patient Name</th>
-                <th>Time</th>
-                <th>Condition</th>
-                <th>Status</th>
-                <th>Action</th>
+                <th>Patient Id</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>John Doe</td>
-                <td>09:00 AM</td>
-                <td>Flu Symptoms</td>
-                <td><span class="status confirmed">Confirmed</span></td>
-                <td><button class="btn-view">View</button></td>
-            </tr>
-            <tr>
-                <td>Sarah Connor</td>
-                <td>10:30 AM</td>
-                <td>Checkup</td>
-                <td><span class="status pending">Pending</span></td>
-                <td><button class="btn-view">View</button></td>
-            </tr>
-            <tr>
-                <td>Michael Scott</td>
-                <td>11:15 AM</td>
-                <td>Headache</td>
-                <td><span class="status cancelled">Cancelled</span></td>
-                <td><button class="btn-view">View</button></td>
-            </tr>
             {% if patients != [] %}
-                {% for patient in patients %}
-                     <tr>
-                        <td>Michael Scott</td>
-                        <td>11:15 AM</td>
-                        <td>Headache</td>
-                        <td><span class="status cancelled">Cancelled</span></td>
-                        <td><button class="btn-view">View</button></td>
-                    </tr>
-                {% endfor %}
+            {% for patient in patients %}
+            <tr>
+                <td>{{patient.name}}</td>
+                <td>{{patient.id}}</td>
+                <td>{{patient.email}}</td>
+                <td>{{patient.phone}}</td>
+                <td>{{patient.address}}</td>
+            </tr>
+            {% endfor %}
             {% else %}
-                <tr>Nothing yet</tr>
+            <tr>Nothing yet</tr>
             {% endif %}
         </tbody>
     </table>
