@@ -57,14 +57,14 @@ def process_appointments(appointment_list):
             
     return appointment_list
 
-def update_vitals(patient):
+def vitals(patient):
     data = db.read_data()
     
     try:
         for appointments in data['help_desk']['appointments'].values():
             for p in appointments:
                 if p['id'] == patient['id']:
-                    p['weight'] = patient['id']
+                    p['weight'] = patient['weight']
                     p['bp'] = f"{patient['bp_systolic']} / {patient['bp_diastolic']}"
                     p['temp'] = patient['temp']
                 
