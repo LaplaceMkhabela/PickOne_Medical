@@ -21,7 +21,7 @@ def reports():
     return render_template('./nurse/reports.html')
 
 @nurse_bp.route("/update/vitals",methods=["GET","POST"])
-def reports():
+def update_vitals():
     patient = request.get_json()
     result = update_vitals(patient)
     
