@@ -102,7 +102,6 @@ function updateVitals(patientId) {
         }
     }).then((result) => {
         if (result.isConfirmed) {
-            console.log(result.value.id)
             update(result)
         }
     });
@@ -114,7 +113,7 @@ function weightValue() {
 }
 
 async function update(result) {
-    let resp_promise = fetch('/nurse/update/vitals', {
+    let resp_promise = await fetch('/nurse/update/vitals', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -127,9 +126,19 @@ async function update(result) {
 
     if (resp_data['code'] == '200') {
         Swal.fire('Success', 'Vitals updated successfully', 'success');
+        Swal.fire({
+            title: "Success",
+            text: "Vitals updated successfully",
+            icon: "success",
+            showCancelButton: false,
+            confirmButtonText: "Ok"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.reload()
+            }
+        });
     }
     else {
         Swal.fire('Error', resp_data['msg'], 'error');
     }
 }
-    
