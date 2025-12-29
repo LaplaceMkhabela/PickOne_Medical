@@ -34,7 +34,8 @@ def get_appointments():
 
 
 def get_patients():
-    return db.get_patients()
+    patients = db.read_data()['patient']['accounts']
+    return patients
 
 def process_appointments(appointment_list):
     current_date = date.today()
