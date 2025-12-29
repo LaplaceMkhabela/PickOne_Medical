@@ -23,7 +23,7 @@ def reports():
 @nurse_bp.route("/update/vitals",methods=["GET","POST"])
 def update_vitals():
     patient = request.get_json()
-    result = update_vitals(patient)
+    result = vitals(patient)
     
     if result:
         return jsonify({'code':'200','msg':'Vitals updated successfully'})
