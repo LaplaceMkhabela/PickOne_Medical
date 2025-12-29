@@ -87,19 +87,19 @@
             <tr>
                 <td>{{patient.name}}</td>
                 <td>{{patient.bp}}</td>
-                <td>{{patient.weight}}</td>
+                <td>{{patient.weight}} kg</td>
                 
                 {% if patient.temp != 'None' %}
-                    {% if patient.temp < 35 %}
-                        <td><span class="status Pending">{{patient.temp}}</span></td>
-                    {% elif patient.temp > 38 %}
-                        <td><span class="status Camcelled">{{patient.temp}}</span></td>
+                    {% if patient.temp < '35' %}
+                        <td><span class="status Pending">{{patient.temp}} ℃</span></td>
+                    {% elif patient.temp > '38' %}
+                        <td><span class="status Cancelled">{{patient.temp}} ℃</span></td>
                     {% else %}
-                        <td><span class="status Confirmed">{{patient.temp}}</span></td>
+                        <td><span class="status Confirmed">{{patient.temp}} ℃</span></td>
                     {% endif %}
 
                 {% else %}
-                    <td><span class="status Confirmed">{{patient.temp}}</span></td>
+                    <td><span class="status Confirmed">{{patient.temp}} ℃</span></td>
                 {% endif %}
                 <td><button onclick="updateVitals('{{patient.id}}')" class="btn-view">Update</button></td>
             </tr>
