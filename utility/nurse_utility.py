@@ -56,3 +56,21 @@ def process_appointments(appointment_list):
             appointment.update({'class':'status Confirmed'})
             
     return appointment_list
+
+def update_vitals(patient):
+    data = db.read_data()
+    
+    try:
+        for appointments in data['help_desk']['appointments'].values():
+            for p in appointments:
+                if p['id'] == patient['id']:
+                    p['weight'] = patient['id']
+                    p['bp'] = f"{patient['bp_systolic']} / {patient['bp_diastolic']}"
+                    p['temp'] = patient['temp']
+                
+        db.write_data(data)
+        
+        return True
+    except:
+        return False
+                
