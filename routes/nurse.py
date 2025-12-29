@@ -1,5 +1,5 @@
 from flask import Blueprint
-from flask import render_template
+from flask import render_template,request,jsonify
 from utility.nurse_utility import *
 
 nurse_bp = Blueprint("nurse",__name__)
@@ -19,3 +19,14 @@ def appointments():
 @nurse_bp.route("/reports",methods=["GET"])
 def reports():
     return render_template('./nurse/reports.html')
+
+@nurse_bp.route("/update/vitals",methods=["GET","POST"])
+def reports():
+    patient = request.get_json()
+    result = update_vitals(patient)
+    
+    if result:
+        return jsonify({'code':'200','msg':'Vitals updated successfully'})
+    else:
+        return jsonify({'code':'500','msg':'Vitals update unsuccessfull'})
+
