@@ -1,3 +1,1 @@
-{
-    "current_user" : {}
-}
+{"current_user": {"name": "test", "email": "test", "role": "help_desk", "id": "test", "password": "$argon2id$v=19$m=65536,t=3,p=4$t0wvBINygTBcepVbP7KuZA$f4n1Q2L17X2PH9oMTUpltrH1pTWYyChLxMlM8VP8FFU"}}
