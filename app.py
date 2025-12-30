@@ -2,6 +2,7 @@ from flask import Flask, render_template, request,redirect,url_for,jsonify
 from database.database import *
 from utility.utility import *
 from routes.nurse import nurse_bp
+from routes.doctor import doctor_bp
 import datetime
 
 
@@ -12,6 +13,7 @@ def create_app():
     app = Flask(__name__)
     
     app.register_blueprint(nurse_bp,url_prefix='/nurse')
+    app.register_blueprint(doctor_bp,url_prefix='/doctor')
     
     return app
 
