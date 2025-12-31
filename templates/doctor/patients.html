@@ -1,0 +1,101 @@
+{% extends './base/dashboard_base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='./doctor/styles.css') }}">
+{% endblock %}
+
+{% block sidebar %}
+<div class="sidebar">
+    <div class="sidebar-header">
+        <h2>PickOne<br>Medics</h2>
+        <i class="fa-solid fa-xmark" id="closeSidebar"></i>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="/doctor/dashboard"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+        <li class="active"><a href="/doctor/patients"><i class="fa-solid fa-user-injured"></i> Patients</a></li>
+        <li><a href="/doctor/appointments"><i class="fa-solid fa-calendar-check"></i> Appointments</a></li>
+        <li><a href="/error"><i class="fa-solid fa-file-medical"></i> Reports</a></li>
+        <li class="logout"><a href="/users/logout"><i class="fa-solid fa-sign-out-alt"></i> Logout</a></li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block topbar %}
+<div class="top-bar">
+    <div class="menu-toggle" id="menuToggle">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <h2>Welcome, <span id="doctorName">Dr {{user['name']}}</span></h2>
+
+    <form class="search-bar" action="/search" method="get">
+        <input type="search" id="query" name="q" placeholder="Search Patient ID...">
+        <button type="submit">Search</button>
+    </form>
+
+    <div class="user-profile">
+        <img src="https://i.ibb.co/RkbqB7tM/icons8-avatar-50.png" alt="Profile" class="avatar">
+    </div>
+</div>
+{% endblock %}
+
+{% block cards %}
+<div class="cards-container">
+    <div class="stats-card">
+        <div class="card-icon blue-bg"><i class="fa-solid fa-users"></i></div>
+        <div class="card-info">
+            <h3>{{analytics['patients']}}</h3>
+            <p>Total Patients</p>
+        </div>
+    </div>
+
+    <div class="stats-card">
+        <div class="card-icon green-bg"><i class="fa-solid fa-calendar-day"></i></div>
+        <div class="card-info">
+            <h3>{{analytics['appointments']}}</h3>
+            <p>Appointments Today</p>
+        </div>
+    </div>
+
+    <div class="stats-card">
+        <div class="card-icon red-bg"><i class="fa-solid fa-clipboard-list"></i></div>
+        <div class="card-info">
+            <h3>{{analytics['reports']}}</h3>
+            <p>Pending Reports</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block table %}
+<div class="table-container">
+    <h3>Patient Information</h3>
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Patient Name</th>
+                <th>Patient Id</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if patients != [] %}
+            {% for patient in patients %}
+            <tr>
+                <td>{{patient.name}}</td>
+                <td>{{patient.id}}</td>
+                <td>{{patient.email}}</td>
+                <td>{{patient.phone}}</td>
+                <td>{{patient.address}}</td>
+            </tr>
+            {% endfor %}
+            {% else %}
+            <tr>Nothing yet</tr>
+            {% endif %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
