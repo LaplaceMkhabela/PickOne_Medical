@@ -81,7 +81,7 @@ def get_patient_record(id):
     
         for patient in accounts:
             if patient['id'] == str(id):
-                return patient['record']
+                return patient
     except:
         return False
     
