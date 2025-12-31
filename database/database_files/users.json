@@ -1,1 +1,804 @@
-{"doctor": {"ids": [], "accounts": []}, "nurse": {"ids": ["nurse"], "accounts": [{"name": "nurse", "email": "nurse", "role": "nurse", "id": "nurse", "password": "$argon2id$v=19$m=65536,t=3,p=4$jipuD/yo6oC5Vm1g9lbGyw$cqe0Na5JQk9knioS6hjoaKIA579fWEn/0yhQ4JIT3zU"}]}, "help_desk": {"ids": ["test", "test2"], "accounts": [{"name": "test", "email": "test", "role": "help_desk", "id": "test", "password": "$argon2id$v=19$m=65536,t=3,p=4$t0wvBINygTBcepVbP7KuZA$f4n1Q2L17X2PH9oMTUpltrH1pTWYyChLxMlM8VP8FFU"}, {"name": "test2", "email": "test2", "role": "help_desk", "id": "test2", "password": "$argon2id$v=19$m=65536,t=3,p=4$UTRrUKpZJobVbCQIs4JCiw$BZuvgMKwmw5I2qwM2lCsiW21m6rmV7+8iPK0/bg7Iok"}], "appointments": {"2025-12-25": [{"isConfirmed": true, "id": "test001", "name": "test", "date": "2025-12-25", "time": "22:57", "status": "Confirmed"}], "2025-12-26": [{"isConfirmed": true, "id": "test1", "name": "test", "date": "2025-12-26", "time": "11:18", "status": "Confirmed"}, {"isConfirmed": true, "id": "ttttttt", "name": "ttttt", "date": "2025-12-26", "time": "16:43", "status": "Confirmed"}], "2025-12-24": [{"isConfirmed": true, "id": "tttt", "name": "tttt", "date": "2025-12-24", "time": "16:38", "status": "Confirmed"}]}}, "patient": {"ids": [], "accounts": []}}
+{
+  "doctor": {
+    "ids": [
+      "doctor"
+    ],
+    "accounts": [
+      {
+        "name": "doctor",
+        "email": "doctor",
+        "role": "doctor",
+        "id": "doctor",
+        "password": "$argon2id$v=19$m=65536,t=3,p=4$GjvDoedStW1HrTxw7ScgXQ$S65TSaN/bVX2S+NbaNxx22E9Dfw/764UV4pR3eLdkv8"
+      }
+    ]
+  },
+  "nurse": {
+    "ids": [
+      "nurse"
+    ],
+    "accounts": [
+      {
+        "name": "nurse",
+        "email": "nurse",
+        "role": "nurse",
+        "id": "nurse",
+        "password": "$argon2id$v=19$m=65536,t=3,p=4$jipuD/yo6oC5Vm1g9lbGyw$cqe0Na5JQk9knioS6hjoaKIA579fWEn/0yhQ4JIT3zU"
+      }
+    ]
+  },
+  "help_desk": {
+    "ids": [
+      "test",
+      "test2",
+      "help1"
+    ],
+    "accounts": [
+      {
+        "name": "test",
+        "email": "test",
+        "role": "help_desk",
+        "id": "test",
+        "password": "$argon2id$v=19$m=65536,t=3,p=4$t0wvBINygTBcepVbP7KuZA$f4n1Q2L17X2PH9oMTUpltrH1pTWYyChLxMlM8VP8FFU"
+      },
+      {
+        "name": "test2",
+        "email": "test2",
+        "role": "help_desk",
+        "id": "test2",
+        "password": "$argon2id$v=19$m=65536,t=3,p=4$UTRrUKpZJobVbCQIs4JCiw$BZuvgMKwmw5I2qwM2lCsiW21m6rmV7+8iPK0/bg7Iok"
+      },
+      {
+        "name": "help1",
+        "email": "help1",
+        "role": "help_desk",
+        "id": "help1",
+        "password": "$argon2id$v=19$m=65536,t=3,p=4$EmS4sQFvOL+p2V9Xg64rYg$Cpp2zcdbPjUM3ZMLdgnBCD4fuq1nrqQmuCAHLT9Zs1k"
+      }
+    ],
+    "appointments": {
+      "2025-12-28": [
+        {
+          "isConfirmed": true,
+          "id": "PAT001",
+          "name": "Nikola Tesla",
+          "date": "2025-12-28",
+          "time": "18:11",
+          "status": "Confirmed",
+          "bp": "110 / 80",
+          "weight": "90.5",
+          "temp": "35"
+        }
+      ],
+      "2025-12-29": [
+        {
+          "isConfirmed": true,
+          "id": "PAT002",
+          "name": "Madara Uchiha",
+          "date": "2025-12-29",
+          "time": "18:11",
+          "status": "Confirmed",
+          "bp": "90 / 50",
+          "weight": "85",
+          "temp": "37"
+        }
+      ],
+      "2025-12-17": [
+        {
+          "isConfirmed": true,
+          "id": "PAT003",
+          "name": "Naruto",
+          "date": "2025-12-17",
+          "time": "18:12",
+          "status": "Confirmed",
+          "bp": "None",
+          "weight": "None",
+          "temp": "None"
+        }
+      ]
+    }
+  },
+  "patient": {
+    "ids": [
+      "PAT001",
+      "PAT002",
+      "PAT003"
+    ],
+    "accounts": [
+      {
+        "name": "Rock Lee",
+        "email": "RockLee@test.com",
+        "phone": "N/A",
+        "Address": "N/A",
+        "role": "patient",
+        "id": "PAT001",
+        "age": "n/a",
+        "dob": "n/a",
+        "gender": "n/a",
+        "password": "$argon2id$v=19$m=65536,t=3,p=4$jD82pyzJZbEC/utKWrzyxA$EYxW2dQgEcuIeJZPrsgnfCGsT5YfF/MQ+Yssed7W5eY",
+        "img": "🍍",
+        "record": {
+          "2017-01-12": {
+            "bp": "115 / 70",
+            "weight": "68",
+            "temp": "36.3",
+            "heart": "69",
+            "spO2": "99",
+            "reason": "Baseline Assessment",
+            "dr": "doctor",
+            "notes": "Initial baseline visit. No prior medical conditions reported.",
+            "medication": "None"
+          },
+          "2017-09-04": {
+            "bp": "122 / 78",
+            "weight": "70",
+            "temp": "36.6",
+            "heart": "72",
+            "spO2": "98",
+            "reason": "Minor Injury",
+            "dr": "doctor",
+            "notes": "Soft tissue injury to the wrist. No fracture suspected.",
+            "medication": "Ibuprofen"
+          },
+          "2018-03-18": {
+            "bp": "128 / 82",
+            "weight": "71",
+            "temp": "36.8",
+            "heart": "75",
+            "spO2": "97",
+            "reason": "Persistent Cough",
+            "dr": "doctor",
+            "notes": "Dry cough lasting more than one week. Chest clear on examination.",
+            "medication": "Cough Syrup"
+          },
+          "2018-12-01": {
+            "bp": "120 / 76",
+            "weight": "69",
+            "temp": "36.5",
+            "heart": "71",
+            "spO2": "99",
+            "reason": "Routine Checkup",
+            "dr": "doctor",
+            "notes": "Vitals within normal limits. No concerns raised.",
+            "medication": "None"
+          },
+          "2019-06-27": {
+            "bp": "135 / 88",
+            "weight": "73",
+            "temp": "37.0",
+            "heart": "83",
+            "spO2": "96",
+            "reason": "Shortness of Breath",
+            "dr": "doctor",
+            "notes": "Mild exertional dyspnoea. Pulmonary function tests requested.",
+            "medication": "Salbutamol"
+          },
+          "2019-11-14": {
+            "bp": "130 / 85",
+            "weight": "72",
+            "temp": "36.7",
+            "heart": "79",
+            "spO2": "97",
+            "reason": "Follow-up",
+            "dr": "doctor",
+            "notes": "Breathing improved with inhaler use.",
+            "medication": "Salbutamol"
+          },
+          "2020-04-03": {
+            "bp": "118 / 75",
+            "weight": "71",
+            "temp": "36.4",
+            "heart": "73",
+            "spO2": "99",
+            "reason": "Telehealth Consultation",
+            "dr": "doctor",
+            "notes": "Virtual visit due to travel restrictions. Patient stable.",
+            "medication": "None"
+          },
+          "2020-10-22": {
+            "bp": "142 / 92",
+            "weight": "75",
+            "temp": "37.1",
+            "heart": "88",
+            "spO2": "95",
+            "reason": "Hypertension",
+            "dr": "doctor",
+            "notes": "Elevated blood pressure confirmed on repeat readings.",
+            "medication": "Lisinopril"
+          },
+          "2021-02-16": {
+            "bp": "135 / 85",
+            "weight": "74",
+            "temp": "36.8",
+            "heart": "82",
+            "spO2": "96",
+            "reason": "Medication Review",
+            "dr": "doctor",
+            "notes": "Blood pressure improving with treatment.",
+            "medication": "Lisinopril"
+          },
+          "2021-07-29": {
+            "bp": "125 / 80",
+            "weight": "72",
+            "temp": "36.6",
+            "heart": "76",
+            "spO2": "98",
+            "reason": "Lifestyle Review",
+            "dr": "doctor",
+            "notes": "Discussed diet and exercise. Continued improvement noted.",
+            "medication": "None"
+          },
+          "2022-01-08": {
+            "bp": "120 / 78",
+            "weight": "71",
+            "temp": "36.4",
+            "heart": "72",
+            "spO2": "99",
+            "reason": "Routine Monitoring",
+            "dr": "doctor",
+            "notes": "Vitals stable. No active complaints.",
+            "medication": "None"
+          },
+          "2022-05-20": {
+            "bp": "138 / 90",
+            "weight": "74",
+            "temp": "36.9",
+            "heart": "85",
+            "spO2": "96",
+            "reason": "Back Pain",
+            "dr": "doctor",
+            "notes": "Lower back strain likely due to posture.",
+            "medication": "Paracetamol"
+          },
+          "2022-11-02": {
+            "bp": "130 / 84",
+            "weight": "73",
+            "temp": "36.6",
+            "heart": "79",
+            "spO2": "97",
+            "reason": "Follow-up",
+            "dr": "doctor",
+            "notes": "Back pain resolved. No further intervention required.",
+            "medication": "None"
+          },
+          "2023-03-17": {
+            "bp": "145 / 94",
+            "weight": "76",
+            "temp": "37.2",
+            "heart": "90",
+            "spO2": "95",
+            "reason": "Severe Headache",
+            "dr": "doctor",
+            "notes": "Migraine suspected. Trigger avoidance discussed.",
+            "medication": "Sumatriptan"
+          },
+          "2023-08-05": {
+            "bp": "132 / 86",
+            "weight": "74",
+            "temp": "36.7",
+            "heart": "81",
+            "spO2": "97",
+            "reason": "Migraine Follow-up",
+            "dr": "doctor",
+            "notes": "Frequency reduced with medication.",
+            "medication": "Sumatriptan"
+          },
+          "2024-02-11": {
+            "bp": "124 / 80",
+            "weight": "73",
+            "temp": "36.5",
+            "heart": "75",
+            "spO2": "98",
+            "reason": "Annual Review",
+            "dr": "doctor",
+            "notes": "Overall health stable.",
+            "medication": "None"
+          },
+          "2024-06-30": {
+            "bp": "140 / 88",
+            "weight": "75",
+            "temp": "36.9",
+            "heart": "84",
+            "spO2": "96",
+            "reason": "Work-related Stress",
+            "dr": "doctor",
+            "notes": "Stress management strategies discussed.",
+            "medication": "None"
+          },
+          "2024-11-19": {
+            "bp": "128 / 82",
+            "weight": "74",
+            "temp": "36.6",
+            "heart": "78",
+            "spO2": "98",
+            "reason": "Follow-up",
+            "dr": "doctor",
+            "notes": "Stress symptoms improved.",
+            "medication": "None"
+          },
+          "2025-04-07": {
+            "bp": "135 / 86",
+            "weight": "75",
+            "temp": "36.8",
+            "heart": "80",
+            "spO2": "97",
+            "reason": "Joint Pain",
+            "dr": "doctor",
+            "notes": "Early osteoarthritis suspected. Advised physiotherapy.",
+            "medication": "Ibuprofen"
+          },
+          "2025-09-14": {
+            "bp": "122 / 78",
+            "weight": "73",
+            "temp": "36.5",
+            "heart": "74",
+            "spO2": "99",
+            "reason": "Follow-up",
+            "dr": "doctor",
+            "notes": "Joint pain well controlled with exercises.",
+            "medication": "None"
+          }
+        }
+      },
+      {
+        "name": "Madara Uchiha",
+        "email": "MadaraUchiha@test.com",
+        "phone": "N/A",
+        "Address": "N/A",
+        "role": "patient",
+        "id": "PAT002",
+        "age": "n/a",
+        "dob": "n/a",
+        "gender": "n/a",
+        "password": "$argon2id$v=19$m=65536,t=3,p=4$D0dQUhg6vZoDGf80Noe1rQ$ox7K0GgLek84QTAJqytj/+EzWwnKrD08J4j5VQ0KNMI",
+        "img": "🍏",
+        "record": {
+          "2018-02-06": {
+            "bp": "118 / 76",
+            "weight": "70",
+            "temp": "36.4",
+            "heart": "72",
+            "spO2": "99",
+            "reason": "Initial Consultation",
+            "dr": "doctor",
+            "notes": "First visit for baseline assessment. Patient appears healthy with no chronic conditions reported.",
+            "medication": "None"
+          },
+          "2018-10-19": {
+            "bp": "125 / 82",
+            "weight": "72",
+            "temp": "36.7",
+            "heart": "75",
+            "spO2": "98",
+            "reason": "Seasonal Flu",
+            "dr": "doctor",
+            "notes": "Mild flu-like symptoms. No complications observed.",
+            "medication": "Oseltamivir"
+          },
+          "2019-04-11": {
+            "bp": "132 / 85",
+            "weight": "73",
+            "temp": "37.2",
+            "heart": "80",
+            "spO2": "97",
+            "reason": "Fever",
+            "dr": "doctor",
+            "notes": "Low-grade fever likely viral. Advised rest and hydration.",
+            "medication": "Panado"
+          },
+          "2019-12-02": {
+            "bp": "120 / 78",
+            "weight": "71",
+            "temp": "36.5",
+            "heart": "74",
+            "spO2": "99",
+            "reason": "Routine Checkup",
+            "dr": "doctor",
+            "notes": "Vitals stable. No concerns raised.",
+            "medication": "None"
+          },
+          "2020-06-15": {
+            "bp": "140 / 90",
+            "weight": "75",
+            "temp": "36.9",
+            "heart": "86",
+            "spO2": "96",
+            "reason": "Hypertension Screening",
+            "dr": "doctor",
+            "notes": "Elevated blood pressure noted. Monitoring advised.",
+            "medication": "Hydrochlorothiazide"
+          },
+          "2020-11-28": {
+            "bp": "135 / 88",
+            "weight": "74",
+            "temp": "36.6",
+            "heart": "82",
+            "spO2": "97",
+            "reason": "Follow-up",
+            "dr": "doctor",
+            "notes": "Blood pressure slightly improved. Continue medication.",
+            "medication": "Hydrochlorothiazide"
+          },
+          "2021-03-07": {
+            "bp": "128 / 80",
+            "weight": "73",
+            "temp": "36.5",
+            "heart": "78",
+            "spO2": "98",
+            "reason": "Dizziness",
+            "dr": "doctor",
+            "notes": "Possible postural hypotension. Advised slow position changes.",
+            "medication": "None"
+          },
+          "2021-09-21": {
+            "bp": "122 / 76",
+            "weight": "72",
+            "temp": "36.4",
+            "heart": "70",
+            "spO2": "99",
+            "reason": "Medication Review",
+            "dr": "doctor",
+            "notes": "Blood pressure normalised. Medication discontinued.",
+            "medication": "None"
+          },
+          "2022-01-30": {
+            "bp": "130 / 84",
+            "weight": "73",
+            "temp": "36.8",
+            "heart": "79",
+            "spO2": "97",
+            "reason": "Fatigue",
+            "dr": "doctor",
+            "notes": "General fatigue reported. Blood work requested.",
+            "medication": "Multivitamins"
+          },
+          "2022-07-18": {
+            "bp": "118 / 74",
+            "weight": "71",
+            "temp": "36.3",
+            "heart": "68",
+            "spO2": "99",
+            "reason": "Lab Results Review",
+            "dr": "doctor",
+            "notes": "All investigations within normal range.",
+            "medication": "None"
+          },
+          "2023-02-09": {
+            "bp": "145 / 92",
+            "weight": "76",
+            "temp": "37.1",
+            "heart": "88",
+            "spO2": "95",
+            "reason": "Chest Tightness",
+            "dr": "doctor",
+            "notes": "Short episodes of tightness reported. ECG recommended.",
+            "medication": "Aspirin"
+          },
+          "2023-06-23": {
+            "bp": "138 / 88",
+            "weight": "75",
+            "temp": "36.9",
+            "heart": "83",
+            "spO2": "96",
+            "reason": "Follow-up ECG",
+            "dr": "doctor",
+            "notes": "ECG normal. Symptoms likely stress-related.",
+            "medication": "None"
+          },
+          "2023-11-05": {
+            "bp": "126 / 80",
+            "weight": "74",
+            "temp": "36.5",
+            "heart": "76",
+            "spO2": "98",
+            "reason": "Routine Monitoring",
+            "dr": "doctor",
+            "notes": "Stable vitals. No new complaints.",
+            "medication": "None"
+          },
+          "2024-02-14": {
+            "bp": "134 / 86",
+            "weight": "75",
+            "temp": "36.7",
+            "heart": "80",
+            "spO2": "97",
+            "reason": "Palpitations",
+            "dr": "doctor",
+            "notes": "Intermittent palpitations reported. Holter monitoring suggested.",
+            "medication": "None"
+          },
+          "2024-05-29": {
+            "bp": "120 / 78",
+            "weight": "73",
+            "temp": "36.4",
+            "heart": "72",
+            "spO2": "99",
+            "reason": "Holter Review",
+            "dr": "doctor",
+            "notes": "No abnormal rhythms detected.",
+            "medication": "None"
+          },
+          "2024-09-08": {
+            "bp": "142 / 90",
+            "weight": "76",
+            "temp": "37.0",
+            "heart": "85",
+            "spO2": "96",
+            "reason": "Anxiety",
+            "dr": "doctor",
+            "notes": "Anxiety symptoms discussed. Non-pharmacological management advised.",
+            "medication": "None"
+          },
+          "2025-01-17": {
+            "bp": "128 / 82",
+            "weight": "74",
+            "temp": "36.6",
+            "heart": "77",
+            "spO2": "98",
+            "reason": "Routine Visit",
+            "dr": "doctor",
+            "notes": "Overall good health maintained.",
+            "medication": "None"
+          },
+          "2025-04-09": {
+            "bp": "136 / 88",
+            "weight": "75",
+            "temp": "36.8",
+            "heart": "81",
+            "spO2": "97",
+            "reason": "Sleep Disturbance",
+            "dr": "doctor",
+            "notes": "Poor sleep patterns reported. Sleep hygiene discussed.",
+            "medication": "Melatonin"
+          },
+          "2025-08-26": {
+            "bp": "124 / 80",
+            "weight": "73",
+            "temp": "36.5",
+            "heart": "74",
+            "spO2": "99",
+            "reason": "Follow-up",
+            "dr": "doctor",
+            "notes": "Sleep quality improved. No further issues.",
+            "medication": "None"
+          },
+          "2025-11-30": {
+            "bp": "130 / 85",
+            "weight": "74",
+            "temp": "36.7",
+            "heart": "78",
+            "spO2": "98",
+            "reason": "Year-End Review",
+            "dr": "doctor",
+            "notes": "Comprehensive annual review completed. Patient remains stable.",
+            "medication": "None"
+          }
+        }
+      },
+      {
+        "name": "Naruto",
+        "email": "Naruto@test.com",
+        "phone": "N/A",
+        "Address": "N/A",
+        "role": "patient",
+        "id": "PAT003",
+        "age": "n/a",
+        "dob": "n/a",
+        "gender": "n/a",
+        "password": "$argon2id$v=19$m=65536,t=3,p=4$OhbX4kj0/pGigTTmv5ew4g$1hw86OV95dBqDecEGPm+++PhI7rRu7MVJV6CwnbeBVQ",
+        "img": "🍒",
+        "record": {
+          "2019-03-14": {
+            "bp": "130 / 85",
+            "weight": "92",
+            "temp": "36.7",
+            "heart": "78",
+            "spO2": "97",
+            "reason": "Routine Checkup",
+            "dr": "doctor",
+            "notes": "Annual health screening. No major issues identified. Advised lifestyle modifications.",
+            "medication": "None"
+          },
+          "2020-07-09": {
+            "bp": "145 / 90",
+            "weight": "95",
+            "temp": "37.1",
+            "heart": "82",
+            "spO2": "96",
+            "reason": "High Blood Pressure",
+            "dr": "doctor",
+            "notes": "Elevated blood pressure noted. Counselling provided on diet and exercise.",
+            "medication": "Amlodipine"
+          },
+          "2021-01-22": {
+            "bp": "120 / 78",
+            "weight": "90",
+            "temp": "36.5",
+            "heart": "75",
+            "spO2": "98",
+            "reason": "Follow-up",
+            "dr": "doctor",
+            "notes": "Blood pressure improved since last visit. Continue current regimen.",
+            "medication": "Amlodipine"
+          },
+          "2021-11-03": {
+            "bp": "118 / 76",
+            "weight": "88",
+            "temp": "36.4",
+            "heart": "72",
+            "spO2": "99",
+            "reason": "Weight Review",
+            "dr": "doctor",
+            "notes": "Gradual weight loss observed. Encouraged continuation of healthy habits.",
+            "medication": "None"
+          },
+          "2022-02-18": {
+            "bp": "125 / 80",
+            "weight": "87",
+            "temp": "36.6",
+            "heart": "74",
+            "spO2": "98",
+            "reason": "Headache",
+            "dr": "doctor",
+            "notes": "Tension headache suspected. No neurological deficits.",
+            "medication": "Panado"
+          },
+          "2022-08-30": {
+            "bp": "135 / 88",
+            "weight": "89",
+            "temp": "36.9",
+            "heart": "80",
+            "spO2": "97",
+            "reason": "Fatigue",
+            "dr": "doctor",
+            "notes": "Patient reports persistent fatigue. Blood tests requested.",
+            "medication": "Multivitamins"
+          },
+          "2023-01-12": {
+            "bp": "128 / 82",
+            "weight": "86",
+            "temp": "36.5",
+            "heart": "76",
+            "spO2": "98",
+            "reason": "Lab Review",
+            "dr": "doctor",
+            "notes": "Lab results within normal limits. Reassured patient.",
+            "medication": "None"
+          },
+          "2023-05-27": {
+            "bp": "140 / 92",
+            "weight": "88",
+            "temp": "37.0",
+            "heart": "85",
+            "spO2": "96",
+            "reason": "Chest Tightness",
+            "dr": "doctor",
+            "notes": "ECG performed. No acute abnormalities found.",
+            "medication": "Aspirin"
+          },
+          "2023-09-15": {
+            "bp": "132 / 85",
+            "weight": "87",
+            "temp": "36.8",
+            "heart": "79",
+            "spO2": "97",
+            "reason": "Follow-up",
+            "dr": "doctor",
+            "notes": "Symptoms resolved. Continued monitoring advised.",
+            "medication": "None"
+          },
+          "2024-01-05": {
+            "bp": "122 / 78",
+            "weight": "85",
+            "temp": "36.4",
+            "heart": "73",
+            "spO2": "99",
+            "reason": "Routine Visit",
+            "dr": "doctor",
+            "notes": "Stable vitals. No complaints reported.",
+            "medication": "None"
+          },
+          "2024-03-19": {
+            "bp": "138 / 90",
+            "weight": "86",
+            "temp": "36.9",
+            "heart": "81",
+            "spO2": "96",
+            "reason": "Dizziness",
+            "dr": "doctor",
+            "notes": "Possible dehydration. Advised increased fluid intake.",
+            "medication": "ORS"
+          },
+          "2024-06-11": {
+            "bp": "126 / 80",
+            "weight": "84",
+            "temp": "36.6",
+            "heart": "75",
+            "spO2": "98",
+            "reason": "Medication Review",
+            "dr": "doctor",
+            "notes": "No side effects reported. Medication discontinued.",
+            "medication": "None"
+          },
+          "2024-08-24": {
+            "bp": "134 / 86",
+            "weight": "85",
+            "temp": "36.7",
+            "heart": "77",
+            "spO2": "97",
+            "reason": "Shortness of Breath",
+            "dr": "doctor",
+            "notes": "Mild symptoms during exertion. Advised gradual activity increase.",
+            "medication": "Salbutamol"
+          },
+          "2024-10-10": {
+            "bp": "120 / 75",
+            "weight": "83",
+            "temp": "36.3",
+            "heart": "70",
+            "spO2": "99",
+            "reason": "Follow-up",
+            "dr": "doctor",
+            "notes": "Improved exercise tolerance. No further intervention required.",
+            "medication": "None"
+          },
+          "2025-01-28": {
+            "bp": "128 / 82",
+            "weight": "84",
+            "temp": "36.5",
+            "heart": "74",
+            "spO2": "98",
+            "reason": "Routine Monitoring",
+            "dr": "doctor",
+            "notes": "Vitals remain stable. Continue routine checks.",
+            "medication": "None"
+          },
+          "2025-04-16": {
+            "bp": "136 / 88",
+            "weight": "85",
+            "temp": "36.8",
+            "heart": "80",
+            "spO2": "97",
+            "reason": "Stress-related Symptoms",
+            "dr": "doctor",
+            "notes": "Work-related stress discussed. Advised stress management strategies.",
+            "medication": "None"
+          },
+          "2025-07-03": {
+            "bp": "124 / 78",
+            "weight": "84",
+            "temp": "36.4",
+            "heart": "72",
+            "spO2": "99",
+            "reason": "Follow-up",
+            "dr": "doctor",
+            "notes": "Stress symptoms improving. No medication required.",
+            "medication": "None"
+          },
+          "2025-10-21": {
+            "bp": "142 / 90",
+            "weight": "86",
+            "temp": "37.0",
+            "heart": "84",
+            "spO2": "96",
+            "reason": "Chest Discomfort",
+            "dr": "doctor",
+            "notes": "Mild chest discomfort reported. Further investigations planned.",
+            "medication": "Panado"
+          },
+          "2025-12-17": {
+            "bp": "110 / 80",
+            "weight": "85",
+            "temp": "35",
+            "heart": "n/a",
+            "spO2": "n/a",
+            "reason": "Chest Pain",
+            "dr": "doctor",
+            "notes": "Follow-up visit focused on chest pain. Noted improvement since the last visit but some persistent symptoms remained. Adjusted therapy and emphasised adherence and self-monitoring. Plan for a repeat test or review in the coming weeks.",
+            "medication": "Panado"
+          }
+        }
+      }
+    ]
+  }
+}
