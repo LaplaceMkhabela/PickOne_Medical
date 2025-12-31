@@ -74,4 +74,14 @@ def vitals(patient):
         return True
     except:
         return False
-                
+
+def get_patient_record(id):
+    try:
+        accounts = db.read_data()['patient']['accounts']
+    
+        for patient in accounts:
+            if patient['id'] == str(id):
+                return patient['record']
+    except:
+        return False
+    
