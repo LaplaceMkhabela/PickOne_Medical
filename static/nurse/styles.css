@@ -6,8 +6,8 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body {
-    display: flex;
+body{
+    display: flex; 
     height: 100vh;
     background: linear-gradient(115deg, #cadeec 0%, #9cc1db 100%);
 }

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=TASA+Orbiter:wght@400..800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Diagnosis Form</title>
+</head>
+<body>
+<div class="app-container">
+  <header><h3>Patient Diagnosis Form</h3></header>
+  <section>
+    <form action="">
+      <label for="purpose">Reason for consultation</label></br>
+      <textarea type="text" id="visit_purpose" name="visit_purpose"></textarea></br>
+      
+      <label for="referral">Referral from referring provider?</label></br>
+      <select id="referral">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+      
+      <fieldset>
+        <legend>Relevant Medical History and Reports</legend>
+      <label for="diagnosis">Primary diagnoses:</label></br>
+      <textarea type="text" id="diagnosis" name="diagnosis"></textarea></br>
+
+      <label for="medications">Current Medications:</label></br>
+      <textarea type="text" id="medications" name="medications"></textarea></br>
+
+      <label for="tests">Pertinant Labs/Imaging:</label></br>
+      <textarea type="text" id="tests" name="tests"></textarea></br>
+
+      <label for="interventions">Recent Interventions:</label></br>
+      <textarea type="text" id="interventions" name="interventions"></textarea></br>
+    </fieldset>
+    
+    <fieldset>
+      <legend>Assessment and Clinical Reasoning</legend>
+      <label for="c_summary">Clinical summary:</label></br>
+      <textarea type="c_summary" id="c_summary" name="c_summary" ></textarea></br>
+
+      <label for="d_dx">Differential Diagnosis:</label></br>
+      <textarea type="d_dx" id="d_dx" name="d_dx"></textarea></br>
+    </fieldset>
+
+    <fieldset>
+      <legend>Recommendations and Next Steps</legend>
+      <label for="d_dx_rec">Diagnostic recommendations:</label></br>
+      <textarea type="d_dx_rec" id="d_dx_rec" name="d_dx_rec" ></textarea></br>
+      
+      <label for="treatment_plan">Treatment Plan:</label></br>
+      <textarea type="treatment_plan" id="treatment_plan" name="treatment_plan" ></textarea></br>
+    </fieldset>
+    </form>
+
+  </br>
+  </section>
+  <section class="patient-query">
+    <a href="patient-summary.html">Back to summary</button>
+      <a href="#"
+        target="blank">Submit Diagnosis</button>
+  </section>
+</div>
+</body>
+</html>
