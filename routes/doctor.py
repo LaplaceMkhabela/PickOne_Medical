@@ -1,5 +1,5 @@
 from flask import Blueprint
-from flask import render_template,request,jsonify
+from flask import render_template,request,jsonify,redirect,url_for
 from utility.nurse_utility import *
 
 doctor_bp = Blueprint("doctor",__name__)
@@ -20,9 +20,26 @@ def appointments():
 def reports():
     return render_template('./doctor/reports.html')
 
-@doctor_bp.route("/record",methods=["GET"])
-def record():
-    return render_template('./doctor/record.html',user=get_user(),analytics=get_analytics(),patients=get_appointments())
+@doctor_bp.route("/record/<id>",methods=["GET","POST"])
+def patient_record(id):
+    record = get_patient_record(str(id))
+    return render_template('./doctor/record.html',record=record)
+    
+@doctor_bp.route("/view",methods=["GET","POST"])
+def view_patient():
+    patient = request.get_json()
+    
+    if patient['id'] != '':
+        record = get_patient_record(patient['id'])
+        
+        if record:
+            return jsonify({"code":"200","link":f"/doctor/record/{patient['id']}"})
+        
+        else:
+            return jsonify({"code":"500","msg":"Failed to retrieve patient record"})
+        
+    else:
+        return jsonify({"code":"500","msg":"Failed to retrieve patient id"})
 
 @doctor_bp.route("/update/vitals",methods=["GET","POST"])
 def update_vitals():
