@@ -9,7 +9,7 @@
 body {
     display: flex;
     height: 100vh;
-    background: linear-gradient(115deg, #424242 0%, #2c2c2c 100%);
+    background: #F4F7FE;
 }
 
 /* ================== DASHBOARD PAGE STYLES =================== */
@@ -17,67 +17,6 @@ body {
     display: flex;
     height: 100vh;
     background: linear-gradient(115deg, #cadeec 0%, #9cc1db 100%);
-}
-
-/* --- Sidebar --- */
-.sidebar {
-    width: 250px;
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
-    z-index: 1000;
-    height: 100vh;
-}
-
-.sidebar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.sidebar-header h2 {
-    color: #1976d2;
-    margin-bottom: 30px;
-}
-
-.sidebar ul {
-    padding-left: 0;
-}
-
-.nav-links {
-    list-style: none;
-}
-
-.nav-links li {
-    margin-bottom: 15px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #546e7a;
-    font-size: 1.1rem;
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    border-radius: 8px;
-    transition: 0.3s;
-}
-
-.nav-links a i {
-    margin-right: 15px;
-    width: 20px;
-}
-
-.nav-links li.active a,
-.nav-links a:hover {
-    background-color: #e3f2fd;
-    color: #1976d2;
-}
-
-.logout {
-    margin-top: auto;
 }
 
 /* --- Main Content --- */
@@ -97,7 +36,7 @@ body {
 }
 
 .top-bar h2 {
-    color: #145da7;
+    color: #2b3674;
     margin-right: auto;
 }
 
@@ -109,7 +48,7 @@ body {
     border-radius: 30px;
     padding: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    border: 1px solid #dae1e7;
+    border: 1px solid #d2d2d2;
     width: 300px;
     margin-right: 20px;
 }
@@ -125,7 +64,7 @@ body {
 }
 
 .search-bar button {
-    background-color: #4192e2;
+    background-color: #2d5bff;
     color: white;
     border: none;
     padding: 8px 20px;
@@ -159,10 +98,13 @@ body {
     background: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
     display: flex;
     align-items: center;
-    border-top: 5px solid #1976d2;
+    border-top: 5px solid #2d5bff;
+    border-bottom: 1px solid #d2d2d2;
+    border-left: 1px solid #d2d2d2;
+    border-right: 1px solid #d2d2d2;
 }
 
 .card-icon {
@@ -176,6 +118,16 @@ body {
     color: white;
     margin-right: 15px;
 }
+
+.card-info p{
+    color: #4a5568;
+}
+
+.card-info h3{
+    color: #2b3674;
+}
+
+
 
 .blue-bg {
     background-color: #1976d2;
@@ -194,9 +146,12 @@ body {
     background: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    border-top: 5px solid #1976d2;
+    box-shadow:  0px 4px 12px rgba(0, 0, 0, 0.05);
+    border-top: 5px solid #2d5bff;
     overflow-x: auto;
+    border-bottom: 1px solid #d2d2d2;
+    border-left: 1px solid #d2d2d2;
+    border-right: 1px solid #d2d2d2;
     /* Adds scroll on small screens */
 }
 
@@ -214,8 +169,8 @@ body {
 }
 
 .styled-table th {
-    background-color: #f8f9fa;
-    color: #1976d2;
+    background-color: #eaf0ff;
+    color: #2b3674;
 }
 
 .status {
@@ -238,12 +193,13 @@ body {
 }
 
 .btn-view {
-    background-color: #1976d2;
+    background-color: #2d5bff;
     color: white;
     border: none;
     padding: 5px 10px;
     border-radius: 4px;
     cursor: pointer;
+    text-decoration-line: none;
 }
 
 /* ================== MOBILE RESPONSIVENESS =================== */
@@ -321,168 +277,6 @@ body {
     .cards-container {
         grid-template-columns: 1fr;
     }
-}
-
-
-/* ================== vitals dialog =================== */
-#swal2-html-container{
-    padding: 0;
-    text-align: left;
-}
-.dialog-container {
-    background-color: white;
-    overflow: hidden;
-}
-
-.dialog-header {
-    background-color: #4a6ee0;
-    color: white;
-    padding: 24px 30px;
-}
-
-.dialog-header h1 {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 5px;
-}
-
-.dialog-header p {
-    opacity: 0.9;
-    font-size: 15px;
-}
-
-.dialog-body {
-    padding: 30px;
-}
-
-.input-group {
-    margin-bottom: 28px;
-}
-
-.input-group label {
-    display: block;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 10px;
-    font-size: 16px;
-}
-
-.input-group input,
-.input-group select {
-    width: 100%;
-    padding: 14px 16px;
-    border: 2px solid #e0e8ff;
-    border-radius: 10px;
-    font-size: 16px;
-    transition: border-color 0.3s;
-    background-color: #f8faff;
-}
-
-.input-group input:focus,
-.input-group select:focus {
-    outline: none;
-    border-color: #4a6ee0;
-    background-color: white;
-}
-
-.blood-pressure-container {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.blood-pressure-container div {
-    flex: 1;
-}
-
-.range-slider-container {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-#weight{
-    display: block;
-}
-
-.slider-info {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 8px;
-}
-
-.slider-info span {
-    font-size: 14px;
-    color: #666;
-}
-
-.slider-value {
-    font-weight: 600;
-    color: #4a6ee0;
-}
-
-input[type="range"] {
-    -webkit-appearance: none;
-    width: 100%;
-    height: 8px;
-    border-radius: 4px;
-    background: #e0e8ff;
-    outline: none;
-}
-
-input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background: #4a6ee0;
-    cursor: pointer;
-    border: 3px solid white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.unit {
-    color: #666;
-    font-size: 14px;
-    margin-left: 5px;
-}
-
-.metric-indicator {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    margin-right: 8px;
-}
-
-.systolic-indicator {
-    background-color: #ff6b6b;
-}
-
-.diastolic-indicator {
-    background-color: #4d96ff;
-}
-
-.temp-indicator {
-    background-color: #ff9a3c;
-}
-
-.weight-indicator {
-    background-color: #6bcf7f;
-}
-
-.metric-note {
-    font-size: 13px;
-    color: #888;
-    margin-top: 6px;
-    font-style: italic;
-}
-
-.w-top{
-    width: 100%;
-    display: block;
 }
 
 @media (max-width: 500px) {
