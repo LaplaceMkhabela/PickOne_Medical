@@ -6,6 +6,191 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* ================== WELCOME PAGE STYLES =================== */
+
+.welcome-body {
+    background-color: #ffffff;
+    overflow-x: hidden; 
+    display: block;     
+    height: auto;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo h2 {
+    color: #1976d2;
+    font-size: 1.5rem;
+}
+.logo span {
+    color: #455a64;
+}
+
+.nav-buttons a {
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 15px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.btn-outline {
+    color: #1976d2;
+    border: 2px solid #1976d2;
+}
+.btn-outline:hover {
+    background-color: #e3f2fd;
+}
+
+.btn-solid {
+    background-color: #1976d2;
+    color: white;
+}
+.btn-solid:hover {
+    background-color: #1565c0;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 50px;
+    background: linear-gradient(135deg, #e3f2fd 0%, #ffffff 100%);
+    min-height: 80vh; 
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    color: #263238;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 span {
+    color: #1976d2;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: #546e7a;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.hero-buttons a {
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-right: 15px;
+    display: inline-block;
+}
+
+.btn-primary {
+    background-color: #1976d2;
+    color: white;
+    box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3);
+}
+
+.btn-secondary {
+    background-color: white;
+    color: #1976d2;
+    border: 1px solid #ddd;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    width: 500px;
+}
+
+/* --- Features Section --- */
+.features-section {
+    padding: 80px 50px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.section-title h2 {
+    color: #1976d2;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #78909c;
+    margin-bottom: 50px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border: 1px solid #f0f0f0;
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px); 
+}
+
+.icon-box {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    margin: 0 auto 20px auto;
+}
+
+.blue-icon { background-color: #e3f2fd; color: #1976d2; }
+.green-icon { background-color: #e8f5e9; color: #43a047; }
+.red-icon { background-color: #ffebee; color: #e53935; }
+
+.feature-card h3 {
+    margin-bottom: 10px;
+    color: #37474f;
+}
+
+.feature-card p {
+    color: #78909c;
+    font-size: 0.95rem;
+}
+
+/* --- Footer --- */
+.main-footer {
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 20px;
+    color: #90a4ae;
+    font-size: 0.9rem;
+    border-top: 1px solid #eee;
+}
+
 /* ================== LOGIN PAGE STYLES ===================*/
 .login-body {
     background: linear-gradient(115deg, #cadeec 0%, #9cc1db 100%); 
@@ -347,6 +532,29 @@
 
 /* MOBILE VIEW (Tablets & Phones) */
 @media (max-width: 768px) {
+    /* welcome page */
+    .navbar {
+        padding: 20px;
+    }
+    
+    .hero-section {
+        flex-direction: column-reverse; 
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        margin-top: 30px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-image img {
+        width: 80%;
+    }
 
     .dashboard-body {
         flex-direction: column;
@@ -361,7 +569,7 @@
 
     /* Top Bar Adjustment */
     .top-bar {
-        justify-content: flex-start; /* Align items left */
+        justify-content: flex-start; 
     }
     
     .top-bar h2 {
@@ -372,7 +580,7 @@
     /* Search bar moves to a new line on mobile */
     .search-bar {
         width: 100%;
-        order: 3; /* Push to bottom of top-bar flex */
+        order: 3; 
         margin-right: 0;
         margin-top: 10px;
     }
@@ -381,7 +589,7 @@
     .sidebar {
         position: fixed; 
         top: 0;
-        left: -100%; /* Hidden off-screen */
+        left: -100%; 
         height: 100vh;
         width: 280px; 
         transition: left 0.4s ease; 
