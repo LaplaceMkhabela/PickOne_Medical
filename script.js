@@ -74,11 +74,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 sidebar.classList.remove('active');
             }
         });
-    }
-});
+}
 
 // --- 4. REGISTRATION FORM LOGIC ---
-    const registerForm = document.getElementById('registerForm');
+const registerForm = document.getElementById('registerForm');
 
     if (registerForm) {
         registerForm.addEventListener('submit', (e) => {
@@ -128,5 +127,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Setup the two toggles on the registration page
+    // Setup the two toggles on the registration page
     setupPasswordToggle('toggleRegPassword', 'reg-password');
     setupPasswordToggle('toggleConfirmPassword', 'confirm-password');
+
+    // =========================================================
+    // 5. ERROR PAGE LOGIC (Auto-Redirect)
+    // =========================================================
+    const countdownElement = document.getElementById('countdown');
+
+    if (countdownElement) {
+        let timeLeft = 10;
+
+        const timer = setInterval(() => {
+            timeLeft--; 
+            countdownElement.innerText = timeLeft; 
+
+            if (timeLeft <= 0) {
+                clearInterval(timer); 
+                window.location.href = "welcome-page.html"; 
+            }
+        }, 1000); 
+    }
+});

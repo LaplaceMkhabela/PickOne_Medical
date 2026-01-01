@@ -525,6 +525,80 @@ html {
     cursor: pointer;
 }
 
+/* ================== ERROR PAGE STYLES =================== */
+.error-body {
+    background-color: #ffebee; 
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+.error-container {
+    max-width: 500px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.5); /* Slight white tint behind text */
+    border-radius: 15px;
+}
+
+.icon-wrapper {
+    font-size: 5rem;
+    color: #e53935; /* Medical Red */
+    margin-bottom: 20px;
+    animation: pulse 2s infinite; /* Gentle heartbeat animation */
+}
+
+.error-container h1 {
+    color: #c62828;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.error-code {
+    font-weight: bold;
+    color: #ef5350;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.error-message {
+    color: #546e7a;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+#countdown {
+    font-weight: bold;
+    color: #c62828;
+}
+
+.btn-home {
+    background-color: #e53935;
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(229, 57, 53, 0.3);
+    transition: transform 0.2s, background-color 0.3s;
+    display: inline-block; 
+}
+
+.btn-home:hover {
+    background-color: #b71c1c; 
+    transform: scale(1.05);    
+}
+
+/* Heartbeat Animation for the Ambulance */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
 /* ================== MOBILE RESPONSIVENESS =================== */
 
 /* Hide mobile controls by default */
