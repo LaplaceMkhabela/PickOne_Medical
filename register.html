@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PickOne Medics | Register</title>
+    <link rel="stylesheet" href="styless.css"/>
+</head>
+<body class="login-body">
+
+    <div class="main-container">
+        <div class="login-card"> <div class="header">
+                <h1>Create Account</h1>
+                <p>Join the PickOne healthcare network</p>
+            </div>
+
+            <form id="registerForm">
+                
+                <div class="input-group">
+                    <label for="reg-role">I am joining as a...</label>
+                    <select id="reg-role" name="role" required>
+                        <option value="" disabled selected>Select your role</option>
+                        <option value="patient">Patient</option>
+                        <option value="doctor">Doctor</option>
+                        <option value="nurse">Nurse</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" placeholder="e.g. John Smith" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="name@example.com" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="reg-password">Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="reg-password" placeholder="Create Password" required>
+                        <img src="https://i.ibb.co/TxrRMx5n/icons8-eye-50.png" id="toggleRegPassword" class="toggle-icon" alt="Show">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+                        <img src="https://i.ibb.co/TxrRMx5n/icons8-eye-50.png" id="toggleConfirmPassword" class="toggle-icon" alt="Show">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-login">Create Account</button>
+            </form>
+
+            <p class="footer">Already have an account? <a href="index.html">Log In</a></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

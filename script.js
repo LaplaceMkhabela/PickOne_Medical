@@ -76,3 +76,57 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// --- 4. REGISTRATION FORM LOGIC ---
+    const registerForm = document.getElementById('registerForm');
+
+    if (registerForm) {
+        registerForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const role = document.getElementById('reg-role').value;
+            const fullname = document.getElementById('fullname').value;
+            const pass1 = document.getElementById('reg-password').value;
+            const pass2 = document.getElementById('confirm-password').value;
+
+            // Simple Password Match Check
+            if (pass1 !== pass2) {
+                alert("Passwords do not match!");
+                return;
+            }
+
+            if (pass1.length < 6) {
+                alert("Password must be at least 6 characters long.");
+                return;
+            }
+
+            // Success!
+            alert(`Account created successfully for ${fullname} (${role.toUpperCase()})!\nRedirecting to login...`);
+            window.location.href = "index.html"; // Send them back to login
+        });
+    }
+
+    // --- 5. REGISTRATION PASSWORD TOGGLES ---
+    // Function to make any password field toggleable
+    function setupPasswordToggle(toggleId, inputId) {
+        const toggleBtn = document.getElementById(toggleId);
+        const inputField = document.getElementById(inputId);
+
+        if (toggleBtn && inputField) {
+            toggleBtn.addEventListener('click', () => {
+                const type = inputField.getAttribute('type') === 'password' ? 'text' : 'password';
+                inputField.setAttribute('type', type);
+                
+                // Toggle Icon
+                if (type === 'password') {
+                    toggleBtn.src = "https://i.ibb.co/TxrRMx5n/icons8-eye-50.png";
+                } else {
+                    toggleBtn.src = "https://i.ibb.co/Mxm6yVVn/icons8-eye-50-1.png";
+                }
+            });
+        }
+    }
+
+    // Setup the two toggles on the registration page
+    setupPasswordToggle('toggleRegPassword', 'reg-password');
+    setupPasswordToggle('toggleConfirmPassword', 'confirm-password');
