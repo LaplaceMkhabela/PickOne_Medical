@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PickOne Medics Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='./doctor/sidebar.css') }}"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='./doctor/dashboard.css') }}"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='./doctor/chart.css') }}"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>PickOne<br>Medics</h2>
+            <i class="fa-solid fa-xmark" id="closeSidebar"></i>
+        </div>
+
+        <ul class="nav-links">
+            <li class="active"><a href="/doctor/dashboard"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+            <li><a href="/doctor/patients"><i class="fa-solid fa-user-injured"></i> Patients</a></li>
+            <li><a href="/doctor/appointments"><i class="fa-solid fa-calendar-check"></i> Appointments</a></li>
+            <li><a href="/error"><i class="fa-solid fa-file-medical"></i> Reports</a></li>
+            <li class="logout"><a href="/users/logout"><i class="fa-solid fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </div>
+
+    <div class="dashboard-container">
+        <div class="summary-col">
+            <div style="background-color: aquamarine;min-height:70vh;">
+                <h3>Patient Summary</h3>
+                <p class="summary-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur officia unde quibusdam. Iste
+                    quaerat assumenda similique quia tenetur debitis odio dolorem aut
+                    sunt, a eligendi rerum facere odit quae modi?
+
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores atque doloremque reprehenderit
+                    voluptatum ipsam voluptates soluta et! Iure quis dolorum accusamus, autem ab suscipit inventore
+                    quaerat? Cupiditate illo eligendi reprehenderit!
+                    In cupiditate neque totam quam nulla dolor explicabo. Qui tempore voluptatum dolore ipsam itaque
+                    
+                    Id similique, ducimus ea minus officiis porro in architecto voluptates laboriosam nesciunt. Esse
+                    amet culpa saepe asperiores ratione molestias in est, accusantium nihil eveniet iusto qui harum?
+                    Rerum, perferendis voluptates?
+                    
+                    corrupti at quis!
+                    Numquam maiores natus praesentium accusamus ea ab repudiandae repellat, necessitatibus asperiores
+                    similique placeat nam, modi voluptates odit quidem quasi perferendis neque eius eaque cum iste
+                    dolor. Neque molestiae voluptatibus debitis.
+                </p>
+            </div>
+            <div style="margin-top: auto;">
+                <button onclick="openChat()" class="btn btn-query">Query Patient Info</button>
+                <button class="btn btn-submit">Submit Diagnosis</button>
+            </div>
+        </div>
+
+        <div class="stack-box">
+            <div class="card profile-col">
+                <div class="avatar-circle">🍍</div>
+                <h2 style="margin: 5px 0;">Rock Lee</h2>
+                <span style="color: #707EAE; font-size: 14px;">ID: <b>PAT001</b></span>
+                <hr style="width: 100%; border: 0.5px solid #eee; margin: 20px 0;">
+                <div class="patient-meta">
+                    <span><strong>Gender:</strong> n/a</span>
+                    <span><strong>DOB:</strong> n/a</span>
+                </div>
+                <div class="stat-grid">
+                    <div class="stat-box">
+                        <div class="stat-label">Weight</div>
+                        <div class="stat-value">73 kg</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Temp</div>
+                        <div class="stat-value">36.5 °C</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">BP</div>
+                        <div class="stat-value">122/78</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">SpO2</div>
+                        <div class="stat-value">99%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card chart-col">
+                <h3>Patient Analytics</h3>
+                <div class="chart">
+                    <canvas id="chart" width="100%"></canvas>
+                </div>
+                <div style="margin-top: 20px;">
+                    <div class="stat-label">Current Heart Rate</div>
+                    <div class="stat-value" style="font-size: 24px; color: var(--primary-blue);">74 BPM</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="{{ url_for('static', filename='./doctor/script.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const ctx = document.getElementById('chart');
+    const x = ['1', '2', '3', '4', '5', '6']
+    const y = [12, 19, 33, 15, 2, 35]
+
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: x,
+            datasets: [{
+                label: 'Blood pressure',
+                data: y,
+                borderWidth: 1,
+                borderColor: '#2d5bff',
+                backgroundColor:'#ebf0ff',
+                fill: true
+            }]
+        },
+        options: {
+            tension: 0.3,
+            borderWidth: 23,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    function openChat() {
+        Swal.fire({
+            title: 'Health AI Assistant',
+            html: `
+                <div id="chat-box" class="chat-bubble-container">
+                    <div class="bbl bbl-bot">Hi! I've analyzed your chart. Ready to discuss your vitals?</div>
+                </div>
+                <input type="text" id="chat-input" class="swal2-input" placeholder="Ask about your SpO2..." style="font-size: 1rem;">
+            `,
+            showConfirmButton: true,
+            confirmButtonText: 'Send',
+            customClass: { popup: 'modern-swal' },
+            preConfirm: () => {
+                const input = document.getElementById('chat-input');
+                const val = input.value.trim();
+                if (val) {
+                    addMsg(val, 'user');
+                    input.value = '';
+                    setTimeout(() => addMsg("Your saturation is perfectly normal at 97%.", 'bot'), 700);
+                }
+                return false;
+            }
+        });
+    }
+
+    function addMsg(text, sender) {
+        const box = document.getElementById('chat-box');
+        const div = document.createElement('div');
+        div.className = `bbl bbl-${sender}`;
+        div.innerText = text;
+        box.appendChild(div);
+        box.scrollTop = box.scrollHeight;
+    }
+
+</script>
+</html>
