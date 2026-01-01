@@ -85,3 +85,19 @@ def get_patient_record(id):
     except:
         return False
     
+# def get_trends(id):
+#     try:
+#         accounts = db.read_data()['patient']['accounts']
+#         weight = []
+#         bp = []
+        
+    
+#         for patient in accounts:
+#             if patient['id'] == str(id):
+#                 for key,val in patient['record'].items():
+                    
+                    
+                    
+#     except:
+#         return False
+    
