@@ -1,0 +1,37 @@
+/* Custom SweetAlert Chat Styles */
+.chat-bubble-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 15px;
+    background: #f8fafc;
+    border-radius: 12px;
+    height: 250px;
+    overflow-y: auto;
+}
+
+.bbl {
+    padding: 10px 14px;
+    border-radius: 15px;
+    max-width: 85%;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.bbl-bot {
+    background: white;
+    align-self: flex-start;
+    border: 1px solid #e2e8f0;
+}
+
+.bbl-user {
+    background: #2D5BFF;
+    color: white;
+    align-self: flex-end;
+}
+
+.main-content {
+    padding: 10px;
+    position: relative;
+    overflow-y: auto; 
+}
