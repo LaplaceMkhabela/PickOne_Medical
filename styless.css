@@ -592,6 +592,51 @@ html {
     transform: scale(1.05);    
 }
 
+/* ================== LOADING PAGE STYLES =================== */
+.loading-body {
+    background-color: #e3f2fd; 
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.loading-container h1 {
+    color: #1565c0;
+    margin-top: 20px;
+    font-size: 1.8rem;
+    animation: fadeUp 1s ease-out;
+}
+
+.loading-container p {
+    color: #78909c;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+/* The Spinner Animation */
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 5px solid #bbdefb; 
+    border-top: 5px solid #1976d2; 
+    border-radius: 50%;
+    margin: 0 auto; 
+    animation: spin 1s linear infinite;
+}
+
+/* Animations */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 /* Heartbeat Animation for the Ambulance */
 @keyframes pulse {
     0% { transform: scale(1); }

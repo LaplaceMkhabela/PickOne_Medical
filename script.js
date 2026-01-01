@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- 1. LOGIN FORM LOGIC ---
+    // =========================================================
+    // 1. LOGIN PAGE LOGIC (index.html)
+    // =========================================================
     const loginForm = document.getElementById('loginForm');
 
-    // Only run this if we are on the login page
     if (loginForm) {
         loginForm.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -13,21 +14,47 @@ document.addEventListener('DOMContentLoaded', () => {
             const password = document.getElementById('password').value;
 
             if (role && username && password) {
-                // Simulate Login
-                alert(`Logging you in as a: ${role.toUpperCase()}`);
-                
-                // Redirect logic
-                if (role === 'doctor') {
-                    window.location.href = "doctor_dashboard.html";
-                } else if (role === 'patient') {
-                    alert("Patient Dashboard coming soon!");
-                } else {
-                    alert("Nurse Dashboard coming soon!");
-                }
+                // SAVE DATA: We store the name and role in the browser's memory
+                localStorage.setItem('currentUser', username);
+                localStorage.setItem('currentRole', role);
+
+                // REDIRECT: Go to the loading page first!
+                window.location.href = "loading.html"; 
             } else {
                 alert("Please select a role and fill in all fields.");
             }
         });
+    }
+
+    // =========================================================
+    // 2. LOADING PAGE LOGIC (loading.html)
+    // =========================================================
+    // We check if the "welcomeText" element exists (meaning we are on the loading page)
+    const welcomeText = document.getElementById('welcomeText');
+
+    if (welcomeText) {
+        // RETRIEVE DATA: Get the name we saved earlier
+        const user = localStorage.getItem('currentUser');
+        const role = localStorage.getItem('currentRole');
+
+        // Update the text on screen
+        if (user) {
+            welcomeText.innerText = `Welcome, ${user}`;
+        }
+
+        // WAIT 3 SECONDS, THEN GO TO DASHBOARD
+        setTimeout(() => {
+            if (role === 'doctor') {
+                window.location.href = "doctor_dashboard.html";
+            } else if (role === 'patient') {
+                // We haven't built this yet, so maybe send to error for now?
+                alert("Patient Dashboard under construction!"); 
+                window.location.href = "index.html";
+            } else {
+                alert("Nurse Dashboard under construction!");
+                window.location.href = "index.html";
+            }
+        }, 3000); // 3000 milliseconds = 3 seconds
     }
 
     // --- 2. PASSWORD TOGGLE LOGIC ---
@@ -101,7 +128,7 @@ const registerForm = document.getElementById('registerForm');
 
             // Success!
             alert(`Account created successfully for ${fullname} (${role.toUpperCase()})!\nRedirecting to login...`);
-            window.location.href = "index.html"; // Send them back to login
+            window.location.href = "login.html"; // Send them back to login
         });
     }
 
@@ -126,7 +153,6 @@ const registerForm = document.getElementById('registerForm');
         }
     }
 
-    // Setup the two toggles on the registration page
     // Setup the two toggles on the registration page
     setupPasswordToggle('toggleRegPassword', 'reg-password');
     setupPasswordToggle('toggleConfirmPassword', 'confirm-password');
