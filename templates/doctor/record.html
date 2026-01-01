@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PickOne Medics Dashboard</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='./doctor/sidebar.css') }}"> 
-    <link rel="stylesheet" href="{{ url_for('static', filename='./doctor/dashboard.css') }}"> 
-    <link rel="stylesheet" href="{{ url_for('static', filename='./doctor/chart.css') }}"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='./doctor/sidebar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='./doctor/dashboard.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='./doctor/chart.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
@@ -33,24 +33,13 @@
         <div class="summary-col">
             <div style="background-color: aquamarine;min-height:70vh;">
                 <h3>Patient Summary</h3>
+                <h3>Chief Complaint: <span>{{vitals['reason']}}</span></h3>   
                 <p class="summary-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur officia unde quibusdam. Iste
-                    quaerat assumenda similique quia tenetur debitis odio dolorem aut
-                    sunt, a eligendi rerum facere odit quae modi?
-
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores atque doloremque reprehenderit
-                    voluptatum ipsam voluptates soluta et! Iure quis dolorum accusamus, autem ab suscipit inventore
-                    quaerat? Cupiditate illo eligendi reprehenderit!
-                    In cupiditate neque totam quam nulla dolor explicabo. Qui tempore voluptatum dolore ipsam itaque
-                    
-                    Id similique, ducimus ea minus officiis porro in architecto voluptates laboriosam nesciunt. Esse
-                    amet culpa saepe asperiores ratione molestias in est, accusantium nihil eveniet iusto qui harum?
-                    Rerum, perferendis voluptates?
-                    
-                    corrupti at quis!
-                    Numquam maiores natus praesentium accusamus ea ab repudiandae repellat, necessitatibus asperiores
-                    similique placeat nam, modi voluptates odit quidem quasi perferendis neque eius eaque cum iste
-                    dolor. Neque molestiae voluptatibus debitis.
+                    {% if summary != '' %}
+                        {{summary}}
+                    {% else %}
+                        'Nothing yet'
+                    {% endif %}
                 </p>
             </div>
             <div style="margin-top: auto;">
@@ -61,30 +50,33 @@
 
         <div class="stack-box">
             <div class="card profile-col">
-                <div class="avatar-circle">🍍</div>
-                <h2 style="margin: 5px 0;">Rock Lee</h2>
-                <span style="color: #707EAE; font-size: 14px;">ID: <b>PAT001</b></span>
+                <div class="avatar-circle">{{patient['img']}}</div>
+                <h2 style="margin: 5px 0;">{{patient['name']}}</h2>
+                <span style="color: #707EAE; font-size: 14px;">ID: <b>{{patient['id']}}</b></span>
                 <hr style="width: 100%; border: 0.5px solid #eee; margin: 20px 0;">
                 <div class="patient-meta">
-                    <span><strong>Gender:</strong> n/a</span>
-                    <span><strong>DOB:</strong> n/a</span>
+                    <span><strong>Gender: </strong>{{patient['gender']}}</span>
+                    <span><strong>DOB: </strong>{{patient['dob']}}</span>
+                    <span><strong>Age: </strong>{{patient['age']}}</span>
+                    <span><strong>Phone: </strong>{{patient['phone']}}</span>
+                    <span><strong>Email: </strong>{{patient['email']}}</span>
                 </div>
                 <div class="stat-grid">
                     <div class="stat-box">
                         <div class="stat-label">Weight</div>
-                        <div class="stat-value">73 kg</div>
+                        <div class="stat-value">{{vitals['weight']}} kg</div>
                     </div>
                     <div class="stat-box">
                         <div class="stat-label">Temp</div>
-                        <div class="stat-value">36.5 °C</div>
+                        <div class="stat-value">{{vitals['temp']}} °C</div>
                     </div>
                     <div class="stat-box">
                         <div class="stat-label">BP</div>
-                        <div class="stat-value">122/78</div>
+                        <div class="stat-value">{{vitals['bp']}}</div>
                     </div>
                     <div class="stat-box">
                         <div class="stat-label">SpO2</div>
-                        <div class="stat-value">99%</div>
+                        <div class="stat-value">{{vitals['spO2']}}%</div>
                     </div>
                 </div>
             </div>
@@ -93,10 +85,7 @@
                 <div class="chart">
                     <canvas id="chart" width="100%"></canvas>
                 </div>
-                <div style="margin-top: 20px;">
-                    <div class="stat-label">Current Heart Rate</div>
-                    <div class="stat-value" style="font-size: 24px; color: var(--primary-blue);">74 BPM</div>
-                </div>
+                
             </div>
         </div>
 
@@ -108,27 +97,43 @@
     const ctx = document.getElementById('chart');
     const x = ['1', '2', '3', '4', '5', '6']
     const y = [12, 19, 33, 15, 2, 35]
+    const weight_y = [60, 70, 78, 60, 50, 60]
 
     new Chart(ctx, {
         type: 'line',
         data: {
             labels: x,
-            datasets: [{
-                label: 'Blood pressure',
-                data: y,
-                borderWidth: 1,
-                borderColor: '#2d5bff',
-                backgroundColor:'#ebf0ff',
-                fill: true
-            }]
+            datasets: [
+                {
+                    label: 'Bp',
+                    data: y,
+                    borderColor: '#2d5bff',
+                    backgroundColor: '#ebf0ff',
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 4
+                },
+                {
+                    label: 'Temp °C',
+                    data: [36.9, 36.5, 36.6, 36.7, 36.8, 37.0, 36.6, 36.8, 36.9, 36.4],
+                    borderColor: '#10b981',
+                    tension: 0.4
+                },
+                {
+                    label: 'Weight',
+                    data: weight_y,
+                    borderColor: '#FF2090',
+                    backgroundColor: '#F6D1DF',
+                    tension: 0.4,
+                    pointRadius: 4
+                }
+            ]
         },
         options: {
-            tension: 0.3,
-            borderWidth: 23,
+            plugins: { legend: { position: 'bottom' } },
             scales: {
-                y: {
-                    beginAtZero: true
-                }
+                y: { grid: { display: false } },
+                x: { grid: { display: false } }
             }
         }
     });
@@ -168,4 +173,5 @@
     }
 
 </script>
+
 </html>
