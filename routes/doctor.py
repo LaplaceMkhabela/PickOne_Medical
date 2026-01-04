@@ -1,7 +1,7 @@
 from flask import Blueprint
 from flask import render_template,request,jsonify,redirect,url_for
 from utility.nurse_utility import *
-from utility.model import ai_summary
+from utility.model import ai_summary,html_parser
 
 doctor_bp = Blueprint("doctor",__name__)
 
@@ -26,9 +26,10 @@ def patient_record(id):
     patient = get_patient_record(str(id))
     date = list(patient['record'].keys())[-1]
     vitals = patient['record'][date]
-    summary = ai_summary(jsonify(patient['record']))
+    summary = ai_summary(patient['record'])
+    summary = html_parser(summary)
     #patient_analytics = get_trends()
-    
+
     return render_template('./doctor/record.html',patient=patient,vitals=vitals,summary=summary)
     
 @doctor_bp.route("/view",methods=["GET","POST"])
