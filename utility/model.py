@@ -2,9 +2,6 @@ import os
 from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate
 
-with open("playground/patient.txt","r") as file:
-    medical_history_text = file.read()
-
 def ai_summary(medical_history_text):
     model = ChatGroq(
         model= "llama-3.3-70b-versatile",
@@ -73,10 +70,3 @@ def ai_assistant(medical_history_text):
         })
 
         print(result.content)
-
-
-if __name__ == "__main__":
-    print("\n\n-------------------------------")
-    print(ai_summary(medical_history_text))
-    print("\n\n-------------------------------")
-    ai_assistant(medical_history_text)
