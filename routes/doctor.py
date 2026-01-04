@@ -1,7 +1,7 @@
 from flask import Blueprint
 from flask import render_template,request,jsonify,redirect,url_for
 from utility.nurse_utility import *
-from utility.model import ai_summary,html_parser
+from utility.model import ai_summary,html_parser,ai_assistant
 
 doctor_bp = Blueprint("doctor",__name__)
 
@@ -48,13 +48,12 @@ def view_patient():
     else:
         return jsonify({"code":"500","msg":"Failed to retrieve patient id"})
 
-@doctor_bp.route("/update/vitals",methods=["GET","POST"])
-def update_vitals():
-    patient = request.get_json()
-    result = vitals(patient)
+@doctor_bp.route("/chat/<id>",methods=["GET","POST"])
+def chat(id):
+    history = patient = get_patient_record(str(id))['record']
+    question = request.get_json()['query']
+    answer = ai_assistant(history,question)
     
-    if result:
-        return jsonify({'code':'200','msg':'Vitals updated successfully'})
-    else:
-        return jsonify({'code':'500','msg':'Vitals update unsuccessfull'})
+    return jsonify({'code':'200','msg':answer})
+    
 
