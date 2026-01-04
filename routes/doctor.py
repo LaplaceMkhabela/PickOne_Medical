@@ -50,7 +50,7 @@ def view_patient():
 
 @doctor_bp.route("/chat/<id>",methods=["GET","POST"])
 def chat(id):
-    history = patient = get_patient_record(str(id))['record']
+    history = get_patient_record(str(id))['record']
     question = request.get_json()['query']
     answer = ai_assistant(history,question)
     
