@@ -56,7 +56,7 @@ def ai_assistant(medical_history_text, question):
         "question": question
     })
 
-    print(result.content)
+    return result.content
 
 
 def html_parser(text):
