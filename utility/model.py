@@ -2,13 +2,13 @@ import os
 from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate
 
+
 def ai_summary(medical_history_text):
     model = ChatGroq(
-        model= "llama-3.3-70b-versatile",
+        model="llama-3.3-70b-versatile",
         temperature=0,
-        api_key= "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"
+        api_key="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"
     )
-
 
     template = """
     You are an expert medical assistant. You are analyzing the medical history of a patient and answer questions based on the given patient.
@@ -18,12 +18,11 @@ def ai_summary(medical_history_text):
 
     Question: {question}
     """
-    
 
     prompt = ChatPromptTemplate.from_template(template)
     chain = prompt | model
 
-    question_to_ask ="Generate a brief summary of the patient's medical history for the doctor to review for current conditions."
+    question_to_ask = "Generate a brief summary of the patient's medical history for the doctor to review for current conditions."
 
     result = chain.invoke({
         "records": medical_history_text,
@@ -33,17 +32,12 @@ def ai_summary(medical_history_text):
     return result.content
 
 
-
-
-
-
-def ai_assistant(medical_history_text):
+def ai_assistant(medical_history_text, question):
     model = ChatGroq(
-        model= "llama-3.3-70b-versatile",
+        model="llama-3.3-70b-versatile",
         temperature=0,
-        api_key= "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"
+        api_key="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"
     )
-
 
     template = """
     You are an expert medical assistant. You are analyzing the medical history of a patient and answer questions based on the given patient.
@@ -57,28 +51,20 @@ def ai_assistant(medical_history_text):
     prompt = ChatPromptTemplate.from_template(template)
     chain = prompt | model
 
-    while True:
-        print("\n\n-------------------------------")
-        question_to_ask = input("ask your question (q to quit): ")
-        print("\n\n-------------------------------")
-        if question_to_ask == "q":
-            break
+    result = chain.invoke({
+        "records": medical_history_text,
+        "question": question
+    })
 
-        result = chain.invoke({
-            "records": medical_history_text,
-            "question": question_to_ask
-        })
-
-        print(result.content)
+    print(result.content)
 
 
 def html_parser(text):
     model = ChatGroq(
-        model= "llama-3.3-70b-versatile",
+        model="llama-3.3-70b-versatile",
         temperature=0,
-        api_key= "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"
+        api_key="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"
     )
-
 
     template = """
     You are an expert markdown to html parser.
@@ -88,11 +74,9 @@ def html_parser(text):
     {text}
 
     """
-    
 
     prompt = ChatPromptTemplate.from_template(template)
     chain = prompt | model
-
 
     result = chain.invoke({
         "text": text
