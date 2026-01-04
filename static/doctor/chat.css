@@ -4,13 +4,17 @@
     flex-direction: column;
     gap: 12px;
     padding: 15px;
-    background: #f8fafc;
+    background: #3b3891;
     border-radius: 12px;
     height: 250px;
     overflow-y: auto;
 }
 
-.bbl {
+.ai {
+    background: #6b71ff;
+    align-self: flex-start;
+    border: 1px solid #6b71ff;
+    color:#e7ebfc;
     padding: 10px 14px;
     border-radius: 15px;
     max-width: 85%;
@@ -18,16 +22,16 @@
     line-height: 1.4;
 }
 
-.bbl-bot {
-    background: white;
-    align-self: flex-start;
-    border: 1px solid #e2e8f0;
-}
-
-.bbl-user {
-    background: #2D5BFF;
-    color: white;
+.doc {
+    background: #13152a;
+    color: #bfc0de;
     align-self: flex-end;
+
+    padding: 10px 14px;
+    border-radius: 15px;
+    max-width: 85%;
+    font-size: 0.9rem;
+    line-height: 1.4;
 }
 
 .main-content {
