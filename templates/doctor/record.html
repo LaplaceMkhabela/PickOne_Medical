@@ -7,7 +7,8 @@
     <title>PickOne Medics Dashboard</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='./doctor/sidebar.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='./doctor/dashboard.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='./doctor/chart.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='./doctor/chat.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='./doctor/diagnosis.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
@@ -33,15 +34,15 @@
         <div class="summary-col">
             <div style="min-height:70vh;overflow-y: auto;">
                 {% if summary != '' %}
-                    {{summary | safe}}
+                {{summary | safe}}
                 {% else %}
-                    <h3>Patient Summary</h3>
-                    'Nothing yet'
+                <h3>Patient Summary</h3>
+                'Nothing yet'
                 {% endif %}
             </div>
             <div style="margin-top: auto;">
                 <button onclick="openChat()" class="btn btn-query">Query Patient Info</button>
-                <button class="btn btn-submit">Submit Diagnosis</button>
+                <button onclick="diagnosis()" class="btn btn-submit">Submit Diagnosis</button>
             </div>
         </div>
 
@@ -137,23 +138,24 @@
 
     function openChat() {
         Swal.fire({
-            title: 'Health AI Assistant',
+            title: 'AI Assistant',
             html: `
                 <div id="chat-box" class="chat-bubble-container">
-                    <div class="bbl bbl-bot">Hi! I've analyzed your chart. Ready to discuss your vitals?</div>
+                    <div class="ai">Hi! you can ask any question about the patient</div>
                 </div>
-                <input type="text" id="chat-input" class="swal2-input" placeholder="Ask about your SpO2..." style="font-size: 1rem;">
+                <input type="text" id="chat-input" class="swal2-input" placeholder="Ask about patient..." style="font-size: 1rem;">
             `,
             showConfirmButton: true,
             confirmButtonText: 'Send',
             customClass: { popup: 'modern-swal' },
             preConfirm: () => {
                 const input = document.getElementById('chat-input');
-                const val = input.value.trim();
-                if (val) {
-                    addMsg(val, 'user');
+                const question = input.value.trim();
+                if (question) {
+                    addMsg(question, 'doc');
+                    queryData(question)
                     input.value = '';
-                    setTimeout(() => addMsg("Your saturation is perfectly normal at 97%.", 'bot'), 700);
+
                 }
                 return false;
             }
@@ -162,11 +164,94 @@
 
     function addMsg(text, sender) {
         const box = document.getElementById('chat-box');
-        const div = document.createElement('div');
-        div.className = `bbl bbl-${sender}`;
-        div.innerText = text;
-        box.appendChild(div);
+        box.innerHTML += `<div class='${sender}'>${text}</div>`
         box.scrollTop = box.scrollHeight;
+    }
+
+    async function queryData(question) {
+        let resp_promise = await fetch("/doctor/chat/{{patient['id']}}", { method: "POST", headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ 'query': question }) })
+        let resp_data = await resp_promise.json()
+
+        setTimeout(() => addMsg(resp_data['msg'], 'ai'), 700);
+
+    }
+
+    function diagnosis() {
+        Swal.fire({
+            title: 'Diagnosis',
+            html: `
+                <div class="app-container">
+                <header><h3>Patient Diagnosis Form</h3></header>
+                <section>
+                    <form action="">
+                    <label for="purpose">Reason for consultation</label></br>
+                    <textarea type="text" id="visit_purpose" name="visit_purpose"></textarea></br>
+                    
+                    <label for="referral">Referral from referring provider?</label></br>
+                    <select id="referral">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                    
+                    <fieldset>
+                        <legend>Relevant Medical History and Reports</legend>
+                    <label for="diagnosis">Primary diagnoses:</label></br>
+                    <textarea type="text" id="diagnosis" name="diagnosis"></textarea></br>
+
+                    <label for="medications">Current Medications:</label></br>
+                    <textarea type="text" id="medications" name="medications"></textarea></br>
+
+                    <label for="tests">Pertinant Labs/Imaging:</label></br>
+                    <textarea type="text" id="tests" name="tests"></textarea></br>
+
+                    <label for="interventions">Recent Interventions:</label></br>
+                    <textarea type="text" id="interventions" name="interventions"></textarea></br>
+                    </fieldset>
+                    
+                    <fieldset>
+                    <legend>Assessment and Clinical Reasoning</legend>
+                    <label for="c_summary">Clinical summary:</label></br>
+                    <textarea type="c_summary" id="c_summary" name="c_summary" ></textarea></br>
+
+                    <label for="d_dx">Differential Diagnosis:</label></br>
+                    <textarea type="d_dx" id="d_dx" name="d_dx"></textarea></br>
+                    </fieldset>
+
+                    <fieldset>
+                    <legend>Recommendations and Next Steps</legend>
+                    <label for="d_dx_rec">Diagnostic recommendations:</label></br>
+                    <textarea type="d_dx_rec" id="d_dx_rec" name="d_dx_rec" ></textarea></br>
+                    
+                    <label for="treatment_plan">Treatment Plan:</label></br>
+                    <textarea type="treatment_plan" id="treatment_plan" name="treatment_plan" ></textarea></br>
+                    </fieldset>
+                    </form>
+
+                </br>
+                </section>
+                </div>
+            `,
+            customClass: { popup: 'size' },
+            showConfirmButton: true,
+            confirmButtonText: 'Submit',
+            preConfirm: () => {
+                const form = {
+                    "visit_purpose": document.getElementById('visit_purpose'),
+                    "referral": document.getElementById('referral'),
+                    "diagnosis": document.getElementById('diagnosis'),
+                    "medications": document.getElementById('medications'),
+                    "tests": document.getElementById('tests'),
+                    "interventions": document.getElementById('interventions'),
+                    "c_summary": document.getElementById('c_summary'),
+                    "differential_diagnosis": document.getElementById('d_dx'),
+                    "recommendations": document.getElementById('d_dx_rec'),
+                    "treatment_plan": document.getElementById('treatment_plan'),
+                }
+
+                
+
+            }
+        })
     }
 
 </script>
