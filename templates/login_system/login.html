@@ -53,14 +53,14 @@ PickOne Medics | Login
 
 {% block script %}
 <script>
-    document.addEventListener('onload', async () => {
-        const id = localStorage.getItem('id')
-        if (id != '') {
-            const url = 'http://127.0.0.1:8000/users/login'
+    // document.addEventListener('onload', async () => {
+    //     const id = localStorage.getItem('id')
+    //     if (id != '') {
+    //         const url = 'http://127.0.0.1:8000/users/login'
 
-            let resp_promise = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ 'id': id }) })
-        }
-    })
+    //         let resp_promise = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ 'id': id }) })
+    //     }
+    // })
 
     //document.addEventListener('DomContentLoaded', () => { window.location.replace('/') })
     document.getElementById('login_btn').addEventListener('click', async (e) => {
@@ -71,7 +71,7 @@ PickOne Medics | Login
             'password': document.getElementById('log_password').value
         }
 
-        if (user.name | user.email | user.role | user.id | user.password) {
+        if (!user.role | !user.id | !user.password) {
             Swal.fire({
                 title: "Unsuccessful",
                 text: 'All fields are required',
