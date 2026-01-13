@@ -1,3 +1,77 @@
-{% extends './base/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to PickOne Medics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='./base/index.css' ) }}">
+</head>
 
-{% include './login_system/login.html'   %}
+<body class="welcome-body">
+
+    <nav class="navbar">
+        <div class="logo">
+            <h2>PickOne <span>Medics</span></h2>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="login-page.html" class="btn-outline">Log In</a>
+            <a href="registration-page.html" class="btn-solid">Sign Up</a>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1>Healthcare Management, <br><span>Simplified.</span></h1>
+            <p>The all-in-one platform for Doctors, Nurses, and Patients. Manage appointments, track records, and stay connected.</p>
+            
+            <div class="hero-buttons">
+                <a href="registration-page.html" class="btn-primary">Get Started</a>
+                <a href="#features" class="btn-secondary">Learn More</a>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <img src="images/Behavioral Health Professionals bowl.jpg" alt="Medical Team">
+        </div>
+    </header>
+
+    <section id="features" class="features-section">
+        <div class="section-title">
+            <h2>Why Choose PickOne?</h2>
+            <p>Tailored features for every role in the healthcare ecosystem.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="icon-box blue-icon">
+                    <i class="fa-solid fa-user-doctor"></i>
+                </div>
+                <h3>For Doctors</h3>
+                <p>Manage patient records, schedule surgeries, and track vitals in real-time.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon-box green-icon">
+                    <i class="fa-solid fa-bed-pulse"></i>
+                </div>
+                <h3>For Patients</h3>
+                <p>Book appointments, view prescriptions, and access your medical history securely.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon-box red-icon">
+                    <i class="fa-solid fa-user-nurse"></i>
+                </div>
+                <h3>For Nurses</h3>
+                <p>Efficient triage management, vitals entry, and doctor assistance tools.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 PickOne Medics. All rights reserved.</p>
+    </footer>
+
+</body>
