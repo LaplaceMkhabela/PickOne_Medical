@@ -1,105 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Page Not Found</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-    }
-
-    body {
-      height: 100vh;
-      background: linear-gradient(135deg, #0f4c75, #3282b8);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #ffffff;
-    }
-
-
-    .icon {
-      font-size: 60px;
-      margin-bottom: 10px;
-    }
-
-    h1 {
-      font-size: 72px;
-      margin-bottom: 10px;
-    }
-
-    h2 {
-      font-size: 22px;
-      margin-bottom: 15px;
-    }
-
-    p {
-      font-size: 15px;
-      margin-bottom: 30px;
-    }
-
-    .actions {
-      display: flex;
-      gap: 15px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    a {
-      padding: 12px 22px;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: 600;
-      transition: 0.3s ease;
-    }
-
-    .pulse {
-      margin-top: 25px;
-      height: 6px;
-      width: 100%;
-      background: linear-gradient(
-        to right,
-        transparent,
-        #e63946,
-        transparent
-      );
-      animation: pulse 1.8s infinite;
-    }
-
-    @keyframes pulse {
-      0% { opacity: 0.2; }
-      50% { opacity: 1; }
-      100% { opacity: 0.2; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error | PickOne Medics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styless.css">
 </head>
+<body class="error-body">
 
-<body>
-  <div>
-    <div class="icon">🚑</div>
-    <h1>404</h1>
-    <h2>Patient Record Not Found</h2>
-    <p>
-      The page or patient record you are trying to access cannot be located.
-      Please check the URL or return to the dashboard.
-    </p>
+    <div class="error-container">
+        <div class="icon-wrapper">
+            <i class="fa-solid fa-truck-medical"></i>
+        </div>
 
-    <div class="actions">
-      <a href="/dashboard">Back to Dashboard</a>
+        <h1>Emergency!</h1>
+        <p class="error-code">404 - Page Not Found</p>
+        <p class="error-message">It seems you have wandered off. Redirecting you to safety in <span id="countdown">10</span> seconds...</p>
+
+        <a href="welcome-page.html" class="btn-home">Return to Welcome Page</a>
     </div>
 
-    <div class="pulse"></div>
-  </div>
-
-  <script>
-    function back(){
-        window.location.back()
-    }
-  </script>
+    <script src="script.js"></script>
 </body>
 </html>
