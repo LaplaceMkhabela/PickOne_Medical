@@ -1,11 +1,12 @@
 {% extends './base/dashboard_base.html' %}
 
 {% block head %}
-<link rel="stylesheet" href="{{ url_for('static', filename='./help_desk/styles.css') }}">   
+    <link rel="stylesheet" href="{{ url_for('static', filename='./doctor/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='./base/sidebar.css') }}">    
 {% endblock %}
 
 {% block sidebar %}
-<div class="sidebar bg-dark">
+<div class="sidebar">
     <div class="sidebar-header">
         <h2>PickOne<br>Medics</h2>
         <i class="fa-solid fa-xmark" id="closeSidebar"></i>
@@ -13,8 +14,8 @@
 
     <ul class="nav-links">
         <li><a href="/help_desk/dashboard"><i class="fa-solid fa-house"></i> Dashboard</a></li>
-        <li class="active"><a href="/help_desk/appointments"><i class="fa-solid fa-calendar-check"></i> Appointments</a>
-        </li>
+        <li><a href="/help_desk/patients"><i class="fa-solid fa-user-injured"></i> Patients</a></li>
+        <li class="active"><a href="/help_desk/appointments"><i class="fa-solid fa-calendar-check"></i> Appointments</a></li>
         <li class="logout"><a href="/users/logout"><i class="fa-solid fa-sign-out-alt"></i> Logout</a></li>
     </ul>
 </div>
@@ -31,7 +32,7 @@
     <button class="btn btn-success" onclick="newAppointmentDialog()">New Appointment</button>
 
     <div class="user-profile">
-        <img src="https://i.ibb.co/RkbqB7tM/icons8-avatar-50.png" alt="Profile" class="avatar">
+        <img src="{{ url_for('static', filename='./doctor/icon.png') }}" alt="Profile" class="avatar">
     </div>
 </div>
 {% endblock %}
