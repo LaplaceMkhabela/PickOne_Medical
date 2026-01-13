@@ -19,7 +19,7 @@ def login():
     user = request.get_json()
     
     if user['id'] in session:
-        return redirect(url_for('welcome_page'))
+        return redirect(url_for('users.welcome_page'))
     
     else:
         result = db.login_user(user)
