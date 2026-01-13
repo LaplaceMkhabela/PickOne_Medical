@@ -1,11 +1,13 @@
 from flask import Blueprint
 from flask import render_template,request,jsonify,redirect,url_for
 import datetime
-from utility.nurse_utility import *
+from utility.utility import *
+from database.database import Database
+
 
 help_desk_bp = Blueprint("help_desk",__name__)
+db = Database()
 
-# Help Desk --------------------------------------------------------------------------------------------------------------
 @help_desk_bp.route('/dashboard',methods=["POST","GET"])
 def dashboard():
     current_user = db.current_user()
