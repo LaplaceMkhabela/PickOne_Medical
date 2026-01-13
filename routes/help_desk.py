@@ -2,6 +2,7 @@ from flask import Blueprint
 from flask import render_template,request,jsonify,redirect,url_for
 import datetime
 from utility.utility import *
+from utility.nurse_utility import *
 from database.database import Database
 
 
@@ -42,6 +43,11 @@ def dashboard():
     
     url = f'{current_user['role']}/dashboard'
     return redirect(url)
+
+@help_desk_bp.route('/patients',methods=["POST","GET"])
+def patients():
+    current_user = db.current_user()
+    return render_template('./help_desk/patients.html',user=current_user,analytics=get_analytics(),patients=get_patients())
 
 
 @help_desk_bp.route('/appointments',methods=["POST","GET"])
