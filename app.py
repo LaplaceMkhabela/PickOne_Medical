@@ -3,6 +3,7 @@ from database.database import *
 from utility.utility import *
 from routes.nurse import nurse_bp
 from routes.doctor import doctor_bp
+from routes.users import users_bp
 import datetime
 
 
@@ -14,6 +15,7 @@ def create_app():
     
     app.register_blueprint(nurse_bp,url_prefix='/nurse')
     app.register_blueprint(doctor_bp,url_prefix='/doctor')
+    app.register_blueprint(users_bp,url_prefix='/users')
     
     return app
 
