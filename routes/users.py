@@ -4,7 +4,7 @@ from utility.nurse_utility import *
 
 users_bp = Blueprint("users",__name__)
 session = []
-
+db = Database()
 
 @users_bp.route('/login/page')
 def login_page():
@@ -46,7 +46,8 @@ def register():
     
 @users_bp.route('/welcome')
 def welcome_page():
-    return render_template('./welcome/welcome.html')
+    role = db.current_user()['role']
+    return render_template('./welcome/welcome.html',role=role)
 
 @users_bp.route('/logout')
 def logout():
