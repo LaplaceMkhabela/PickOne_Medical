@@ -25,49 +25,6 @@ app = create_app()
 def index():
     return render_template("index.html")
 
-@app.route('/registration_page')
-def registration_page():
-    return render_template('./login_system/register.html')
-
-@app.route('/users/login',methods=['POSt','GET'])
-def login():
-    user = request.get_json()
-    
-    if user['id'] in session:
-        return redirect(url_for('welcome_page'))
-    
-    else:
-        result = db.login_user(user)
-    
-        if result:
-            if user['id'] not in session:
-                session.append(user['id'])
-                
-            db.create_session(user)
-                
-            return jsonify({'code':'200','link':'/users/welcome'})
-        else:
-            return jsonify({'code':'500','msg':'Invalid Login details'})
-
-@app.route('/users/register',methods=['POST','GET'])
-def register():
-    user = request.get_json()
-    result = db.register_user(user)
-    
-    if result:
-        return jsonify({'code':'200','msg':'Account created successfully'})
-    else:
-        return jsonify({'code':'500','msg':'Sorry we can\'t create your account right now'})
-    
-@app.route('/users/welcome')
-def welcome_page():
-    return render_template('./welcome/welcome.html')
-
-@app.route('/users/logout')
-def logout():
-    session.remove(db.current_user()['id'])
-    
-    return render_template('./welcome/logout.html')
 
 @app.route('/error')
 def error():
