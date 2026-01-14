@@ -174,9 +174,9 @@ body{
     color: white;
 }
 
-.status.confirmed { background-color: #43a047; }
-.status.pending { background-color: #fb8c00; }
-.status.cancelled { background-color: #e53935; }
+.status.Confirmed { background-color: #43a047; }
+.status.Pending { background-color: #fb8c00; }
+.status.Cancelled { background-color: #e53935; }
 
 .btn-view {
     background-color: #2d5bff;
