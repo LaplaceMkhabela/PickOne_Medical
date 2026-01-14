@@ -1,3 +1,13 @@
+:root {
+    --primary-blue: #2D5BFF;
+    --bg-light: #F4F7FE;
+    --sidebar-dark: #1B254B;
+    --text-main: #2B3674;
+    --card-bg: #FFFFFF;
+    --text-head: #2b3674;
+    --search-btn-hover:#115293;
+}
+
 /* =================== Clean, medical aesthetic font ============*/
 * {
     margin: 0;
@@ -6,70 +16,14 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* ================== DASHBOARD PAGE STYLES =================== */
-.dashboard-body {
-    background: linear-gradient(115deg, #cadeec 0%, #9cc1db 100%);
-}
-
-/* --- Sidebar --- */
-.sidebar {
-    width: 250px;
+body{
+    display: flex; 
     height: 100vh;
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.05);
-    z-index: 1000;
+    background: var(--bg-light);
 }
 
-.sidebar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+/* ================== DASHBOARD PAGE STYLES =================== */
 
-.sidebar-header h2 {
-    color: #1976d2;
-    margin-bottom: 30px;
-}
-
-.sidebar ul {
-    padding: 0;
-}
-
-.nav-links {
-    list-style: none;
-}
-
-.nav-links li {
-    margin-bottom: 15px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #546e7a;
-    font-size: 1.1rem;
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    border-radius: 8px;
-    transition: 0.3s;
-}
-
-.nav-links a i {
-    margin-right: 15px;
-    width: 20px;
-}
-
-.nav-links li.active a, .nav-links a:hover {
-    background-color: #e3f2fd;
-    color: #1976d2;
-}
-
-.logout {
-    margin-top: auto; 
-}
 
 /* --- Main Content --- */
 .main-content {
@@ -88,7 +42,7 @@
 }
 
 .top-bar h2 {
-    color: #145da7;
+    color: var(--text-head);
     margin-right: auto; 
 }
 
@@ -101,7 +55,6 @@
     padding: 5px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     border: 1px solid #dae1e7;
-    width: 300px; 
     margin-right: 20px;
 }
 
@@ -116,7 +69,7 @@
 }
 
 .search-bar button {
-    background-color: #4192e2;
+    background-color: var(--primary-blue);
     color: white;
     border: none;
     padding: 8px 20px;
@@ -128,7 +81,7 @@
 }
 
 .search-bar button:hover {
-    background-color: #115293;
+    background-color: var(--search-btn-hover);
 }
 
 .user-profile img {
@@ -150,10 +103,13 @@
     background: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
     display: flex;
     align-items: center;
-    border-top: 5px solid #1976d2;
+    border-top: 5px solid #2d5bff;
+    border-bottom: 1px solid #d2d2d2;
+    border-left: 1px solid #d2d2d2;
+    border-right: 1px solid #d2d2d2;
 }
 
 .card-icon {
@@ -168,6 +124,14 @@
     margin-right: 15px;
 }
 
+.card-info p{
+    color: #4a5568;
+}
+
+.card-info h3{
+    color: #2b3674;
+}
+
 .blue-bg { background-color: #1976d2; }
 .green-bg { background-color: #43a047; }
 .red-bg { background-color: #e53935; }
@@ -177,9 +141,13 @@
     background: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    border-top: 5px solid #1976d2;
-    overflow-x: auto; /* Adds scroll on small screens */
+    box-shadow:  0px 4px 12px rgba(0, 0, 0, 0.05);
+    border-top: 5px solid #2d5bff;
+    overflow-x: auto;
+    border-bottom: 1px solid #d2d2d2;
+    border-left: 1px solid #d2d2d2;
+    border-right: 1px solid #d2d2d2;
+    /* Adds scroll on small screens */
 }
 
 .styled-table {
@@ -195,8 +163,8 @@
 }
 
 .styled-table th {
-    background-color: #f8f9fa;
-    color: #1976d2;
+    background-color: #eaf0ff;
+    color: #2b3674;
 }
 
 .status {
@@ -211,13 +179,15 @@
 .status.cancelled { background-color: #e53935; }
 
 .btn-view {
-    background-color: #1976d2;
+    background-color: #2d5bff;
     color: white;
     border: none;
     padding: 5px 10px;
     border-radius: 4px;
     cursor: pointer;
+    text-decoration-line: none;
 }
+
 
 /* ================== MOBILE RESPONSIVENESS =================== */
 
