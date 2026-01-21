@@ -68,10 +68,6 @@
      font-weight: 400;
  }
 
- body {
-     background: linear-gradient(115deg, #cadeec 0%, #9cc1db 100%);
- }
-
  .analytics {
 
      background: white;
@@ -87,5 +83,5 @@
  canvas {
      box-shadow: 0 10px 30px rgba(0, 0, 0, .4);
      border-radius: 12px;
-     width: 70;
+     width: 80;
  }

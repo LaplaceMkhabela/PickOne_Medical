@@ -8,6 +8,7 @@
 
 body {
     margin: 0;
+    padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--bg-light);
     display: flex;
@@ -23,10 +24,9 @@ body {
     display: flex;
     gap: 20px;
     overflow-x: auto;
-    /* Ensures horizontal layout works on smaller screens */
 }
 
-/* Generic Card Style */
+/*Card Style */
 .card {
     background: var(--card-bg);
     border-radius: 16px;
