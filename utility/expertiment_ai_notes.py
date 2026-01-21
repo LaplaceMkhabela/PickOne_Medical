@@ -12,12 +12,18 @@ def ai_assistant(medical_history_text, question):
     )
 
     template = """
-    You are an expert medical assistant. You are analyzing the medical history of a patient and answer questions based on the given patient.
-    Instruction:
-    -Answer in 1-2 sentences only.
-    -Your answers should Be direct and factual.
-    -No explanations, examples, or emojis unless asked.
+    You are an expert medical assistant. You are analyzing the conversation of a doctor and their patient 
+    and provide notes based on the conversation which can be used for future consultations as part of the 
+    patient's medical history.
 
+    Instruction:
+    - Do not make up any information.
+    - Use only information explicitly provided in the input.
+    - Do not infer, assume, or hallucinate any medical facts.
+    - Do not add extra sections, explanations, or commentary.
+    - Maintain a clinical, concise, neutral tone.
+    - Use plain text only.
+    - Your reply must be a short informative note.
 
     Here are the patient's records:
     {records}
