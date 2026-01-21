@@ -2,8 +2,12 @@ from flask import Blueprint
 from flask import render_template,request,jsonify,redirect,url_for
 from utility.nurse_utility import *
 from utility.model import ai_summary,html_parser,ai_assistant
+from database.database import Database
+from database.chat_database import ChatDb
 
 doctor_bp = Blueprint("doctor",__name__)
+db = Database()
+chat_db = ChatDb()
 
 @doctor_bp.route("/dashboard",methods=["GET"])
 def dashboard():
@@ -54,6 +58,14 @@ def chat(id):
     question = request.get_json()['query']
     answer = ai_assistant(history,question)
     
+    
     return jsonify({'code':'200','msg':answer})
+
+@doctor_bp.route("/chat/load",methods=["GET","POST"])
+def chat_load():
+    doctor_id = db.current_user['id']
+    chats = chat_db.load_chats(doctor_id)
+    
+    return jsonify({'code':'200','msg':chats})
     
 
