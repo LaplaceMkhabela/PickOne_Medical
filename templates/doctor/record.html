@@ -198,6 +198,33 @@
 
     }
 
+    async function submitDiagnosis(form) {
+        let resp_promise = await fetch("/doctor/diagnosis/submit/{{patient['id']}}", { method: "POST", headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(form) })
+        let resp_data = await resp_promise.json()
+
+        if (resp_data['code'] == '200') {
+            Swal.fire({
+                title: 'Successful',
+                text: 'Patient File was updated',
+                icon: "success",
+                showCancelButton: false,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Ok"
+            })
+        } else if (resp_data['code'] == 'conflict'){
+            Swal.fire({
+                title: 'Unsuccessful',
+                text: resp_data['conflict'],
+                icon: "error",
+                showCancelButton: false,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Ok"
+            });
+        }
+    }
+
     function diagnosis() {
         Swal.fire({
             title: 'Diagnosis',
@@ -270,7 +297,7 @@
                     "treatment_plan": document.getElementById('treatment_plan'),
                 }
 
-
+                submitDiagnosis(form)
 
             }
         })
