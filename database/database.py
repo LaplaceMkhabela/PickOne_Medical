@@ -99,8 +99,17 @@ class Database:
         
         return self.user
     
-    
-                
+    def update_patient_file(self,id,date,new_record):
+        data = self.read_db(self.patient_records_path)
+        
+        try:
+            data['patient'][id]['record'][date].update(new_record)
+            self.write_db(self.patient_records_path,data)
+            
+        except KeyError:
+            data['patient'][id].update({'record':{date:new_record}})
+            self.write_db(self.patient_records_path,data)
+             
     def write_data(self,data):
         with open(os.path.join(os.getcwd(),'database','database_files','users.json'),'w') as file:
             try:
@@ -116,6 +125,23 @@ class Database:
                 return user_data
             except:
                 return False
+        
+    def read_db(self,path):
+        with open(path,'r') as file:
+            try:
+                db = json.loads(file.read())
+                return db
+            except:
+                raise "Failed to read db"   
+            
+    def write_db(self,path,data):
+        with open(path,'w') as file:
+            try:
+                file.write(json.dumps(data))
+                return True
+            except:
+                return False
+        
             
     
                 
