@@ -1,1 +1,1 @@
-{"current_user": {"name": "doctor", "email": "doctor", "role": "doctor", "id": "doctor", "password": "$argon2id$v=19$m=65536,t=3,p=4$GjvDoedStW1HrTxw7ScgXQ$S65TSaN/bVX2S+NbaNxx22E9Dfw/764UV4pR3eLdkv8"}}
+{"current_user": {"name": "new", "email": "new", "role": "help_desk", "id": "new", "password": "$argon2id$v=19$m=65536,t=3,p=4$SOtCt8ZASMfcGGtldj+5Xw$68LWcf2cGcE9Qx4/EZC4dZWeLKSPNPIGALFA4jUhyc8"}}
