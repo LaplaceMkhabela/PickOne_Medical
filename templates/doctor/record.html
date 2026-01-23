@@ -136,34 +136,34 @@
         }
     });
 
-    function load_chats(){
+    async function load_chats() {
         let chats = []
         let chatsEl = ``
-        const resp_promise = fetch('chats/load')
-        const resp_data = resp_promise.json()
+        const resp_promise = await fetch("/doctor/chats/load/{{patient['id']}}")
+        const resp_data = await resp_promise.json()
 
-        if(resp_data['code'] == '200'){
+        if (resp_data['code'] == '200') {
             chats = resp_data['msg']
         }
 
-        chats.forEach((index,chat) => {
-            if(index % 2 == 0){
-                chatsEl += `<div class="ai">${chat}</div>`
-            }else{
-                chatsEl += `<div class="doc">${chat}</div>`
-            }
-        });
+        if (chats != []) {
+            chats.forEach(chat => {
+                chatsEl += `<div class="doc">${chat[0]}</div>`
+                chatsEl += `<div class="ai">${chat[1]}</div>`
+            });
+        }
 
         return chatsEl
     }
 
-    function openChat() {
+    async function openChat() {
+        let data = await load_chats()
         Swal.fire({
             title: 'AI Assistant',
             html: `
                 <div id="chat-box" class="chat-bubble-container">
                     <div class="ai">Hi! you can ask any question about the patient</div>
-                    ${load_chats()}
+                    ${data}
                 </div>
                 <input type="text" id="chat-input" class="swal2-input" placeholder="Ask about patient..." style="font-size: 1rem;">
             `,
@@ -270,7 +270,7 @@
                     "treatment_plan": document.getElementById('treatment_plan'),
                 }
 
-                
+
 
             }
         })
