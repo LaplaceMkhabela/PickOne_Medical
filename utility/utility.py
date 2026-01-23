@@ -30,3 +30,5 @@ def mock_graph():
     
     return graph
     
+def current_date():
+    return date.today()
