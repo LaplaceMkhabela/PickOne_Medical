@@ -1,6 +1,7 @@
 from flask import Blueprint
 from flask import render_template,request,jsonify,redirect,url_for
 from utility.nurse_utility import *
+from utility.utility import *
 from utility.model import ai_summary,html_parser,ai_assistant,ai_conflict_checker
 from database.database import Database
 from database.chat_database import ChatDb
@@ -73,11 +74,11 @@ def chat_load(patient_id):
 @doctor_bp.route("/diagnosis/submit/<patient_id>",methods=["GET","POST"])
 def diagnosis(patient_id):
     diagnosis = request.get_json()
-    print(diagnosis)
     history = get_patient_record(str(patient_id))['record']
     response = ai_conflict_checker(history,json.dumps(diagnosis))
     
     if response == 'Approved':
+        db.update_patient_file(patient_id,current_date(),diagnosis)
         return jsonify({'code':'200','msg':'Patient file updated'})
     
     else:
