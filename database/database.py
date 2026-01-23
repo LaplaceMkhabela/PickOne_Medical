@@ -6,6 +6,15 @@ class Database:
     def __init__(self):
         self.encoder = PasswordHash.recommended()
         self.user = {}
+        self.patient_records_path = os.path.join('database','database_files','patients','patient_db.json')
+        self.initialise_files()
+        
+    def initialise_files(self):
+        os.makedirs('database/database_files',exist_ok=True)
+        
+        with open(self.patient_records_path,'xw') as file:
+            file.write(json.dumps({"patient":{}}))
+        
         
     def login_user(self,current_user):
         user_data = self.read_data()
@@ -89,7 +98,8 @@ class Database:
             raise ValueError('Failed to create session')
         
         return self.user
-            
+    
+    
                 
     def write_data(self,data):
         with open(os.path.join(os.getcwd(),'database','database_files','users.json'),'w') as file:
