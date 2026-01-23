@@ -4,6 +4,7 @@ from utility.nurse_utility import *
 from utility.model import ai_summary,html_parser,ai_assistant
 from database.database import Database
 from database.chat_database import ChatDb
+import os,json
 
 doctor_bp = Blueprint("doctor",__name__)
 db = Database()
@@ -57,15 +58,16 @@ def chat(id):
     history = get_patient_record(str(id))['record']
     question = request.get_json()['query']
     answer = ai_assistant(history,question)
-    
+    doctor_id = db.current_user()['id']
+    chat_db.save(doctor_id,id,question,answer)
     
     return jsonify({'code':'200','msg':answer})
 
-@doctor_bp.route("/chat/load",methods=["GET","POST"])
-def chat_load():
-    doctor_id = db.current_user['id']
-    chats = chat_db.load_chats(doctor_id)
-    
+@doctor_bp.route("/chats/load/<patient_id>",methods=["GET","POST"])
+def chat_load(patient_id):
+    doctor_id = db.current_user()['id']
+    chats = chat_db.load_chats(doctor_id,patient_id)
+    print('chats loaded')
     return jsonify({'code':'200','msg':chats})
     
 
