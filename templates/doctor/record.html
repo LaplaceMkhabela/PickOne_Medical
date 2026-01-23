@@ -215,7 +215,7 @@
         } else if (resp_data['code'] == 'conflict'){
             Swal.fire({
                 title: 'Unsuccessful',
-                text: resp_data['conflict'],
+                text: resp_data['msg'],
                 icon: "error",
                 showCancelButton: false,
                 confirmButtonColor: "#3085d6",
@@ -284,19 +284,18 @@
             showConfirmButton: true,
             confirmButtonText: 'Submit',
             preConfirm: () => {
-                const form = {
-                    "visit_purpose": document.getElementById('visit_purpose'),
-                    "referral": document.getElementById('referral'),
-                    "diagnosis": document.getElementById('diagnosis'),
-                    "medications": document.getElementById('medications'),
-                    "tests": document.getElementById('tests'),
-                    "interventions": document.getElementById('interventions'),
-                    "c_summary": document.getElementById('c_summary'),
-                    "differential_diagnosis": document.getElementById('d_dx'),
-                    "recommendations": document.getElementById('d_dx_rec'),
-                    "treatment_plan": document.getElementById('treatment_plan'),
+                let form = {
+                    "visit_purpose": document.getElementById('visit_purpose').value,
+                    "referral": document.getElementById('referral').value,
+                    "diagnosis": document.getElementById('diagnosis').value,
+                    "medications": document.getElementById('medications').value,
+                    "tests": document.getElementById('tests').value,
+                    "interventions": document.getElementById('interventions').value,
+                    "c_summary": document.getElementById('c_summary').value,
+                    "differential_diagnosis": document.getElementById('d_dx').value,
+                    "recommendations": document.getElementById('d_dx_rec').value,
+                    "treatment_plan": document.getElementById('treatment_plan').value,
                 }
-
                 submitDiagnosis(form)
 
             }
