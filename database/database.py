@@ -6,18 +6,31 @@ class Database:
     def __init__(self):
         self.encoder = PasswordHash.recommended()
         self.user = {}
-        self.patient_records_path = os.path.join('database','database_files','patients','patient_db.json')
+        self.patient_path = os.path.join('database','database_files','patients','patient_db.json')
+        self.help_desk_path = os.path.join('database','database_files','help_desk','help_desk_db.json')
+        self.nurse_path = os.path.join('database','database_files','nurse','nurse_db.json')
+        self.doctor_path = os.path.join('database','database_files','doctor','doctor_db.json')
         self.initialise_files()
         
     def initialise_files(self):
-        os.makedirs('database/database_files',exist_ok=True)
+        os.makedirs('database/database_files/patients',exist_ok=True)
+        os.makedirs('database/database_files/help_desk',exist_ok=True)
+        os.makedirs('database/database_files/nurse',exist_ok=True)
+        os.makedirs('database/database_files/doctor',exist_ok=True)
         
-        with open(self.patient_records_path,'xw') as file:
-            file.write(json.dumps({"patient":{}}))
+        for path in [(self.patient_path,'patient'),(self.help_desk_path,'help_desk'),(self.nurse_path,'nurse'),(self.doctor_path,'doctor')]:
+            if not os.path.exists(path[0]):
+                with open(path[0],'w') as file:
+                    file.write(json.dumps({path[1]:{
+                        "ids":[],
+                        "accounts":[],
+                        "appointments":{}
+                    }}))
         
-        
+         
     def login_user(self,current_user):
-        user_data = self.read_data()
+        path = os.path.join('database','database_files',f'{current_user['role']}',f'{current_user['role']}_db.json')
+        user_data = self.read_db(path)
         user_accounts = user_data[current_user['role']]['accounts']
             
         for user in user_accounts:
@@ -28,7 +41,8 @@ class Database:
         return False
     
     def register_user(self,current_user):
-        user_data = self.read_data()
+        path = os.path.join('database','database_files',f'{current_user['role']}',f'{current_user['role']}_db.json')
+        user_data = self.read_db(path)
         user_ids = user_data[current_user['role']]['ids']
             
         if current_user['id'] in user_ids:
@@ -37,7 +51,7 @@ class Database:
             current_user['password'] = self.encoder.hash(current_user['password'])
             user_data[current_user['role']]['accounts'].append(current_user)
             user_data[current_user['role']]['ids'].append(current_user['id'])
-            self.write_data(user_data)
+            self.write_db(path,user_data)
             return True
     
     def create_appointment(self,user,appointment):
@@ -50,7 +64,7 @@ class Database:
         appointment.update(vitals)
         
         try:
-            db = self.read_data()
+            db = self.read_db(self.help_desk_path)
             appointments = db[user['role']]['appointments']
             
             if appointment['date'] in appointments.keys():
@@ -60,7 +74,7 @@ class Database:
                 appointments.update({appointment['date']:[]})
                 appointments[appointment['date']].append(appointment)
             
-            self.write_data(db)
+            self.write_db(self.help_desk_path,db)
             
             return True
             
@@ -85,7 +99,8 @@ class Database:
         return appointments['appointments']
     
     def get_patients(self):
-        patients = self.read_data()['patient']
+        #patients = self.read_db(self.patient_records_path)['patient']
+        patients = self.read_db(self.patient_path)['patient']
         return patients['accounts']
         
     def current_user(self):
