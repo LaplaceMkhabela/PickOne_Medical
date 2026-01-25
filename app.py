@@ -5,6 +5,7 @@ from routes.nurse import nurse_bp
 from routes.doctor import doctor_bp
 from routes.users import users_bp
 from routes.help_desk import help_desk_bp
+from routes.patient import patient_bp
 import datetime
 
 
@@ -18,6 +19,7 @@ def create_app():
     app.register_blueprint(doctor_bp,url_prefix='/doctor')
     app.register_blueprint(users_bp,url_prefix='/users')
     app.register_blueprint(help_desk_bp,url_prefix='/help_desk')
+    app.register_blueprint(patient_bp,url_prefix='/patient')
     
     return app
 
