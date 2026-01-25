@@ -1,9 +1,9 @@
 {% extends './base/dashboard_base.html' %}
 
 {% block head %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='./doctor/styles.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='./base/sidebar.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='./help_desk/analytics.css') }}">     
+<link rel="stylesheet" href="{{ url_for('static', filename='./base/base.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='./base/sidebar.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='./help_desk/styles.css') }}">
 {% endblock %}
 
 {% block sidebar %}
@@ -40,64 +40,59 @@
 
 {% block cards %}
 <div class="cards-container">
-<div class="stats-card">
-    <div class="card-icon blue-bg"><i class="fa-solid fa-users"></i></div>
-    <div class="card-info">
-        <h3>{{stats['patients']}}</h3>
-        <p>Total Patients</p>
+    <div class="stats-card">
+        <div class="card-icon blue-bg"><i class="fa-solid fa-users"></i></div>
+        <div class="card-info">
+            <h3>{{stats['patients']}}</h3>
+            <p>Total Patients</p>
+        </div>
     </div>
-</div>
 
-<div class="stats-card">
-    <div class="card-icon green-bg"><i class="fa-solid fa-calendar-day"></i></div>
-    <div class="card-info">
-        <h3>{{stats['appointments']}}</h3>
-        <p>Appointments Today</p>
+    <div class="stats-card">
+        <div class="card-icon green-bg"><i class="fa-solid fa-calendar-day"></i></div>
+        <div class="card-info">
+            <h3>{{stats['appointments']}}</h3>
+            <p>Appointments Today</p>
+        </div>
     </div>
-</div>
 
-<div class="stats-card">
-    <div class="card-icon red-bg"><i class="fa-solid fa-clipboard-list"></i></div>
-    <div class="card-info">
-        <h3>{{stats['cancelled']}}</h3>
-        <p>Cancelled Appointments</p>
+    <div class="stats-card">
+        <div class="card-icon red-bg"><i class="fa-solid fa-clipboard-list"></i></div>
+        <div class="card-info">
+            <h3>{{stats['cancelled']}}</h3>
+            <p>Cancelled Appointments</p>
+        </div>
     </div>
-</div>
 </div>
 {% endblock %}
 
 {% block table %}
-
-<div class="analytics">
-    <h4 class="mb-3">Appointments Analytics</h4>
-<div class="container-fluid p-0">
-    <div class="d-flex justify-content-between">
-        <div class="d-flex justify-content-center">
-            <canvas id="appointmentChart"></canvas>
-        </div>
-        <div class="d-none d-md-block d-flex justify-content-center">
-            <div class="calendar">
-                <div class="calendar-header">
-                    <button id="prev">«</button>
-                    <span id="monthYear"></span>
-                    <button id="next">»</button>
-                </div>
-
-                <div class="weekdays">
-                    <div>Mo</div>
-                    <div>Tu</div>
-                    <div>We</div>
-                    <div>Th</div>
-                    <div>Fr</div>
-                    <div>Sa</div>
-                    <div>Su</div>
-                </div>
-
-                <div class="days" id="days"></div>
-            </div>
-        </div>
+<div class="dashboard-container">
+    <div class="card main-graph">
+        <div class="card-title">PATIENT VOLUME (WEEKLY)</div>
+        <canvas id="lineChart"></canvas>
     </div>
-</div>
+
+    <div class="card pie-chart-box">
+        <div class="card-title">DEPARTMENT SPLIT</div>
+        <canvas id="pieChart"></canvas>
+    </div>
+
+    <div class="card bar-graph-box">
+        <div class="card-title">APPOINTMENTS BY HOUR</div>
+        <canvas id="barChart"></canvas>
+    </div>
+
+    <div class="card calendar-box">
+            <div class="card-title">WEEKLY OVERVIEW</div>
+            <div id="weekly-view" class="weekly-container">
+            </div>
+    </div>
+
+    <div class="card date-box">
+        <div id="clock" style="font-size: 1.5rem; font-weight: bold;"></div>
+        <div id="full-date"></div>
+    </div>
 </div>
 {% endblock %}
 
@@ -105,6 +100,58 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='./help_desk/script.js') }}"></script>
 <script>
+    // 1. Line Area Graph
+    new Chart(document.getElementById('lineChart'), {
+        type: 'line',
+        data: {
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+            datasets: [{
+                label: 'Patients',
+                data: [30, 45, 35, 60, 55, 20],
+                fill: true,
+                backgroundColor: 'rgba(52, 152, 219, 0.2)',
+                borderColor: '#3498db',
+                tension: 0.4
+            }]
+        },
+        options: { maintainAspectRatio: false }
+    });
+
+    // 2. Pie Chart
+    new Chart(document.getElementById('pieChart'), {
+        type: 'doughnut',
+        data: {
+            labels: ['General', 'Pediatrics', 'Dental'],
+            datasets: [{
+                data: [50, 25, 25],
+                backgroundColor: ['#3498db', '#2ecc71', '#e74c3c']
+            }]
+        },
+        options: { maintainAspectRatio: false }
+    });
+
+    // 3. Bar Chart
+    new Chart(document.getElementById('barChart'), {
+        type: 'bar',
+        data: {
+            labels: ['9am', '12pm', '3pm', '6pm'],
+            datasets: [{
+                label: 'Visits',
+                data: [12, 19, 15, 8],
+                backgroundColor: '#3498db'
+            }]
+        },
+        options: { maintainAspectRatio: false }
+    });
+
+    // 4. Live Clock & Date
+    function updateTime() {
+        const now = new Date();
+        document.getElementById('clock').innerText = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        document.getElementById('full-date').innerText = now.toLocaleDateString(undefined, { weekday: 'long', month: 'short', day: 'numeric' });
+    }
+    setInterval(updateTime, 1000);
+    updateTime();
     const ctx = document.getElementById('appointmentChart');
     const x = parsePythonListString("{{ graph['x'] }}")
     const y = parsePythonListString("{{ graph['y'] }}")
@@ -129,6 +176,33 @@
             }
         }
     });
+
+    function generateWeeklyCalendar() {
+    const container = document.getElementById('weekly-view');
+    const now = new Date();
+    const startOfWeek = new Date(now);
+    // Set to Monday (or Sunday by changing to 0)
+    startOfWeek.setDate(now.getDate() - (now.getDay() === 0 ? 6 : now.getDay() - 1));
+
+    for (let i = 0; i < 7; i++) {
+        const day = new Date(startOfWeek);
+        day.setDate(startOfWeek.getDate() + i);
+
+        const isToday = day.toDateString() === now.toDateString();
+        
+        const dayRow = document.createElement('div');
+        dayRow.className = `day-row ${isToday ? 'active' : ''}`;
+        
+        dayRow.innerHTML = `
+            <span class="day-name">${day.toLocaleDateString('en-US', { weekday: 'short' })}</span>
+            <span class="day-date">${day.getDate()}</span>
+        `;
+        
+        container.appendChild(dayRow);
+    }
+}
+
+generateWeeklyCalendar();
 
 </script>
 {% endblock %}
