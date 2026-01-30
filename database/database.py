@@ -119,16 +119,16 @@ class Database:
         
         return self.user
     
-    def update_patient_file(self,id,date,new_record):
-        data = self.read_db(self.patient_records_path)
+    # def get_patient_file(self,id,date,new_record):
+    #     data = self.read_db(self.patient_records_path)
         
-        try:
-            data['patient'][id]['record'][date].update(new_record)
-            self.write_db(self.patient_records_path,data)
+    #     try:
+    #         data['patient'][id]['record'][date].update(new_record)
+    #         self.write_db(self.patient_records_path,data)
             
-        except KeyError:
-            data['patient'][id].update({'record':{date:new_record}})
-            self.write_db(self.patient_records_path,data)
+    #     except KeyError:
+    #         data['patient'][id].update({'record':{date:new_record}})
+    #         self.write_db(self.patient_records_path,data)
             
     def update_patient_details(self,info):
         data = self.read_db(self.patient_path)
@@ -153,7 +153,7 @@ class Database:
     def get_patient_file(self,id):
         data = self.read_db(self.patient_path)
         
-        return data[id]
+        return data['patient']['accounts'][id]
     
     def write_data(self,data):
         with open(os.path.join(os.getcwd(),'database','database_files','users.json'),'w') as file:
