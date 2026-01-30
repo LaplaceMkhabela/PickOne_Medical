@@ -87,11 +87,11 @@ class Database:
             return False
         
     def create_session(self,user):
-        accounts = self.read_db(self.paths[user['role']])[user['role']]['accounts']
+        account = self.read_db(self.paths[user['role']])[user['role']]['accounts'][user['id']]
         
-        for account in accounts:
-            if user['id'] == account['id']:
-                current_user = account
+        if user['id'] == account['id']:
+            current_user = account
+            
         try:
             with open(os.path.join(os.getcwd(),'database','database_files','sessions','sessions.json'),'w') as file:
                 file.write(json.dumps({"current_user": current_user}))
