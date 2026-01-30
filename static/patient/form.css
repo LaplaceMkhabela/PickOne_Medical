@@ -1,0 +1,124 @@
+:root {
+    --primary-purple: #6366f1;
+    --text-main: #1e293b;
+    --border-color: #e2e8f0;
+    --input-bg: #f8fafc;
+}
+
+.form-overlay {
+    background-color: #f1f5f900;
+    display: flex;
+    justify-content: center;
+    padding: 0px;
+    min-height: fit-content;
+    font-family: 'Inter', system-ui, sans-serif;
+    overflow: hidden;
+}
+
+body.swal2-height-auto{height: 200px !important;}
+
+.form-card {
+    background: white;
+    width: 100%;
+    max-width: 600px;
+    padding: 32px;
+    border-radius: 16px;
+}
+
+.form-header {
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 16px;
+}
+
+.form-header h2 {
+    margin: 0;
+    color: var(--text-main);
+    font-size: 1.5rem;
+}
+
+.form-header p {
+    color: #64748b;
+    margin: 8px 0 0;
+    font-size: 0.9rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.full-width {
+    grid-column: span 2;
+}
+
+label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #475569;
+}
+
+input,
+select,
+textarea {
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--input-bg);
+    font-size: 0.95rem;
+    color: var(--text-main);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary-purple);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.form-footer {
+    margin-top: 32px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.2s;
+}
+
+.btn-cancel {
+    background: #f1f5f9;
+    color: #475569;
+}
+
+.btn-submit {
+    background: var(--primary-purple);
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+@media (max-width: 480px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: span 1;
+    }
+}
