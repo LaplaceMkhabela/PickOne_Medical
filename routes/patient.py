@@ -1,13 +1,17 @@
 from flask import Blueprint
 from flask import render_template,request,jsonify
 from database.database import Database
+from utility.utility import recent_vitals,recent_visits
 
 patient_bp = Blueprint("patient",__name__)
 db = Database()
 
 @patient_bp.route("/dashboard",methods=["GET"])
 def dashboard():
-    return render_template('./patient/dashboard.html',user=db.current_user())
+    id = db.current_user()['id']
+    vitals = recent_vitals(id)
+    visits = recent_visits(id)
+    return render_template('./patient/dashboard.html',user=db.current_user(),vitals=vitals,visits=visits)
 
 @patient_bp.route("/update/profile",methods=["GET","POST"])
 def update_profile():
