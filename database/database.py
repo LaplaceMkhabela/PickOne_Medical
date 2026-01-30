@@ -149,7 +149,11 @@ class Database:
         
         except:
             return False
+
+    def get_patient_file(self,id):
+        data = self.read_db(self.patient_path)
         
+        return data[id]
     
     def write_data(self,data):
         with open(os.path.join(os.getcwd(),'database','database_files','users.json'),'w') as file:
