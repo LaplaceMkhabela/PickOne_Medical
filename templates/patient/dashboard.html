@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PickOne - Patient Portal</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='./patient/styles.css') }}">
+       <link rel="stylesheet" href="{{ url_for('static', filename='./patient/form.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <div class="sidebar-logo">PickOne Medics</div>
+        <div class="nav-item active"><i class="fa-solid fa-house"></i> My Dashboard</div>
+        <div class="nav-item"><i class="fa-solid fa-house"></i> Medical Records</div>
+        <div class="nav-item"><i class="fa-solid fa-house"></i> My Appointments</div>
+        <div class="nav-item"><i class="fa-solid fa-house"></i> Prescriptions</div>
+        <div class="nav-item" style="margin-top: auto; color: #ef4444;"><i class="fa-solid fa-sign-out"></i> Sign Out</div>
+    </div>
+
+    <div class="content-wrapper">
+        <header class="top-nav">
+            <span style="font-weight: 600; color: #ff3737;">Monday, Jan 25, 2026</span>
+            <button class="btn-portal">Book Appointment</button>
+        </header>
+
+        <main class="main-content">
+            <div class="welcome-header">
+                <h1 style="margin: 0;">Welcome back, {{user['name']}}</h1>
+                <p style="color: #64748b;">Your next appointment is on </p>
+            </div>
+
+            <div class="patient-grid">
+                <div class="left-col" style="display: flex; flex-direction: column; gap: 25px;">
+
+                    <div class="card" style="display: flex; justify-content: space-between;">
+                        <div><small style="color: #94a3b8;">Weight</small>
+                            <div style="font-size: 1.5rem; font-weight: 700;">{{vitals['weight']}} kg</div>
+                        </div>
+                        <div><small style="color: #94a3b8;">Blood Pressure</small>
+                            <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent-teal);">{{vitals['bp']}}</div>
+                        </div>
+                        <div><small style="color: #94a3b8;">Heart Rate</small>
+                            <div style="font-size: 1.5rem; font-weight: 700;">{{vitals['bpm']}} bpm</div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 style="margin-top: 0;">Recent Medical Records</h3>
+                        <table class="records-table">
+                            <thead>
+                                <tr>
+                                    <th>DATE</th>
+                                    <th>RECORD TYPE</th>
+                                    <th>PROVIDER</th>
+                                    <th>STATUS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for record in visits %}
+                                    <tr>
+                                        <td>{{record['date']}}</td>
+                                        <td>{{record['type']}}</td>
+                                        <td>{{record['provider']}}</td>
+                                        <td><span class="status-pill">{{record['status']}}</span></td>
+                                    </tr>
+                                {% else %}
+                                    <tr>Nothing yet</tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="right-col">
+                    <div class="card">
+                        <h3 style="margin-top: 0;">Personal Details</h3>
+                        <div style="text-align: center; margin-bottom: 20px;">
+                            <div
+                                style="width: 80px; height: 80px; background: #eef2ff; border-radius: 50%; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                                👤</div>
+                            <strong>{{user['name']}}</strong>
+                        </div>
+                        <div class="details-list">
+                            <div class="detail-item"><label>DOB</label>
+                                {% if user['dob'] %}
+                                    {{user['dob']}}
+                                {% else %}
+                                    N/A
+                                {% endif %}
+                            </div>
+                            <div class="detail-item"><label>Gender</label>
+                                {% if user['gender'] %}
+                                    {{user['gender']}}
+                                {% else %}
+                                    N/A
+                                {% endif %}
+                            </div>
+                            <div class="detail-item" style="grid-column: span 2;"><label>Email</label>
+                                {% if user['email'] %}
+                                    {{user['email']}}
+                                {% else %}
+                                    N/A
+                                {% endif %}
+                            </div>
+                            <div class="detail-item" style="grid-column: span 2;"><label>Contact</label>
+                                {% if user['phone'] %}
+                                    {{user['phone']}}
+                                {% else %}
+                                    N/A
+                                {% endif %}
+                            </div>
+                            <div class="detail-item" style="grid-column: span 2;"><label>Address</label>
+                                {% if user['address'] %}
+                                    {{user['address']}}
+                                {% else %}
+                                    N/A
+                                {% endif %}
+                            </div>
+                        </div>
+                        <button
+                            style="width: 100%; margin-top: 20px; background: none; border: 1px solid var(--border-light); padding: 10px; border-radius: 8px; cursor: pointer;" onclick="update_profile({{user}})">Edit
+                            Profile</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='./patient/script.js') }}"></script>
+
+</body>
+
+</html>
