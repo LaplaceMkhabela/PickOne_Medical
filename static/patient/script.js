@@ -1,4 +1,4 @@
-function buildForm(user){
+function buildForm(user) {
     let form = `
 
 <div class="form-overlay">
@@ -53,7 +53,27 @@ function buildForm(user){
     return form
 }
 
-function update_profile(user){
+async function update(form) {
+    let resp_promise = await fetch('patient/update/profile', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(form) })
+    let resp_data = resp_promise.json()
+
+    if (resp_data['code'] == '200') {
+        Swal.fire({
+            title: "Success",
+            text: resp_data['msg'],
+            icon: "success"
+        });
+    }
+    else {
+        Swal.fire({
+            title: "Unsuccessful",
+            text: resp_data['msg'],
+            icon: "error"
+        });
+    }
+}
+
+function update_profile(user) {
     let updateForm = buildForm(user)
     Swal.fire({
         title: 'Personal Information',
@@ -73,7 +93,7 @@ function update_profile(user){
                 return false;
             }
 
-            return { isConfirmed: true, "name": name, "dob": dob, "gender": gender, "email": email,"phone": phone,"address": address }
+            return { isConfirmed: true, "name": name, "dob": dob, "gender": gender, "email": email, "phone": phone, "address": address }
         }
     }).then((result) => {
         if (result.isConfirmed) {
