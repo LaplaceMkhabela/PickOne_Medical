@@ -1,4 +1,7 @@
 from datetime import date,timedelta
+from database.database import Database
+
+db = Database()
 
 def get_week(weekday):
     week = []
@@ -32,3 +35,10 @@ def mock_graph():
     
 def current_date():
     return date.today()
+
+# Patient ================================================================
+
+def recent_vitals(id):
+    patient_file = db.get_patient_file(id)
+    
+    return patient_file['recent_vitals']
