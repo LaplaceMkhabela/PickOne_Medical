@@ -130,13 +130,19 @@ class Database:
             data['patient'][id].update({'record':{date:new_record}})
             self.write_db(self.patient_records_path,data)
             
-    def update_patient_details(self,info){
+    def update_patient_details(self,info):
         data = self.read_db(self.patient_records_path)
         
-        for account in data['patient']['accounts']:
-            if account['i
+        data['patient']['accounts'][info['id']].update({
+            "name":info['name'],
+            "email": info['email'],
+            "dob": info['dob'],
+            "gender": info['gender'],
+            "phone": info['phone'],
+            "address": info['address'],  
+        })
         
-    }
+    
              
     def write_data(self,data):
         with open(os.path.join(os.getcwd(),'database','database_files','users.json'),'w') as file:
