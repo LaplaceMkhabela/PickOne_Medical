@@ -81,6 +81,7 @@ function update_profile(user) {
         showCancelButton: true,
         confirmButtonText: 'Update',
         preConfirm: () => {
+            const id = user['id'];
             const name = document.getElementById('name').value;
             const dob = document.getElementById('dob').value;
             const gender = document.getElementById('gender').value;
@@ -93,7 +94,7 @@ function update_profile(user) {
                 return false;
             }
 
-            return { isConfirmed: true, "name": name, "dob": dob, "gender": gender, "email": email, "phone": phone, "address": address }
+            return { isConfirmed: true, "name": name, "dob": dob, "gender": gender, "email": email, "phone": phone, "address": address,"id":id }
         }
     }).then((result) => {
         if (result.isConfirmed) {
