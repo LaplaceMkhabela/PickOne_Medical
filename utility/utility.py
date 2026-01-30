@@ -43,7 +43,7 @@ def recent_vitals(id):
     
     return patient_file['recent_vitals']
 
-def recent_vitals(id):
+def recent_visits(id):
     patient_file = db.get_patient_file(id)
     
     return patient_file['recent_visits'][:4]
