@@ -131,7 +131,7 @@ class Database:
             self.write_db(self.patient_records_path,data)
             
     def update_patient_details(self,info):
-        data = self.read_db(self.patient_records_path)
+        data = self.read_db(self.patient_path)
         
         data['patient']['accounts'][info['id']].update({
             "name":info['name'],
@@ -142,8 +142,9 @@ class Database:
             "address": info['address'],  
         })
         
+        self.write_db(self.patient_path)
+        
     
-             
     def write_data(self,data):
         with open(os.path.join(os.getcwd(),'database','database_files','users.json'),'w') as file:
             try:
