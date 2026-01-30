@@ -133,16 +133,22 @@ class Database:
     def update_patient_details(self,info):
         data = self.read_db(self.patient_path)
         
-        data['patient']['accounts'][info['id']].update({
+        try:
+            data['patient']['accounts'][info['id']].update({
             "name":info['name'],
             "email": info['email'],
             "dob": info['dob'],
             "gender": info['gender'],
             "phone": info['phone'],
             "address": info['address'],  
-        })
+            })
         
-        self.write_db(self.patient_path)
+            self.write_db(self.patient_path)
+            
+            return True
+        
+        except:
+            return False
         
     
     def write_data(self,data):
