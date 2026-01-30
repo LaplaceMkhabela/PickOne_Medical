@@ -97,7 +97,7 @@ function update_profile(user) {
         }
     }).then((result) => {
         if (result.isConfirmed) {
-            console.log(result)
+            update(result.value)
         }
     });
 }
