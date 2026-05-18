@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ClinIQ - Clinical Workspace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#eff1f3",
+                        "background": "#f7f9fb",
+                        "inverse-surface": "#2d3133",
+                        "tertiary-container": "#002f6c",
+                        "primary-fixed": "#d4e4f8",
+                        "error": "#ba1a1a",
+                        "on-surface": "#191c1e",
+                        "on-background": "#191c1e",
+                        "surface-bright": "#f7f9fb",
+                        "surface-variant": "#e0e3e5",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#00201d",
+                        "primary-container": "#243342",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#89f5e7",
+                        "on-primary-fixed-variant": "#394858",
+                        "surface": "#f7f9fb",
+                        "on-secondary-fixed-variant": "#005049",
+                        "on-tertiary-fixed-variant": "#004395",
+                        "tertiary-fixed": "#d8e2ff",
+                        "outline-variant": "#c4c6cc",
+                        "on-primary-fixed": "#0d1d2b",
+                        "on-tertiary-container": "#6098ff",
+                        "surface-tint": "#516070",
+                        "tertiary": "#001b44",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#b8c8db",
+                        "on-primary-container": "#8c9bad",
+                        "surface-container-low": "#f2f4f6",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#6bd8cb",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-surface-variant": "#44474c",
+                        "on-secondary-container": "#006f66",
+                        "secondary": "#006a61",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-container": "#eceef0",
+                        "outline": "#74777c",
+                        "surface-dim": "#d8dadc",
+                        "primary": "#0e1e2c",
+                        "primary-fixed-dim": "#b8c8db",
+                        "secondary-container": "#86f2e4",
+                        "on-tertiary-fixed": "#001a42",
+                        "surface-container-highest": "#e0e3e5",
+                        "tertiary-fixed-dim": "#adc6ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "margin": "24px",
+                        "sm": "8px",
+                        "gutter": "16px",
+                        "base": "8px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "data-mono": ["jetbrainsMono"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "data-mono": ["14px", {"lineHeight": "20px", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f7f9fb;
+            font-family: 'Inter', sans-serif;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- SideNavBar Shell -->
+<nav class="fixed left-0 top-0 h-full w-[240px] flex flex-col border-r border-outline-variant bg-surface-container-low dark:bg-primary-container z-40 shadow-sm">
+<div class="px-lg py-xl">
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">ClinIQ</h1>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-70">Medical Intelligence</p>
+</div>
+<div class="flex-1 px-md space-y-xs">
+<a class="flex items-center gap-md px-md py-sm bg-secondary-container text-on-secondary-container rounded-lg font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">group</span>
+<span>Patients</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span>Schedule</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">monitoring</span>
+<span>Analytics</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">mail</span>
+<span>Messages</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+</div>
+<div class="p-md">
+<button class="w-full py-md px-lg bg-primary text-on-primary rounded-xl font-headline-sm text-headline-sm flex items-center justify-center gap-sm hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">add</span>
+                New Consultation
+            </button>
+</div>
+</nav>
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 right-0 left-[240px] h-16 flex items-center justify-between px-lg border-b border-outline-variant bg-surface dark:bg-inverse-surface z-30 shadow-sm">
+<div class="flex items-center gap-md">
+<h2 class="font-headline-sm text-headline-sm font-semibold text-on-surface dark:text-inverse-on-surface">
+                Patient Context: John Doe (ID: 88291) • 45y • Male
+            </h2>
+</div>
+<div class="flex items-center gap-md">
+<div class="flex items-center gap-lg border-r border-outline-variant pr-lg mr-md">
+<a class="text-primary font-bold border-b-2 border-primary py-sm font-body-md text-body-md" href="#">Add Diagnosis</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">View Trends</a>
+</div>
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant p-sm rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="flex items-center gap-sm pl-sm border-l border-outline-variant">
+<img alt="Clinician Profile" class="w-10 h-10 rounded-full border-2 border-primary-container object-cover" data-alt="A professional headshot of a female doctor in her late 30s wearing a clean white clinical coat and a blue stethoscope. She has a confident, approachable smile and is positioned against a soft-focus clinical background with blue and white tones. The lighting is bright and systematic, conveying high-end professional healthcare quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ_gzpufqTABtNaPZ7O4WoZi4Kimuw68mCjI8C7-DV9Hu9QoXmJA0RGafUlm88CFykirFo_LdNew0L2L2Vuh5Flp1xZZoTd1QuVSS5EN502C7_uIMtrfesZY8moIWqVPAQIrqh7eI_wCY0foata_mBNMRFQ8wahTw-dom-WEHrcrPMypQnwBxeCeIU0tDy6vVR-D6bBl41G29VPLs0nI1Eu8_yK-qtxjdpS6NaEDHzqSkyQXXR4vVPpZXs05ij3COZCN3wagmnVZYd"/>
+<div class="hidden lg:block text-left">
+<p class="font-label-md text-label-md text-on-surface font-bold">Dr. Sarah Jenkins</p>
+<p class="font-label-md text-label-md text-on-surface-variant">Senior Cardiologist</p>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-[240px] pt-24 p-lg min-h-screen">
+<div class="grid grid-cols-12 gap-lg h-[calc(100vh-128px)]">
+<!-- Left & Center Workspace -->
+<div class="col-span-12 lg:col-span-8 flex flex-col gap-lg overflow-y-auto custom-scrollbar pr-md">
+<!-- Patient Info Card (Bento Style) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg shadow-sm">
+<div class="flex flex-wrap items-start justify-between gap-md mb-lg">
+<div class="flex gap-lg items-center">
+<div class="w-16 h-16 bg-primary-container rounded-xl flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined text-[32px]">person</span>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md text-primary">Marcus Chen <span class="text-on-surface-variant text-body-lg font-normal ml-xs">(PAT-0891)</span></h1>
+<div class="flex items-center gap-md mt-xs">
+<span class="font-body-md text-body-md text-on-surface-variant">Age: 50y</span>
+<span class="w-1 h-1 bg-outline rounded-full"></span>
+<span class="font-body-md text-body-md text-on-surface-variant">Gender: Male</span>
+<span class="w-1 h-1 bg-outline rounded-full"></span>
+<span class="font-body-md text-body-md text-error flex items-center gap-xs font-bold">
+<span class="material-symbols-outlined text-[16px]">bloodtype</span> Blood O-
+                                    </span>
+</div>
+</div>
+</div>
+<div class="flex gap-sm">
+<button class="px-md py-sm border border-secondary text-secondary rounded-lg font-label-md text-label-md hover:bg-secondary-container transition-colors flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">edit</span> Edit Profile
+                            </button>
+<button class="px-md py-sm bg-primary text-on-primary rounded-lg font-label-md text-label-md hover:opacity-90 transition-opacity flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">emergency</span> Emergency Alert
+                            </button>
+</div>
+</div>
+<div class="grid grid-cols-4 gap-md">
+<div class="p-md bg-surface-container rounded-lg border border-outline-variant">
+<p class="font-label-md text-label-md text-on-surface-variant mb-xs">Height</p>
+<p class="font-headline-sm text-headline-sm text-on-surface">178 cm</p>
+</div>
+<div class="p-md bg-surface-container rounded-lg border border-outline-variant">
+<p class="font-label-md text-label-md text-on-surface-variant mb-xs">Weight</p>
+<p class="font-headline-sm text-headline-sm text-on-surface">82 kg</p>
+</div>
+<div class="p-md bg-surface-container rounded-lg border border-outline-variant">
+<p class="font-label-md text-label-md text-on-surface-variant mb-xs">BMI</p>
+<p class="font-headline-sm text-headline-sm text-on-surface">25.9 <span class="text-label-md text-secondary ml-xs">Healthy</span></p>
+</div>
+<div class="p-md bg-surface-container rounded-lg border border-outline-variant">
+<p class="font-label-md text-label-md text-on-surface-variant mb-xs">Heart Rate</p>
+<p class="font-headline-sm text-headline-sm text-error">88 bpm</p>
+</div>
+</div>
+</div>
+<!-- AI Clinical Insight Section -->
+<div class="bg-blue-50/50 border border-on-tertiary-container/20 rounded-xl p-lg shadow-sm relative overflow-hidden">
+<div class="absolute top-0 right-0 p-lg opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">neurology</span>
+</div>
+<div class="flex items-center gap-sm mb-lg">
+<div class="w-8 h-8 bg-on-tertiary-container rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-tertiary-container">Groq AI Clinical Insight</h3>
+</div>
+<div class="grid md:grid-cols-2 gap-lg relative z-10">
+<div class="space-y-md">
+<h4 class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant font-bold">Clinical Overview</h4>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+                                Marcus Chen, a 50-year-old male with blood type O-, presented with symptoms of acute bronchitis, which resolved after treatment with amoxicillin and albuterol inhaler. His blood pressure and heart rate initially increased during the acute phase but returned to normal after resolution of the infection.
+                            </p>
+</div>
+<div class="space-y-md">
+<h4 class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant font-bold">Automated Insights</h4>
+<ul class="space-y-sm">
+<li class="flex gap-sm font-body-md text-body-md text-on-surface">
+<span class="material-symbols-outlined text-error text-[20px]">warning</span>
+<span><strong class="text-primary">Risk of Hypertension:</strong> Elevated blood pressure readings (122/82 and 120/80) may indicate risk, warranting further monitoring.</span>
+</li>
+<li class="flex gap-sm font-body-md text-body-md text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[20px]">trending_up</span>
+<span><strong class="text-primary">Tachycardia:</strong> Increased heart rate (85 and 88) during the acute phase suggests a possible stress response.</span>
+</li>
+<li class="flex gap-sm font-body-md text-body-md text-on-surface">
+<span class="material-symbols-outlined text-on-tertiary-container text-[20px]">thermostat</span>
+<span><strong class="text-primary">Fever Response:</strong> Temperature spikes of 38.0 and 38.2 resolved completely post-antibiotics.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Historical Records -->
+<div class="flex flex-col gap-md">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-primary">Historical Records</h3>
+<button class="text-on-secondary-container font-label-md text-label-md flex items-center gap-xs">
+                            See all <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</button>
+</div>
+<div class="space-y-md">
+<!-- Record 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<p class="font-label-md text-label-md text-on-tertiary-container mb-xs">May 13, 2026</p>
+<h5 class="font-body-lg text-body-lg font-bold text-on-surface">Dr. Sarah Jenkins</h5>
+</div>
+<span class="px-sm py-xs bg-secondary-container/30 text-on-secondary-container rounded-full text-[10px] font-bold uppercase tracking-wider">RESOLVED</span>
+</div>
+<div class="grid grid-cols-3 gap-md border-t border-outline-variant pt-md mt-sm">
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">Vitals</p>
+<p class="font-data-mono text-data-mono mt-xs">BP: 118/78, HR: 70, Temp: 36.6</p>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">Diagnosis</p>
+<p class="font-body-md text-body-md mt-xs font-semibold">Resolved Bronchitis</p>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">Rx</p>
+<p class="font-body-md text-body-md mt-xs text-error">Discontinue Amoxicillin</p>
+</div>
+</div>
+</div>
+<!-- Record 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<p class="font-label-md text-label-md text-on-tertiary-container mb-xs">May 01, 2026</p>
+<h5 class="font-body-lg text-body-lg font-bold text-on-surface">Dr. Sarah Jenkins</h5>
+</div>
+<span class="px-sm py-xs bg-error-container/30 text-on-error-container rounded-full text-[10px] font-bold uppercase tracking-wider">ACUTE</span>
+</div>
+<div class="grid grid-cols-3 gap-md border-t border-outline-variant pt-md mt-sm">
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">Vitals</p>
+<p class="font-data-mono text-data-mono mt-xs">BP: 122/82, HR: 85, Temp: 38.0</p>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">Diagnosis</p>
+<p class="font-body-md text-body-md mt-xs font-semibold">Acute Bronchitis</p>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">Rx</p>
+<p class="font-body-md text-body-md mt-xs">Amoxicillin 500mg, Albuterol PRN</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Assistant Panel -->
+<div class="col-span-12 lg:col-span-4 h-full bg-surface-container border border-outline-variant rounded-xl flex flex-col overflow-hidden shadow-sm">
+<!-- Chat Header -->
+<div class="p-md bg-on-tertiary-container text-white flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">smart_toy</span>
+</div>
+<div>
+<p class="font-label-md text-label-md">Assistant for</p>
+<p class="font-body-md text-body-md font-bold">Dr. Sarah Jenkins</p>
+</div>
+</div>
+<button class="text-white/70 hover:text-white">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<!-- Chat Body -->
+<div class="flex-1 p-md flex flex-col gap-md overflow-y-auto custom-scrollbar">
+<!-- Bot Message -->
+<div class="flex gap-sm">
+<div class="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-blue-600 text-[18px]">clinical_notes</span>
+</div>
+<div class="bg-white border border-outline-variant p-md rounded-tr-xl rounded-b-xl max-w-[85%] shadow-sm">
+<p class="font-body-md text-body-md text-on-surface leading-snug">
+                                Hello Dr. Jenkins. I am analyzing PAT-0891's file. How can I assist you with this diagnosis today?
+                            </p>
+</div>
+</div>
+<!-- User Message -->
+<div class="flex gap-sm justify-end">
+<div class="bg-primary text-on-primary p-md rounded-tl-xl rounded-b-xl max-w-[85%] shadow-sm">
+<p class="font-body-md text-body-md leading-snug">
+                                Can you summarize the blood pressure trends for Marcus over the last 3 visits?
+                            </p>
+</div>
+</div>
+<!-- Bot Message Response -->
+<div class="flex gap-sm">
+<div class="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-blue-600 text-[18px]">clinical_notes</span>
+</div>
+<div class="bg-white border-l-4 border-l-secondary border border-outline-variant p-md rounded-tr-xl rounded-b-xl max-w-[85%] shadow-sm">
+<p class="font-label-md text-label-md uppercase font-bold text-secondary mb-xs">Clinical Response</p>
+<p class="font-body-md text-body-md text-on-surface leading-snug">
+                                Marcus's systolic BP shows a slight upward trajectory during acute infection (122/82) but stabilized back to 118/78 in the latest visit. Baseline BP remains within acceptable range for his age group.
+                            </p>
+<div class="mt-md pt-sm border-t border-outline-variant/30">
+<p class="font-label-md text-label-md text-on-surface-variant italic">Source: 3 clinical encounters (2025-2026)</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Chat Input -->
+<div class="p-md bg-white border-t border-outline-variant">
+<div class="relative">
+<textarea class="w-full bg-surface-container border border-outline rounded-xl p-md pr-12 text-body-md font-body-md focus:ring-1 focus:ring-primary focus:border-primary resize-none h-24" placeholder="Ask about the patient's record..."></textarea>
+<button class="absolute bottom-3 right-3 w-8 h-8 bg-primary text-on-primary rounded-lg flex items-center justify-center hover:opacity-90">
+<span class="material-symbols-outlined text-[18px]">arrow_upward</span>
+</button>
+</div>
+<p class="text-[10px] text-on-surface-variant text-center mt-sm">AI can make mistakes. Always verify clinical decisions.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Contextual FAB (Only on specific screens, but we add it here for consistency if needed) -->
+<!-- Hidden for this Dashboard as per UX Goal rules if it doesn't align -->
+</body></html>

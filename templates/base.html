@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-gray-50">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}PickOne Medical{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="h-full flex flex-col">
+
+    {% if current_user.is_authenticated %}
+    <nav class="bg-white border-b border-gray-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-blue-600 tracking-tight">PickOne<span class="text-gray-800">Med</span></span>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <div class="text-right hidden sm:block">
+                        <p class="text-sm font-semibold text-gray-900">{{ current_user.user_name }}</p>
+                        <p class="text-xs font-medium text-blue-600 uppercase tracking-wider">{{ current_user.user_role }}</p>
+                    </div>
+                    
+                    <div class="relative">
+                        <img class="h-10 w-10 rounded-full border-2 border-white shadow-sm object-cover" 
+                             src="https://ui-avatars.com/api/?name={{ current_user.user_name }}&background=EBF5FF&color=1E3A8A&bold=true" 
+                             alt="User Avatar">
+                        <span class="absolute bottom-0 right-0 block h-3 w-3 rounded-full bg-green-500 ring-2 ring-white"></span>
+                    </div>
+
+                    <a href="{{ url_for('logout') }}" class="ml-4 text-sm font-medium text-gray-500 hover:text-red-600 transition-colors">
+                        Logout
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    {% endif %}
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-4">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="p-4 mb-4 text-sm rounded-lg {% if category == 'error' %}bg-red-50 text-red-800 border border-red-200{% else %}bg-green-50 text-green-800 border border-green-200{% endif %}" role="alert">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+        {% block content %}
+        {% endblock %}
+    </main>
+    {% block scripts %}
+    {% endblock %}
+</body>
+</html>
