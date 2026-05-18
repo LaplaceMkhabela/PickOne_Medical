@@ -9,7 +9,7 @@ from groq import Groq
 
 app = Flask(__name__)
 # Security key for session management (change this in production)
-app.config['SECRET_KEY'] = 'pickone-super-secret-key-2026' 
+app.config['SECRET_KEY'] = os.environ.get('SECRET')
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///pickone.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
