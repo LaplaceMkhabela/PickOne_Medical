@@ -1,0 +1,3 @@
+# Static mocked demo of the revision branch, published from /demo.
+[build]
+  publish = "demo"

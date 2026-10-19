@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-gray-50">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard - PickOne Medical</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="h-full flex flex-col">
+
+    <div id="navbar"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-4" id="flashZone"></div>
+
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+
+        <div class="mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div>
+                <h1 class="text-2xl font-bold text-gray-900">Clinical Workspace &amp; AI Co-Pilot</h1>
+                <p class="text-sm text-gray-500 mt-1">Review AI-summarized patient records and query clinical data.</p>
+            </div>
+
+            <div class="flex items-center gap-3 w-full md:w-auto">
+                <button id="toggleViewBtn"
+                    class="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-50 hover:text-blue-600 shadow-sm transition-colors flex items-center gap-2 h-[42px]">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path>
+                    </svg>
+                    <span id="toggleBtnText">View Trend Graphs</span>
+                </button>
+
+                <button id="openAppointmentsBtn"
+                    class="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200 shadow-sm transition-colors flex items-center gap-2 h-[42px]">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                    </svg>
+                    Manage Appointments
+                </button>
+
+                <form action="/doctor/dashboard" method="GET" class="relative">
+                    <input type="text" name="search_id" id="searchInput" placeholder="Search Patient ID..."
+                        class="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none w-64 h-[42px]">
+                    <button type="submit" class="absolute left-3 top-2.5 text-gray-400 hover:text-blue-500">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div id="summaryView" class="hidden grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+            <div class="lg:col-span-2 flex flex-col gap-6">
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex justify-between items-center">
+                    <div>
+                        <h2 id="patientHeading" class="font-bold text-gray-900"></h2>
+                        <p id="patientMeta" class="text-sm text-gray-600"></p>
+                    </div>
+                    <div>
+                        <button id="openEditProfileBtn"
+                            class="text-sm text-blue-600 bg-blue-50 hover:bg-blue-100 px-4 py-2 rounded-lg font-medium transition-colors border shadow-sm border-blue-200">
+                            ✏️ Edit Profile
+                        </button>
+                        <button id="openDiagnosisBtn"
+                            class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium shadow-sm transition-colors">
+                            + Add Diagnosis &amp; Rx
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-50 to-white rounded-xl shadow-sm border border-blue-100 p-6">
+                    <div class="flex items-center gap-2 mb-4 border-b border-blue-100 pb-2">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                        <h2 class="text-lg font-bold text-gray-900">Groq AI Record Summary</h2>
+                        <span class="ml-auto text-[10px] font-bold uppercase tracking-wider text-amber-600 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded">Mocked</span>
+                    </div>
+                    <div id="aiSummary" class="prose prose-sm max-w-none text-gray-700 whitespace-pre-wrap"></div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                    <h2 class="text-sm font-bold text-gray-800 uppercase tracking-wider mb-4 border-b pb-2">Historical Records</h2>
+                    <div id="recordsList" class="space-y-4 max-h-64 overflow-y-auto pr-2"></div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 flex flex-col overflow-hidden h-[600px]">
+                <div class="px-4 py-3 border-b border-gray-100 bg-gray-50 flex justify-between items-center">
+                    <div class="flex items-center gap-2">
+                        <span class="relative flex h-3 w-3">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
+                        </span>
+                        <h2 class="text-sm font-semibold text-gray-800">Clinical Assistant</h2>
+                    </div>
+
+                    <button id="clearChatBtn"
+                        class="text-xs text-gray-500 hover:text-red-600 transition-colors flex items-center gap-1 font-medium bg-white px-2 py-1 rounded border border-gray-200 hover:border-red-200">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16">
+                            </path>
+                        </svg>
+                        Clear
+                    </button>
+                </div>
+
+                <div class="flex-grow p-4 overflow-y-auto flex flex-col gap-4 bg-gray-50/50" id="chatWindow">
+                    <div class="flex gap-3 greeting-msg" id="chatGreeting"></div>
+                </div>
+
+                <div class="p-3 border-t border-gray-200 bg-white">
+                    <form id="chatForm" class="relative">
+                        <input type="hidden" id="currentPatientId" value="">
+                        <textarea id="chatInput" rows="2" required placeholder="Ask about the patient's record..."
+                            class="w-full pl-3 pr-12 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none resize-none text-sm"></textarea>
+                        <button type="submit" id="chatSubmitBtn"
+                            class="absolute bottom-2 right-2 p-1.5 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors disabled:bg-gray-400">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </button>
+                    </form>
+                    <p class="text-[10px] text-gray-400 text-center mt-2">AI can make mistakes. Always verify clinical decisions.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="graphsView" class="hidden grid grid-cols-1 lg:grid-cols-4 gap-6 h-[500px]">
+            <div class="lg:col-span-1 bg-white rounded-xl shadow-sm border border-gray-200 p-6 flex flex-col">
+                <h2 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4 border-b pb-2">Graph Controls</h2>
+                <select id="metricSelector"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 outline-none bg-gray-50 mb-4 cursor-pointer">
+                    <option value="heart_rate">Heart Rate (bpm)</option>
+                    <option value="temperature">Temperature (°C)</option>
+                    <option value="weight">Weight (kg)</option>
+                    <option value="spo2">SpO2 (%)</option>
+                </select>
+            </div>
+            <div class="lg:col-span-3 bg-white rounded-xl shadow-sm border border-gray-200 p-6 flex flex-col">
+                <h2 id="chartTitle" class="text-lg font-semibold text-gray-800 mb-4">Heart Rate Trends</h2>
+                <div class="flex-grow relative w-full h-full min-h-[400px]">
+                    <canvas id="vitalsChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div id="emptyState" class="flex flex-col items-center justify-center h-64 text-gray-400 mt-10">
+            <svg class="w-16 h-16 mb-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+            <p class="text-lg">Use the search bar above to load a patient record.</p>
+        </div>
+
+    </main>
+
+    <div id="diagnosisModal" class="fixed inset-0 bg-gray-900 bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-lg overflow-hidden">
+            <div class="px-6 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50">
+                <h3 class="text-lg font-bold text-gray-900">Clinical Diagnosis &amp; Prescription</h3>
+                <button data-close="diagnosisModal" class="text-gray-400 hover:text-gray-600"><svg class="w-5 h-5"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg></button>
+            </div>
+
+            <form id="diagnosisForm" class="p-6 space-y-4">
+                <input type="hidden" name="patient_id" id="diagnosisPatientId">
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Diagnosis / Doctor Notes</label>
+                    <textarea name="diagnosis" rows="3" required placeholder="Enter clinical findings..."
+                        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 outline-none resize-none"></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Prescriptions (Checked by AI for Conflicts)</label>
+                    <textarea name="prescriptions" rows="2" placeholder="e.g., Amoxicillin 500mg BID"
+                        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 outline-none resize-none"></textarea>
+                </div>
+
+                <div class="mt-6 pt-4 border-t border-gray-100 flex justify-end gap-3">
+                    <button type="button" data-close="diagnosisModal"
+                        class="px-4 py-2 text-sm text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50">Cancel</button>
+                    <button type="submit" class="px-4 py-2 text-sm text-white bg-blue-600 rounded-lg hover:bg-blue-700">Save Record</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="editProfileModal" class="fixed inset-0 bg-gray-900 bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-lg overflow-hidden">
+            <div class="px-6 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50">
+                <h3 class="text-lg font-bold text-gray-900">Edit Patient Profile</h3>
+                <button data-close="editProfileModal" class="text-gray-400 hover:text-gray-600">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+
+            <form id="editProfileForm" class="p-6 space-y-4">
+                <input type="hidden" name="patient_id" id="editPatientId">
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Date of Birth</label>
+                        <input type="date" name="dob" id="editDob" required
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Gender</label>
+                        <select name="gender" id="editGender"
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 outline-none">
+                            <option value="M">Male (M)</option>
+                            <option value="F">Female (F)</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Blood Type</label>
+                    <select name="blood_type" id="editBloodType"
+                        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 outline-none">
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Allergies (Comma separated)</label>
+                    <textarea name="allergies" id="editAllergies" rows="2"
+                        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 outline-none resize-none"></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Active Medications (Comma separated)</label>
+                    <textarea name="active_medications" id="editMedications" rows="2"
+                        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 outline-none resize-none"></textarea>
+                </div>
+
+                <div class="mt-6 pt-4 border-t border-gray-100 flex justify-end gap-3">
+                    <button type="button" data-close="editProfileModal"
+                        class="px-4 py-2 text-sm text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50">Cancel</button>
+                    <button type="submit" class="px-4 py-2 text-sm text-white bg-blue-600 rounded-lg hover:bg-blue-700">Save Profile</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="appointmentsModal" class="fixed inset-0 bg-gray-900 bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-5xl overflow-hidden flex flex-col max-h-[85vh]">
+            <div class="px-6 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50">
+                <h3 class="text-lg font-bold text-gray-900">Upcoming Appointments</h3>
+                <button data-close="appointmentsModal" class="text-gray-400 hover:text-gray-600">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="p-0 overflow-y-auto flex-grow">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-white sticky top-0 shadow-sm">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date &amp; Time</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Patient ID</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Provider</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Reason</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                            <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="appointmentsBody" class="bg-white divide-y divide-gray-100"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/data.js"></script>
+    <script src="/js/app.js"></script>
+    <script>
+        POM.demoBanner();
+        const user = POM.guard({ role: 'doctor', active: 'dashboard' });
+        if (user) {
+            const esc = POM.escapeHtml;
+            let currentView = 'summary';
+            let vitalsChartInstance = null;
+            let activePatient = null;
+
+            const summaryView = document.getElementById('summaryView');
+            const graphsView = document.getElementById('graphsView');
+            const emptyState = document.getElementById('emptyState');
+            const recordsList = document.getElementById('recordsList');
+            const chatWindow = document.getElementById('chatWindow');
+            const chatGreeting = document.getElementById('chatGreeting');
+
+            /* ---------- Appointment table (shared markup with nurse page) ---------- */
+            function statusBadge(status) {
+                const styles = status === 'Approved'
+                    ? 'bg-green-100 text-green-800'
+                    : status === 'Pending'
+                        ? 'bg-yellow-100 text-yellow-800'
+                        : 'bg-red-100 text-red-800';
+                return '<span class="px-2 py-1 text-xs font-bold rounded-full ' + styles + '">' + esc(status) + '</span>';
+            }
+
+            function appointmentActions(appt) {
+                if (appt.status === 'Pending') {
+                    return '<button data-appt-id="' + appt.id + '" data-appt-status="Approved" class="appt-action text-green-600 hover:text-green-900 bg-green-50 hover:bg-green-100 px-2 py-1 rounded transition-colors">Approve</button>' +
+                           '<button data-appt-id="' + appt.id + '" data-appt-status="Cancelled" class="appt-action text-red-600 hover:text-red-900 bg-red-50 hover:bg-red-100 px-2 py-1 rounded transition-colors">Cancel</button>';
+                }
+                if (appt.status === 'Approved') {
+                    return '<button data-appt-id="' + appt.id + '" data-appt-status="Cancelled" class="appt-action text-red-600 hover:text-red-900 bg-red-50 hover:bg-red-100 px-2 py-1 rounded transition-colors">Cancel</button>';
+                }
+                return '<span class="text-gray-400 text-xs">No actions</span>';
+            }
+
+            function renderAppointments() {
+                const rows = POM.DB.appointments().map((appt) => {
+                    return '<tr class="hover:bg-gray-50 transition-colors">' +
+                        '<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-medium">' + esc(appt.appointment_date) +
+                            '<br><span class="text-xs text-gray-500 font-normal">' + esc(appt.appointment_time) + '</span></td>' +
+                        '<td class="px-6 py-4 whitespace-nowrap text-sm text-blue-600 font-bold">' + esc(appt.patient_id) + '</td>' +
+                        '<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">' + esc(appt.doctor_name) + '</td>' +
+                        '<td class="px-6 py-4 text-sm text-gray-600 max-w-xs truncate" title="' + esc(appt.reason) + '">' + esc(appt.reason) + '</td>' +
+                        '<td class="px-6 py-4 whitespace-nowrap text-sm">' + statusBadge(appt.status) + '</td>' +
+                        '<td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium flex justify-center gap-2">' + appointmentActions(appt) + '</td>' +
+                    '</tr>';
+                }).join('');
+
+                document.getElementById('appointmentsBody').innerHTML = rows ||
+                    '<tr><td colspan="6" class="px-6 py-10 text-center text-gray-500 text-sm">No upcoming appointments found.</td></tr>';
+            }
+
+            document.getElementById('appointmentsBody').addEventListener('click', (event) => {
+                const button = event.target.closest('.appt-action');
+                if (!button) return;
+                POM.DB.setAppointmentStatus(button.dataset.apptId, button.dataset.apptStatus);
+                POM.Flash.push('success', 'Appointment marked as ' + button.dataset.apptStatus + '.');
+                renderAppointments();
+                POM.Flash.render();
+            });
+
+            /* ---------- Patient rendering ---------- */
+            function renderRecords(records) {
+                if (!records.length) {
+                    recordsList.innerHTML = '<p class="text-sm text-gray-500 text-center py-4">No historical records found for this patient.</p>';
+                    return;
+                }
+                recordsList.innerHTML = records.map((record) => {
+                    return '<div class="p-3 bg-gray-50 rounded border border-gray-100 text-sm">' +
+                        '<p class="text-xs text-blue-600 font-bold mb-1">' + esc(POM.formatDate(record.timestamp)) + ' - ' + esc(record.recorded_by) + '</p>' +
+                        '<p><strong>Vitals:</strong> BP: ' + esc(record.bp || '--') + ', HR: ' + esc(record.heart_rate || '--') + ', Temp: ' + esc(record.temperature || '--') + '</p>' +
+                        (record.diagnosis ? '<p class="mt-1"><strong>Diagnosis:</strong> ' + esc(record.diagnosis) + '</p>' : '') +
+                        (record.prescriptions ? '<p class="text-red-600"><strong>Rx:</strong> ' + esc(record.prescriptions) + '</p>' : '') +
+                    '</div>';
+                }).join('');
+            }
+
+            function renderPatient(patient) {
+                activePatient = patient;
+                const recordsDesc = POM.DB.records(patient.patient_id, 'desc');
+
+                emptyState.classList.add('hidden');
+                summaryView.classList.remove('hidden');
+
+                document.getElementById('patientHeading').innerHTML = esc(patient.first_name + ' ' + patient.last_name) +
+                    ' <span class="text-gray-500 text-sm font-normal">(' + esc(patient.patient_id) + ')</span>';
+                document.getElementById('patientMeta').innerHTML = 'DOB: ' + esc(patient.dob) + ' | Blood: <span class="text-red-600 font-bold">' + esc(patient.blood_type) + '</span>';
+
+                document.getElementById('aiSummary').textContent = POM.AI.summary(patient, recordsDesc);
+                renderRecords(recordsDesc);
+
+                document.getElementById('diagnosisPatientId').value = patient.patient_id;
+                document.getElementById('editPatientId').value = patient.patient_id;
+                document.getElementById('editDob').value = patient.dob || '';
+                document.getElementById('editGender').value = ['M', 'F'].includes(patient.gender) ? patient.gender : 'Other';
+                document.getElementById('editBloodType').value = patient.blood_type || 'A+';
+                document.getElementById('editAllergies').value = patient.allergies || '';
+                document.getElementById('editMedications').value = patient.active_medications || '';
+
+                initChat(patient, recordsDesc);
+                initChart(patient);
+            }
+
+            function showEmptyState() {
+                activePatient = null;
+                summaryView.classList.add('hidden');
+                graphsView.classList.add('hidden');
+                emptyState.classList.remove('hidden');
+                document.getElementById('toggleBtnText').innerText = 'View Trend Graphs';
+                currentView = 'summary';
+            }
+
+            /* ---------- Chart ---------- */
+            function chartConfig(patient) {
+                const dbData = POM.DB.trendData(patient.patient_id);
+                return {
+                    heart_rate: { label: 'Heart Rate (bpm)', data: dbData.heart_rate, borderColor: 'rgb(239, 68, 68)', backgroundColor: 'rgba(239, 68, 68, 0.1)' },
+                    temperature: { label: 'Temperature (°C)', data: dbData.temperature, borderColor: 'rgb(245, 158, 11)', backgroundColor: 'rgba(245, 158, 11, 0.1)' },
+                    weight: { label: 'Weight (kg)', data: dbData.weight, borderColor: 'rgb(59, 130, 246)', backgroundColor: 'rgba(59, 130, 246, 0.1)' },
+                    spo2: { label: 'SpO2 (%)', data: dbData.spo2, borderColor: 'rgb(16, 185, 129)', backgroundColor: 'rgba(16, 185, 129, 0.1)' }
+                };
+            }
+
+            function initChart(patient) {
+                const dbData = POM.DB.trendData(patient.patient_id);
+                if (!dbData.labels.length) return;
+                const dataSets = chartConfig(patient);
+                const first = dataSets.heart_rate;
+
+                if (vitalsChartInstance) { vitalsChartInstance.destroy(); }
+
+                const ctx = document.getElementById('vitalsChart').getContext('2d');
+                vitalsChartInstance = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: dbData.labels,
+                        datasets: [{
+                            label: first.label,
+                            data: first.data,
+                            borderColor: first.borderColor,
+                            backgroundColor: first.backgroundColor,
+                            borderWidth: 2, tension: 0.3, fill: true, pointBackgroundColor: '#fff', pointRadius: 4, pointHoverRadius: 6
+                        }]
+                    },
+                    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: false }, x: { grid: { display: false } } } }
+                });
+
+                document.getElementById('chartTitle').innerText = first.label + ' Trends';
+                document.getElementById('metricSelector').value = 'heart_rate';
+            }
+
+            document.getElementById('metricSelector').addEventListener('change', function (e) {
+                if (!vitalsChartInstance || !activePatient) return;
+                const newData = chartConfig(activePatient)[e.target.value];
+                vitalsChartInstance.data.datasets[0].label = newData.label;
+                vitalsChartInstance.data.datasets[0].data = newData.data;
+                vitalsChartInstance.data.datasets[0].borderColor = newData.borderColor;
+                vitalsChartInstance.data.datasets[0].backgroundColor = newData.backgroundColor;
+                document.getElementById('chartTitle').innerText = newData.label + ' Trends';
+                vitalsChartInstance.update();
+            });
+
+            /* ---------- Modals ---------- */
+            function openModal(id) { document.getElementById(id).classList.remove('hidden'); }
+            function closeModal(id) { document.getElementById(id).classList.add('hidden'); }
+
+            document.querySelectorAll('[data-close]').forEach((button) => {
+                button.addEventListener('click', () => closeModal(button.dataset.close));
+            });
+
+            document.getElementById('openAppointmentsBtn').addEventListener('click', () => {
+                renderAppointments();
+                openModal('appointmentsModal');
+                document.body.style.overflow = 'hidden';
+            });
+            document.getElementById('openDiagnosisBtn').addEventListener('click', () => openModal('diagnosisModal'));
+            document.getElementById('openEditProfileBtn').addEventListener('click', () => openModal('editProfileModal'));
+
+            // restore body scroll when the appointments modal closes
+            const appointmentsModal = document.getElementById('appointmentsModal');
+            new MutationObserver(() => {
+                if (appointmentsModal.classList.contains('hidden')) document.body.style.overflow = 'auto';
+            }).observe(appointmentsModal, { attributes: true, attributeFilter: ['class'] });
+
+            /* ---------- Toggle views ---------- */
+            document.getElementById('toggleViewBtn').addEventListener('click', () => {
+                const btnText = document.getElementById('toggleBtnText');
+                if (currentView === 'summary') {
+                    summaryView.classList.add('hidden');
+                    graphsView.classList.remove('hidden');
+                    btnText.innerText = 'Back to AI Summary';
+                    currentView = 'graphs';
+                    if (vitalsChartInstance) vitalsChartInstance.resize();
+                } else {
+                    graphsView.classList.add('hidden');
+                    summaryView.classList.remove('hidden');
+                    btnText.innerText = 'View Trend Graphs';
+                    currentView = 'summary';
+                }
+            });
+
+            /* ---------- Forms ---------- */
+            document.getElementById('diagnosisForm').addEventListener('submit', (event) => {
+                event.preventDefault();
+                const form = event.target;
+                const patientId = form.elements.patient_id.value;
+                const diagnosis = form.elements.diagnosis.value.trim();
+                const prescriptions = form.elements.prescriptions.value.trim();
+                const patient = POM.DB.findPatient(patientId);
+                if (!patient) return;
+
+                const records = POM.DB.records(patientId, 'desc');
+                const conflict = POM.AI.checkConflicts(patient, prescriptions);
+
+                if (!conflict.ok) {
+                    POM.Flash.push('error', '⚠️ AI Conflict Alert: ' + conflict.warning);
+                    closeModal('diagnosisModal');
+                    renderPatient(patient);
+                    POM.Flash.render();
+                    return;
+                }
+
+                POM.DB.addRecord({
+                    patient_id: patientId,
+                    recorded_by: 'Dr. ' + user.user_name,
+                    diagnosis: diagnosis,
+                    prescriptions: prescriptions,
+                    nurse_notes: 'Doctor Consultation'
+                });
+
+                form.reset();
+                closeModal('diagnosisModal');
+                POM.Flash.push('success', 'Diagnosis and prescriptions saved successfully.');
+                renderPatient(POM.DB.findPatient(patientId));
+                POM.Flash.render();
+            });
+
+            document.getElementById('editProfileForm').addEventListener('submit', (event) => {
+                event.preventDefault();
+                const form = event.target;
+                const patientId = form.elements.patient_id.value;
+                POM.DB.updatePatient(patientId, {
+                    dob: form.elements.dob.value,
+                    gender: form.elements.gender.value,
+                    blood_type: form.elements.blood_type.value,
+                    allergies: form.elements.allergies.value,
+                    active_medications: form.elements.active_medications.value
+                });
+                closeModal('editProfileModal');
+                POM.Flash.push('success', 'Patient profile updated successfully.');
+                renderPatient(POM.DB.findPatient(patientId));
+                POM.Flash.render();
+            });
+
+            /* ---------- Chat (mocked AI) ---------- */
+            function initChat(patient, records) {
+                document.getElementById('currentPatientId').value = patient.patient_id;
+                chatGreeting.innerHTML =
+                    '<div class="w-8 h-8 rounded bg-blue-600 flex-shrink-0 flex items-center justify-center text-white">' +
+                        '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>' +
+                    '</div>' +
+                    '<div class="bg-white p-3 rounded-lg rounded-tl-none shadow-sm border border-gray-100 text-sm text-gray-700">Hello Dr. ' +
+                        esc(user.user_name) + ". I am analyzing " + esc(patient.patient_id) + "'s file. How can I assist you with this diagnosis today?</div>";
+
+                // remove previously rendered non-greeting messages, then load persisted history
+                Array.from(chatWindow.children).forEach((child) => {
+                    if (!child.classList.contains('greeting-msg')) child.remove();
+                });
+                loadChatHistory(patient.patient_id);
+            }
+
+            function storageKeyFor(patientId) { return 'chatHistory_' + patientId; }
+
+            function loadChatHistory(patientId) {
+                let history = [];
+                try { history = JSON.parse(localStorage.getItem(storageKeyFor(patientId)) || '[]'); } catch (e) { history = []; }
+                history.forEach((msg) => {
+                    if (msg.role === 'user') appendUserMessage(msg.text, false);
+                    else appendAIMessage(msg.text, false);
+                });
+            }
+
+            function saveMessage(patientId, role, text) {
+                let history = [];
+                try { history = JSON.parse(localStorage.getItem(storageKeyFor(patientId)) || '[]'); } catch (e) { history = []; }
+                history.push({ role, text });
+                try { localStorage.setItem(storageKeyFor(patientId), JSON.stringify(history)); } catch (e) { /* noop */ }
+            }
+
+            function appendUserMessage(text, save = true) {
+                const msgDiv = document.createElement('div');
+                msgDiv.className = 'flex gap-3 justify-end';
+                msgDiv.innerHTML = '<div class="bg-blue-600 text-white p-3 rounded-lg rounded-tr-none shadow-sm text-sm max-w-[85%] whitespace-pre-wrap">' + esc(text) + '</div>' +
+                    '<div class="w-8 h-8 rounded bg-gray-200 flex-shrink-0 flex items-center justify-center text-gray-600 text-xs font-bold border border-gray-300">DR</div>';
+                chatWindow.appendChild(msgDiv);
+                chatWindow.scrollTop = chatWindow.scrollHeight;
+                if (save && activePatient) saveMessage(activePatient.patient_id, 'user', text);
+            }
+
+            function appendAIMessage(text, save = true) {
+                const msgDiv = document.createElement('div');
+                msgDiv.className = 'flex gap-3';
+                msgDiv.innerHTML = '<div class="w-8 h-8 rounded bg-blue-600 flex-shrink-0 flex items-center justify-center text-white">' +
+                        '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>' +
+                    '</div>' +
+                    '<div class="bg-white p-3 rounded-lg rounded-tl-none shadow-sm border border-gray-100 text-sm text-gray-700 max-w-[85%] whitespace-pre-wrap">' + esc(text) + '</div>';
+                chatWindow.appendChild(msgDiv);
+                chatWindow.scrollTop = chatWindow.scrollHeight;
+                if (save && activePatient) saveMessage(activePatient.patient_id, 'ai', text);
+            }
+
+            function appendAILoading() {
+                const id = 'loading-' + Date.now();
+                const msgDiv = document.createElement('div');
+                msgDiv.id = id;
+                msgDiv.className = 'flex gap-3';
+                msgDiv.innerHTML = '<div class="w-8 h-8 rounded bg-blue-600 flex-shrink-0 flex items-center justify-center text-white">' +
+                        '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>' +
+                    '</div>' +
+                    '<div class="bg-white p-3 rounded-lg rounded-tl-none shadow-sm border border-gray-100 text-sm text-gray-500 animate-pulse">Analyzing records...</div>';
+                chatWindow.appendChild(msgDiv);
+                chatWindow.scrollTop = chatWindow.scrollHeight;
+                return id;
+            }
+
+            document.getElementById('clearChatBtn').addEventListener('click', () => {
+                if (!activePatient) return;
+                if (!confirm('Are you sure you want to clear the AI chat history for this patient?')) return;
+                try { localStorage.removeItem(storageKeyFor(activePatient.patient_id)); } catch (e) { /* noop */ }
+                Array.from(chatWindow.children).forEach((child) => {
+                    if (!child.classList.contains('greeting-msg')) child.remove();
+                });
+            });
+
+            document.getElementById('chatForm').addEventListener('submit', async (event) => {
+                event.preventDefault();
+                const input = document.getElementById('chatInput');
+                const submitBtn = document.getElementById('chatSubmitBtn');
+                const message = input.value.trim();
+                if (!message || !activePatient) return;
+
+                appendUserMessage(message, true);
+                input.value = '';
+                submitBtn.disabled = true;
+
+                const loadingId = appendAILoading();
+                const patientId = activePatient.patient_id;
+                const records = POM.DB.records(patientId, 'desc');
+
+                try {
+                    const reply = await POM.AI.chat(POM.DB.findPatient(patientId), records, message);
+                    const node = document.getElementById(loadingId);
+                    if (node) node.remove();
+                    appendAIMessage(reply, true);
+                } catch (error) {
+                    const node = document.getElementById(loadingId);
+                    if (node) node.remove();
+                    appendAIMessage('⚠️ Connection error. Please try again.', false);
+                } finally {
+                    submitBtn.disabled = false;
+                }
+            });
+
+            /* ---------- Boot ---------- */
+            const searchId = POM.queryString('search_id');
+            document.getElementById('searchInput').value = searchId;
+
+            if (searchId) {
+                const patient = POM.DB.findPatient(searchId);
+                if (patient) {
+                    renderPatient(patient);
+                } else {
+                    POM.Flash.push('error', 'Patient ID ' + searchId + ' not found in system.');
+                    POM.Flash.render();
+                    showEmptyState();
+                }
+            } else {
+                // For the show demo, preload the flagship patient record.
+                renderPatient(POM.DB.findPatient('PAT-1042'));
+            }
+        }
+    </script>
+</body>
+</html>

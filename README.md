@@ -47,3 +47,19 @@ An AI-powered, role-based clinical workspace and patient portal built with Flask
 * **Deployment:** Google Cloud Run
 
 ---
+
+## 🌐 Static Demo (Netlify)
+
+The `deploy` branch contains a **fully static, mocked build** of this app so it can be hosted on Netlify with no backend, database or Groq API key. All data (patients, telemetry, appointments, users) lives in the browser's `localStorage` and the AI summary/chat/conflict checks are simulated client-side.
+
+* **Publish directory:** `demo` (already configured in `netlify.toml`).
+* **Routes:** `demo/_redirects` maps the Flask-style URLs (`/login`, `/doctor/dashboard`, `/pricing`, …) onto the static pages.
+* **Demo credentials** (password for all accounts is `password123`):
+
+| Role    | User ID  |
+| ------- | -------- |
+| Doctor  | DOC-100  |
+| Nurse   | NUR-100  |
+| Patient | PAT-1042 |
+
+To deploy: connect the repository to Netlify and select the `deploy` branch — no build command is required. `demo/js/data.js` holds the seed data (mirrors `seed.py`) and can be reset from the browser console with `POM.DB.reset()`.

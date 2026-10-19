@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-gray-50">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing &amp; Plans - PickOne Medical</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="h-full flex flex-col">
+
+    <div id="navbar"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-4" id="flashZone"></div>
+
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+        <div class="max-w-6xl mx-auto py-8">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-extrabold text-gray-900 mb-4">Choose Your Plan</h1>
+                <p class="text-lg text-gray-500 max-w-2xl mx-auto">Upgrade your PickOne Medical experience to unlock unlimited AI diagnostics, permanent record storage, and premium support.</p>
+
+                <div id="trialBanner" class="hidden mt-6 inline-flex items-center gap-2 bg-yellow-100 border border-yellow-300 text-yellow-800 px-4 py-2 rounded-full font-medium text-sm">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    You are currently on the 60-Day Trial.
+                </div>
+
+                <div id="planBanner" class="hidden mt-6 inline-flex items-center gap-2 bg-green-100 border border-green-300 text-green-800 px-4 py-2 rounded-full font-medium text-sm">
+                    Current plan: <span id="planBannerName" class="font-bold"></span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 flex flex-col hover:border-blue-300 transition-colors">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Monthly</h3>
+                    <p class="text-sm text-gray-500 mb-6 border-b border-gray-100 pb-6">Perfect for short-term access.</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-extrabold text-gray-900">$29</span><span class="text-gray-500">/mo</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-grow text-sm text-gray-600">
+                        <li class="flex items-center gap-2"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Full Dashboard Access</li>
+                        <li class="flex items-center gap-2"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> AI Diagnostics</li>
+                    </ul>
+                    <button data-tier="monthly" class="checkout-btn w-full block text-center bg-white border border-blue-600 text-blue-600 hover:bg-blue-50 font-bold py-3 rounded-xl transition-colors">Select Plan</button>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 flex flex-col hover:border-blue-300 transition-colors">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Quarterly</h3>
+                    <p class="text-sm text-gray-500 mb-6 border-b border-gray-100 pb-6">Save 15% with a 3-month commitment.</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-extrabold text-gray-900">$75</span><span class="text-gray-500">/3mo</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-grow text-sm text-gray-600">
+                        <li class="flex items-center gap-2"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Full Dashboard Access</li>
+                        <li class="flex items-center gap-2"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> AI Diagnostics</li>
+                    </ul>
+                    <button data-tier="3-month" class="checkout-btn w-full block text-center bg-white border border-blue-600 text-blue-600 hover:bg-blue-50 font-bold py-3 rounded-xl transition-colors">Select Plan</button>
+                </div>
+
+                <div class="bg-blue-600 rounded-2xl shadow-xl border border-blue-700 p-8 flex flex-col transform md:-translate-y-4 relative">
+                    <div class="absolute top-0 right-0 transform translate-x-2 -translate-y-3 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Most Popular</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Annual</h3>
+                    <p class="text-sm text-blue-200 mb-6 border-b border-blue-500 pb-6">Save 30%. Best value for practices.</p>
+                    <div class="mb-6 text-white">
+                        <span class="text-4xl font-extrabold">$240</span><span class="text-blue-200">/yr</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-grow text-sm text-blue-50">
+                        <li class="flex items-center gap-2"><svg class="w-5 h-5 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Full Dashboard Access</li>
+                        <li class="flex items-center gap-2"><svg class="w-5 h-5 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Priority AI Processing</li>
+                        <li class="flex items-center gap-2"><svg class="w-5 h-5 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> 24/7 Email Support</li>
+                    </ul>
+                    <button data-tier="12-month" class="checkout-btn w-full block text-center bg-white text-blue-600 hover:bg-gray-50 font-bold py-3 rounded-xl transition-colors">Select Annual</button>
+                </div>
+
+                <div class="bg-gray-900 rounded-2xl shadow-sm border border-gray-800 p-8 flex flex-col">
+                    <h3 class="text-lg font-bold text-white mb-2">Lifetime</h3>
+                    <p class="text-sm text-gray-400 mb-6 border-b border-gray-800 pb-6">Pay once. Own it forever.</p>
+                    <div class="mb-6 text-white">
+                        <span class="text-4xl font-extrabold">$899</span><span class="text-gray-400">/once</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-grow text-sm text-gray-300">
+                        <li class="flex items-center gap-2"><svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Never pay again</li>
+                        <li class="flex items-center gap-2"><svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> All Future Updates</li>
+                    </ul>
+                    <button data-tier="lifetime" class="checkout-btn w-full block text-center bg-gray-800 border border-gray-700 text-white hover:bg-gray-700 font-bold py-3 rounded-xl transition-colors">Get Lifetime</button>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/data.js"></script>
+    <script src="/js/app.js"></script>
+    <script>
+        POM.demoBanner();
+        const user = POM.guard({ active: 'pricing' });
+        if (user) {
+            const TIER_LABELS = { 'trial': '60-Day Trial', 'monthly': 'Monthly', '3-month': 'Quarterly', '12-month': 'Annual', 'lifetime': 'Lifetime' };
+
+            const trialBanner = document.getElementById('trialBanner');
+            const planBanner = document.getElementById('planBanner');
+            if ((user.subscription_tier || 'trial') === 'trial') {
+                trialBanner.classList.remove('hidden');
+            } else {
+                planBanner.classList.remove('hidden');
+                document.getElementById('planBannerName').textContent = TIER_LABELS[user.subscription_tier] || user.subscription_tier;
+            }
+
+            document.querySelectorAll('.checkout-btn').forEach((button) => {
+                button.addEventListener('click', () => {
+                    const tier = button.dataset.tier;
+
+                    // Mirror app.py's simulate_checkout(): persist the tier on the mock user + session.
+                    const stored = POM.DB.users().find((u) => u.user_id === user.user_id);
+                    if (stored) {
+                        stored.subscription_tier = tier;
+                    }
+                    POM.Session.update({ subscription_tier: tier });
+
+                    const label = TIER_LABELS[tier] || tier;
+                    POM.Flash.push('success', 'Successfully upgraded to the ' + label + ' plan!');
+                    POM.redirect(POM.Session.dashboardUrl());
+                });
+            });
+        }
+    </script>
+</body>
+</html>

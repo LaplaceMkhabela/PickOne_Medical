@@ -1,0 +1,11 @@
+# Clean Flask-style URLs for the static demo (Netlify publish dir: demo/)
+/login                         /login.html                200
+/register                      /register.html             200
+/logout                        /logout.html               200
+/doctor/dashboard              /doctor.html               200
+/nurse/dashboard               /nurse.html                200
+/patient/dashboard             /patient.html              200
+/pricing                       /pricing.html              200
+/support                       /support.html              200
+/checkout/*                    /pricing.html              200
+/                              /login.html                200

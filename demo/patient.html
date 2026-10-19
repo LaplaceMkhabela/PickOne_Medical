@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-gray-50">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Portal - PickOne Medical</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="h-full flex flex-col">
+
+    <div id="navbar"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-4" id="flashZone"></div>
+
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+
+        <div class="mb-8 flex justify-between items-end">
+            <div>
+                <h1 id="welcomeHeading" class="text-2xl font-bold text-gray-900"></h1>
+                <p class="text-sm text-gray-500 mt-1">Review your personal health records, vitals, and upcoming appointments.</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+            <div class="lg:col-span-1 space-y-6">
+
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="px-6 py-4 border-b border-gray-100 bg-gray-50 flex items-center justify-between">
+                        <h2 class="text-lg font-semibold text-gray-800">Health Profile</h2>
+                        <span id="profileUserId" class="text-xs font-medium bg-blue-100 text-blue-800 py-1 px-2 rounded-full"></span>
+                    </div>
+
+                    <div class="p-6 space-y-4" id="profileBody"></div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="px-6 py-4 border-b border-gray-100 bg-gray-50">
+                        <h2 class="text-lg font-semibold text-gray-800">Upcoming Appointments</h2>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-3" id="appointmentsList"></div>
+
+                        <button id="openAppointmentBtn" class="w-full mt-4 bg-gray-50 hover:bg-gray-100 text-sm font-medium text-blue-600 hover:text-blue-800 py-2.5 rounded-lg border border-gray-200 transition-colors">
+                            + Request New Appointment
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="lg:col-span-2 space-y-6">
+
+                <div class="bg-gradient-to-r from-blue-600 to-blue-800 rounded-xl shadow-md p-6 text-white">
+                    <h2 id="latestVitalsHeading" class="text-sm font-medium text-blue-100 uppercase tracking-wider mb-4">Latest Recorded Vitals</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div>
+                            <p class="text-xs text-blue-200 mb-1">Blood Pressure</p>
+                            <p id="vitalBp" class="text-2xl font-bold">--/--</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-blue-200 mb-1">Heart Rate</p>
+                            <p id="vitalHr" class="text-2xl font-bold">-- <span class="text-sm font-normal text-blue-200">bpm</span></p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-blue-200 mb-1">Temperature</p>
+                            <p id="vitalTemp" class="text-2xl font-bold">-- <span class="text-sm font-normal text-blue-200">°C</span></p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-blue-200 mb-1">Blood Oxygen</p>
+                            <p id="vitalSpo2" class="text-2xl font-bold text-green-300">--%</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden flex flex-col">
+                    <div class="px-6 py-4 border-b border-gray-100 bg-gray-50 flex justify-between items-center">
+                        <h2 id="chartTitle" class="text-lg font-semibold text-gray-800">My Health Trends</h2>
+                        <select id="metricSelector" class="text-sm px-3 py-1.5 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 outline-none bg-white cursor-pointer">
+                            <option value="weight">Body Weight (kg)</option>
+                            <option value="heart_rate">Heart Rate (bpm)</option>
+                            <option value="temperature">Temperature (°C)</option>
+                        </select>
+                    </div>
+                    <div class="p-6 flex-grow relative h-[350px] w-full" id="chartWrapper">
+                        <canvas id="myVitalsChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="px-6 py-4 border-b border-gray-100 bg-gray-50">
+                        <h2 class="text-lg font-semibold text-gray-800">Recent Medical Notes</h2>
+                    </div>
+                    <div class="p-6 space-y-4 max-h-80 overflow-y-auto" id="notesList"></div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <div id="appointmentModal" class="fixed inset-0 bg-gray-900 bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-md overflow-hidden">
+            <div class="px-6 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50">
+                <h3 class="text-lg font-bold text-gray-900">Request Appointment</h3>
+                <button data-close="appointmentModal" class="text-gray-400 hover:text-gray-600 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+
+            <form id="appointmentForm" class="p-6 space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Select Physician</label>
+                    <select name="doctor_name" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 outline-none bg-white">
+                        <option value="" disabled selected>Choose a doctor...</option>
+                        <option value="Dr. Sarah Jenkins">Dr. Sarah Jenkins (General Practice)</option>
+                        <option value="Dr. Marcus Chen">Dr. Marcus Chen (Cardiology)</option>
+                    </select>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Preferred Date</label>
+                        <input type="date" name="appointment_date" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Preferred Time</label>
+                        <input type="time" name="appointment_time" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 outline-none">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Reason for Visit</label>
+                    <textarea name="reason" rows="3" required placeholder="Briefly describe your symptoms or reason for visit..." class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 outline-none resize-none"></textarea>
+                </div>
+                <div class="mt-6 pt-4 border-t border-gray-100 flex justify-end gap-3">
+                    <button type="button" data-close="appointmentModal" class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">Cancel</button>
+                    <button type="submit" class="px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-lg hover:bg-blue-700 shadow-sm transition-colors">Confirm Request</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/js/data.js"></script>
+    <script src="/js/app.js"></script>
+    <script>
+        POM.demoBanner();
+        const user = POM.guard({ role: 'patient', active: 'dashboard' });
+        if (user) {
+            const esc = POM.escapeHtml;
+            const patient = POM.DB.findPatient(user.user_id);
+            let myVitalsChart = null;
+
+            document.getElementById('welcomeHeading').textContent = 'Welcome back, ' + user.user_name + '!';
+            document.getElementById('profileUserId').textContent = user.user_id;
+
+            /* ---------- Health profile ---------- */
+            function renderProfile() {
+                const body = document.getElementById('profileBody');
+                if (!patient) {
+                    body.innerHTML = '<p class="text-sm text-gray-500">Profile data not found.</p>';
+                    return;
+                }
+
+                const age = POM.calculateAge(patient.dob);
+
+                const allergyTags = (patient.allergies && patient.allergies !== 'None')
+                    ? patient.allergies.split(',').map((a) => '<span class="px-2 py-1 bg-red-50 text-red-700 text-xs font-medium rounded border border-red-100">' + esc(a.trim()) + '</span>').join('')
+                    : '<span class="text-sm text-gray-500">No known allergies reported.</span>';
+
+                const meds = (patient.active_medications && patient.active_medications !== 'None')
+                    ? patient.active_medications.split(',').map((m) =>
+                        '<li class="flex items-start gap-2 text-sm text-gray-700">' +
+                            '<svg class="w-4 h-4 text-blue-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>' +
+                            '<span>' + esc(m.trim()) + '</span>' +
+                        '</li>').join('')
+                    : '<li class="text-sm text-gray-500">No active medications.</li>';
+
+                body.innerHTML =
+                    '<div class="grid grid-cols-3 gap-2 text-center pb-4 border-b border-gray-100">' +
+                        '<div><p class="text-xs text-gray-500 uppercase tracking-wide">Age</p><p class="text-lg font-semibold text-gray-900">' + esc(age) + '</p></div>' +
+                        '<div class="border-l border-r border-gray-100"><p class="text-xs text-gray-500 uppercase tracking-wide">Gender</p><p class="text-lg font-semibold text-gray-900">' + esc(patient.gender) + '</p></div>' +
+                        '<div><p class="text-xs text-gray-500 uppercase tracking-wide">Blood</p><p class="text-lg font-semibold text-red-600">' + esc(patient.blood_type) + '</p></div>' +
+                    '</div>' +
+                    '<div><h3 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Recorded Allergies</h3><div class="flex flex-wrap gap-2">' + allergyTags + '</div></div>' +
+                    '<div><h3 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Active Medications</h3><ul class="space-y-2">' + meds + '</ul></div>';
+            }
+
+            /* ---------- Appointments ---------- */
+            function renderAppointments() {
+                const appointments = POM.DB.appointments(user.user_id);
+                const list = document.getElementById('appointmentsList');
+
+                if (!appointments.length) {
+                    list.innerHTML = '<p class="text-sm text-gray-500 text-center py-4">No upcoming appointments scheduled.</p>';
+                    return;
+                }
+
+                const monthNames = POM.MONTHS;
+                list.innerHTML = appointments.map((appt) => {
+                    const parts = (appt.appointment_date || '').split('-');
+                    const isPending = appt.status === 'Pending';
+                    const month = parts.length === 3 ? monthNames[Number(parts[1]) - 1] : 'TBD';
+                    const day = parts.length === 3 ? parts[2] : '--';
+
+                    return '<div class="flex items-center gap-4 p-3 rounded-lg border ' + (isPending ? 'bg-yellow-50 border-yellow-100' : 'bg-blue-50 border-blue-100') + '">' +
+                        '<div class="bg-white p-2 rounded shadow-sm text-center min-w-[50px]">' +
+                            '<p class="text-xs ' + (isPending ? 'text-yellow-600' : 'text-blue-600') + ' font-bold uppercase">' + esc(month) + '</p>' +
+                            '<p class="text-lg font-bold text-gray-900">' + esc(day) + '</p>' +
+                        '</div>' +
+                        '<div class="flex-grow">' +
+                            '<h3 class="text-sm font-bold text-gray-900">' + esc(appt.doctor_name) + '</h3>' +
+                            '<p class="text-xs text-gray-600">' + esc(appt.reason) + ' • ' + esc(appt.appointment_time) + '</p>' +
+                        '</div>' +
+                        (isPending ? '<span class="text-[10px] font-bold bg-yellow-200 text-yellow-800 px-2 py-1 rounded">PENDING</span>' : '') +
+                    '</div>';
+                }).join('');
+            }
+
+            /* ---------- Latest vitals ---------- */
+            function renderVitals() {
+                const records = POM.DB.records(user.user_id, 'desc');
+                const latest = records.length ? records[0] : null;
+                const heading = document.getElementById('latestVitalsHeading');
+
+                if (!latest) {
+                    heading.textContent = 'Latest Recorded Vitals';
+                    document.getElementById('vitalBp').textContent = '--/--';
+                    document.getElementById('vitalHr').innerHTML = '-- <span class="text-sm font-normal text-blue-200">bpm</span>';
+                    document.getElementById('vitalTemp').innerHTML = '-- <span class="text-sm font-normal text-blue-200">°C</span>';
+                    document.getElementById('vitalSpo2').textContent = '--%';
+                    return;
+                }
+
+                heading.textContent = 'Latest Recorded Vitals (' + POM.formatDate(latest.timestamp) + ')';
+                document.getElementById('vitalBp').textContent = latest.bp || '--/--';
+                document.getElementById('vitalHr').innerHTML = esc(latest.heart_rate != null ? latest.heart_rate : '--') + ' <span class="text-sm font-normal text-blue-200">bpm</span>';
+                document.getElementById('vitalTemp').innerHTML = esc(latest.temperature != null ? latest.temperature : '--') + ' <span class="text-sm font-normal text-blue-200">°C</span>';
+                document.getElementById('vitalSpo2').textContent = (latest.spo2 != null ? latest.spo2 : '--') + '%';
+
+                renderNotes(records);
+            }
+
+            /* ---------- Recent notes ---------- */
+            function renderNotes(records) {
+                const notes = records.filter((r) => r.nurse_notes || r.diagnosis || r.prescriptions).slice(0, 3);
+                const list = document.getElementById('notesList');
+
+                if (!notes.length) {
+                    list.innerHTML = '<p class="text-sm text-gray-500 text-center py-4">No recent medical notes found.</p>';
+                    return;
+                }
+
+                list.innerHTML = notes.map((note) => {
+                    return '<div class="border-l-4 border-blue-500 pl-4 py-1">' +
+                        '<p class="text-xs text-gray-500 font-medium mb-1">' + esc(POM.formatDate(note.timestamp)) + ' - ' + esc(note.recorded_by) + '</p>' +
+                        (note.nurse_notes ? '<p class="text-sm text-gray-700 mb-1">' + esc(note.nurse_notes) + '</p>' : '') +
+                        (note.diagnosis ? '<p class="text-sm text-gray-900 font-medium mt-2">Diagnosis:</p><p class="text-sm text-gray-700">' + esc(note.diagnosis) + '</p>' : '') +
+                        (note.prescriptions ? '<p class="text-sm text-red-600 mt-1"><strong>Rx:</strong> ' + esc(note.prescriptions) + '</p>' : '') +
+                    '</div>';
+                }).join('');
+            }
+
+            /* ---------- Chart ---------- */
+            function chartDataSets() {
+                const dbData = POM.DB.trendData(user.user_id);
+                return {
+                    dbData: dbData,
+                    metrics: {
+                        weight: { label: 'Body Weight (kg)', data: dbData.weight, borderColor: 'rgb(59, 130, 246)', backgroundColor: 'rgba(59, 130, 246, 0.1)' },
+                        heart_rate: { label: 'Heart Rate (bpm)', data: dbData.heart_rate, borderColor: 'rgb(239, 68, 68)', backgroundColor: 'rgba(239, 68, 68, 0.1)' },
+                        temperature: { label: 'Temperature (°C)', data: dbData.temperature, borderColor: 'rgb(245, 158, 11)', backgroundColor: 'rgba(245, 158, 11, 0.1)' }
+                    }
+                };
+            }
+
+            function renderChart() {
+                const config = chartDataSets();
+                const dbData = config.dbData;
+
+                if (!dbData || !dbData.labels.length) {
+                    document.getElementById('chartWrapper').innerHTML = '<div class="flex items-center justify-center h-full text-gray-500">No telemetry data recorded yet to display trends.</div>';
+                    return;
+                }
+
+                const first = config.metrics.weight;
+                const ctx = document.getElementById('myVitalsChart').getContext('2d');
+                myVitalsChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: dbData.labels,
+                        datasets: [{
+                            label: first.label,
+                            data: first.data,
+                            borderColor: first.borderColor,
+                            backgroundColor: first.backgroundColor,
+                            borderWidth: 3, tension: 0.4, fill: true, pointBackgroundColor: '#fff', pointRadius: 5, pointHoverRadius: 7
+                        }]
+                    },
+                    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: false }, x: { grid: { display: false } } } }
+                });
+
+                document.getElementById('chartTitle').textContent = 'My Health Trends';
+                document.getElementById('metricSelector').value = 'weight';
+
+                document.getElementById('metricSelector').addEventListener('change', (e) => {
+                    const newData = chartDataSets().metrics[e.target.value];
+                    myVitalsChart.data.datasets[0].label = newData.label;
+                    myVitalsChart.data.datasets[0].data = newData.data;
+                    myVitalsChart.data.datasets[0].borderColor = newData.borderColor;
+                    myVitalsChart.data.datasets[0].backgroundColor = newData.backgroundColor;
+                    myVitalsChart.update();
+                });
+            }
+
+            /* ---------- Modal ---------- */
+            const modal = document.getElementById('appointmentModal');
+            function openModal() { modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
+            function closeModal() { modal.classList.add('hidden'); document.body.style.overflow = 'auto'; }
+
+            document.getElementById('openAppointmentBtn').addEventListener('click', openModal);
+            document.querySelectorAll('[data-close="appointmentModal"]').forEach((button) => {
+                button.addEventListener('click', closeModal);
+            });
+            window.addEventListener('click', (event) => { if (event.target === modal) closeModal(); });
+
+            document.getElementById('appointmentForm').addEventListener('submit', (event) => {
+                event.preventDefault();
+                const form = event.target;
+
+                // Normalise the 24h <input type="time"> value to the seed's 12h format.
+                const rawTime = form.elements.appointment_time.value;
+                let displayTime = rawTime;
+                if (/^\d{2}:\d{2}$/.test(rawTime)) {
+                    const [hours, minutes] = rawTime.split(':').map(Number);
+                    const ampm = hours >= 12 ? 'PM' : 'AM';
+                    const h12 = hours % 12 || 12;
+                    displayTime = String(h12).padStart(2, '0') + ':' + String(minutes).padStart(2, '0') + ' ' + ampm;
+                }
+
+                POM.DB.addAppointment({
+                    patient_id: user.user_id,
+                    doctor_name: form.elements.doctor_name.value,
+                    appointment_date: form.elements.appointment_date.value,
+                    appointment_time: displayTime,
+                    reason: form.elements.reason.value.trim()
+                });
+
+                form.reset();
+                closeModal();
+                POM.Flash.push('success', 'Appointment request submitted successfully! It is currently Pending approval.');
+                renderAppointments();
+                POM.Flash.render();
+            });
+
+            /* ---------- Boot ---------- */
+            renderProfile();
+            renderAppointments();
+            renderVitals();
+            renderChart();
+        }
+    </script>
+</body>
+</html>
